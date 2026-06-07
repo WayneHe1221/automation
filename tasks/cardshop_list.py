@@ -136,9 +136,18 @@ def yen_list(prices):
     return " / ".join(f"{p:,}円" for p in prices) if prices else "—"
 
 
+def esc(s):
+    """HTML 跳脫，供 parse_mode=HTML 訊息安全顯示名稱。"""
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def detail_url(pid):
+    return f"https://cardshop-serra.com/ws/products/detail/{pid}"
+
+
 def link(pid, name):
-    label = name if name else f"商品 {pid}"
-    return f'<a href="https://cardshop-serra.com/ws/products/detail/{pid}">{label}</a>'
+    label = esc(name) if name else f"商品 {pid}"
+    return f'<a href="{detail_url(pid)}">{label}</a>'
 
 
 def main():
@@ -184,7 +193,9 @@ def main():
     sections = []
     if new_ids:
         lines = [f"🆕 <b>新增商品 ({len(new_ids)})</b>"]
-        lines += [f"• {link(pid, current[pid]['name'])} — {yen_list(current[pid]['prices'])}" for pid in new_ids]
+        for pid in new_ids:
+            nm = esc(current[pid]["name"]) if current[pid]["name"] else f"商品 {pid}"
+            lines.append(f"• <b>{nm}</b> — {yen_list(current[pid]['prices'])}\n  {detail_url(pid)}")
         sections.append("\n".join(lines))
     if changed:
         lines = [f"💱 <b>價格異動 ({len(changed)})</b>"]

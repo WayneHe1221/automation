@@ -74,9 +74,16 @@ def save_state(state):
         json.dump(state, f, ensure_ascii=False, indent=2)
 
 
-def link(pid, name):
-    label = name if name else f"商品 {pid}"
-    return f'<a href="https://www.square-bushiroad.com/product/{pid}">{label}</a>'
+def esc(s):
+    """HTML 跳脫，供 parse_mode=HTML 訊息安全顯示名稱。"""
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def product_line(pid, name):
+    """一行：粗體名稱 + 下一行完整連結。"""
+    label = esc(name) if name else f"商品 {pid}"
+    url = f"https://www.square-bushiroad.com/product/{pid}"
+    return f"• <b>{label}</b>\n  {url}"
 
 
 def main():
@@ -123,7 +130,7 @@ def main():
         return
 
     lines = [f"🆕 <b>bushiroad 668 新增商品 ({len(new_ids)})</b>", ""]
-    lines += [f"• {link(pid, current[pid])}" for pid in new_ids]
+    lines += [product_line(pid, current[pid]) for pid in new_ids]
     message = "\n".join(lines)
     print(f"新增 {len(new_ids)} 件，發送通知")
     if send_telegram(message):
