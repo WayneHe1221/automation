@@ -1,0 +1,13 @@
+# 機密設定（本機開發用，絕不上傳）
+config.env
+*.env
+!.github/**
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store

@@ -1,0 +1,41 @@
+name: scheduled-tasks
+
+on:
+  schedule:
+    - cron: "0 * * * *" # 每小時整點（UTC，實際會有幾分鐘誤差）
+  workflow_dispatch: {} # 允許手動觸發
+
+permissions:
+  contents: write # 允許把更新後的 state/ commit 回 repo
+
+concurrency:
+  group: scheduled-tasks
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run all tasks
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: python run_all.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/
+          if git diff --staged --quiet; then
+            echo "state 無變化，不需 commit"
+          else
+            git commit -m "chore: update task state [skip ci]"
+            git push
+          fi
