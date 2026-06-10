@@ -10,7 +10,9 @@ automation/
 │   ├─ notify.py         #   Telegram 發訊（token 從環境變數/Secrets 讀）
 │   └─ fetch.py          #   抓網頁
 ├─ tasks/                # 一支檔案 = 一個任務，需提供 main()
-│   └─ cardshop_list.py  #   cardshop-serra 列表監控（新增/價格異動/下架）
+│   ├─ cardshop_list.py  #   cardshop-serra 列表監控（每小時：新增/價格異動/下架）
+│   ├─ bushiroad_668.py  #   square-bushiroad 668（每天：新增商品）
+│   └─ shop_watch.py     #   多站新品追蹤（每天：bushiroad 284 / torecolo / manasource / cardmax / gurapan / c-labo）
 ├─ state/                # 各任務狀態（Actions 跑完自動 commit 回來）
 ├─ run_all.py            # 入口：自動探索並執行 tasks/ 所有任務
 └─ .github/workflows/

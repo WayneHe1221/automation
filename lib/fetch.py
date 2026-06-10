@@ -9,8 +9,9 @@ USER_AGENT = (
 )
 
 
-def fetch_html(url, timeout=30):
+def fetch_html(url, timeout=30, encoding=None):
+    """抓取 HTML。encoding 可強制指定（如舊式日文站的 euc_jp）。"""
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
-        charset = resp.headers.get_content_charset() or "utf-8"
+        charset = encoding or resp.headers.get_content_charset() or "utf-8"
         return resp.read().decode(charset, errors="replace")
