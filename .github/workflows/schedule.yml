@@ -2,7 +2,7 @@ name: scheduled-tasks
 
 on:
   schedule:
-    - cron: "0 * * * *" # 每小時整點（UTC，實際會有幾分鐘誤差）
+    - cron: "25 * * * *" # 每小時第 25 分（避開整點壅塞，提升觸發命中率）
   workflow_dispatch: {} # 允許手動觸發
 
 permissions:
