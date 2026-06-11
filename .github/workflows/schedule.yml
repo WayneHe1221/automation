@@ -2,7 +2,9 @@ name: scheduled-tasks
 
 on:
   schedule:
-    - cron: "25 * * * *" # 每小時第 25 分（避開整點壅塞，提升觸發命中率）
+    # GitHub 對低活動 repo 的 schedule 會大量丟棄（實測每天僅觸發 6~8 次）。
+    # 以高密度排程補償丟棄率，讓有效頻率接近每小時。
+    - cron: "*/20 * * * *"
   workflow_dispatch: {} # 允許手動觸發
 
 permissions:
