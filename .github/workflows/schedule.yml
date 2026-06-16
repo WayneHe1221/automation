@@ -29,14 +29,14 @@ jobs:
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: python run_all.py
 
-      - name: Commit updated state
+      - name: Commit updated state & report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add state/
+          git add state/ inventory_report.md
           if git diff --staged --quiet; then
-            echo "state 無變化，不需 commit"
+            echo "state/報告 無變化，不需 commit"
           else
-            git commit -m "chore: update task state [skip ci]"
+            git commit -m "chore: update task state & inventory report [skip ci]"
             git push
           fi
