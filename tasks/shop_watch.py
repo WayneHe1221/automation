@@ -49,81 +49,92 @@ def parse_count_number(html):
 
 
 # ---------------------------------------------------------------- 各站解析器
-# 解析器一律回傳 {id(str): name(str)}
+# 解析器一律回傳「原始」清單 {id(str): {"name": str, "in_stock": bool}}
+# （含售完品；售完過濾在 main 統一處理，以免影響分頁件數估算）
+# 每個 id 以「第一次出現」決定名稱與庫存（已驗證可靠）。
 
 
 def parse_squarebushi(html):
-    """square-bushiroad：data-product-id 切塊 + goods_name。"""
+    """square-bushiroad：data-product-id 切塊 + goods_name；在庫なし/soldout 為售完。"""
     products = {}
     matches = list(re.finditer(r'data-product-id="(\d+)"', html))
     for i, m in enumerate(matches):
         pid = m.group(1)
+        if pid in products:
+            continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
         block = html[m.end():end]
+        in_stock = "在庫なし" not in block and "stock soldout" not in block
         nm = re.search(r'<span class="goods_name">(.*?)</span>', block, re.S)
-        name = _clean(nm.group(1)) if nm else ""
-        if pid not in products or (name and not products[pid]):
-            products[pid] = name
+        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
     return products
 
 
 def parse_product_links(html):
-    """manasource / c-labo：/product/<id> 連結 + 後續 goods_name。"""
+    """manasource / c-labo：/product/<id> 連結 + goods_name；在庫なし/soldout 為售完。"""
     products = {}
     matches = list(re.finditer(r'href="https?://[^"]*/product/(\d+)"', html))
     for i, m in enumerate(matches):
         pid = m.group(1)
+        if pid in products:
+            continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
         window = html[m.end():min(m.end() + 3000, end if end > m.end() else len(html))]
+        in_stock = "在庫なし" not in window and "stock soldout" not in window
         nm = re.search(r'<span class="goods_name">(.*?)</span>', window, re.S)
-        name = _clean(nm.group(1)) if nm else ""
-        if pid not in products or (name and not products[pid]):
-            products[pid] = name
+        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
     return products
 
 
 def parse_torecolo(html):
-    """torecolo：/shop/g/g<編號> 連結 + goods-name 錨點文字。"""
+    """torecolo：/shop/g/g<編號> 區塊 + goods-name；「売切れ」為售完。"""
     products = {}
-    blocks = re.split(r'js-enhanced-ecommerce-item', html)[1:]
-    for block in blocks:
+    for block in re.split(r'js-enhanced-ecommerce-item', html)[1:]:
         idm = re.search(r'/shop/g/g(\w+)', block)
         if not idm:
             continue
         pid = idm.group(1)
+        if pid in products:
+            continue
+        in_stock = "売切れ" not in block
         nm = re.search(r'class="[^"]*goods-name[^"]*"[^>]*>(.*?)</a>', block, re.S)
-        name = _clean(nm.group(1)) if nm else ""
-        if pid not in products or (name and not products[pid]):
-            products[pid] = name
+        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
     return products
 
 
 def parse_cardmax(html):
     """cardmax (MakeShop, EUC-JP)：/shopdetail/<id>/ 連結文字即名稱。
+    售完字樣「売り切れ」在連結後方的價格區，故看連結之後的小範圍。
     需先移除 HTML 註解（內含舊廣告的 shopdetail 連結）。"""
     html = re.sub(r"<!--.*?-->", " ", html, flags=re.S)
     products = {}
-    for m in re.finditer(r'<a href="/shopdetail/(\d+)/[^"]*"[^>]*>(.*?)</a>', html, re.S):
-        pid, inner = m.group(1), m.group(2)
-        name = _clean(inner)
-        if pid not in products or (name and not products[pid]):
-            products[pid] = name
-    # 過濾沒名稱的（純圖片/按鈕連結若同 id 已有名稱則保留名稱版）
-    return {pid: nm for pid, nm in products.items() if nm}
+    matches = list(re.finditer(r'<a href="/shopdetail/(\d+)/[^"]*"[^>]*>(.*?)</a>', html, re.S))
+    for i, m in enumerate(matches):
+        pid = m.group(1)
+        name = _clean(m.group(2))
+        if not name or pid in products:  # 略過純圖片連結與重複
+            continue
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
+        after = html[m.end():min(m.end() + 400, end if end > m.end() else len(html))]
+        products[pid] = {"name": name, "in_stock": "売り切れ" not in after}
+    return products
 
 
 def parse_gurapan(html):
-    """gurapan (EC-CUBE)：/products/detail/<id> + ec-shelfGrid__item-name。"""
+    """gurapan (EC-CUBE)：/products/detail/<id> + item-name；SOLD OUT/品切/売り切れ 為售完。"""
     products = {}
     matches = list(re.finditer(r'href="[^"]*/products/detail/(\d+)"', html))
     for i, m in enumerate(matches):
         pid = m.group(1)
+        if pid in products:
+            continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
         window = html[m.end():min(m.end() + 3000, end if end > m.end() else len(html))]
+        in_stock = not (
+            "SOLD OUT" in window.upper() or "品切" in window or "売り切れ" in window
+        )
         nm = re.search(r'class="ec-shelfGrid__item-name">(.*?)</p>', window, re.S)
-        name = _clean(nm.group(1)) if nm else ""
-        if pid not in products or (name and not products[pid]):
-            products[pid] = name
+        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
     return products
 
 
@@ -260,23 +271,29 @@ def main():
     for site in SITES:
         key = site["key"]
         try:
-            current = site["fetch"]()
+            raw = site["fetch"]()
         except Exception as e:  # noqa: BLE001
             print(f"ERROR: [{key}] 抓取失敗：{e}")
             all_ok = False
             continue
 
-        if not current:
-            print(f"WARN: [{key}] 解析到 0 件，跳過（不更新基準、不誤報）")
+        if not raw:
+            # 原始清單為空 = 疑似抓取/解析問題（非「全部售完」），保守跳過。
+            print(f"WARN: [{key}] 解析到 0 件（原始），跳過（不更新基準、不誤報）")
             all_ok = False
             continue
+
+        # 只保留有貨商品（售完不追蹤、不入報告）
+        current = {pid: v.get("name", "") for pid, v in raw.items() if v.get("in_stock")}
+        sold = len(raw) - len(current)
+        print(f"[{key}] 原始 {len(raw)} 件，有貨 {len(current)}，售完 {sold}")
 
         prev = sites_state.get(key, {}).get("products")
 
         if not isinstance(prev, dict):
-            print(f"[{key}] 首次執行，建立基準：{len(current)} 件")
+            print(f"[{key}] 首次執行，建立基準：{len(current)} 件（有貨）")
             sites_state[key] = {"products": current}
-            startup_summary.append(f"• {esc(site['label'])}：{len(current)} 件")
+            startup_summary.append(f"• {esc(site['label'])}：{len(current)} 件（有貨）")
             continue
 
         new_ids = [pid for pid in current if pid not in prev]

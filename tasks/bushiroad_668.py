@@ -39,22 +39,23 @@ def parse_total(html):
 
 
 def parse_products(html):
-    """解析 -> {id(str): name(str)}。以 data-product-id 為分界切塊。"""
+    """解析 -> {id(str): {"name": str, "in_stock": bool}}（原始清單，含售完）。
+
+    以 data-product-id 為分界切塊；在庫なし / stock soldout 視為售完。
+    每個 id 以第一次出現為準。售完過濾在 main 處理。
+    """
     products = {}
     matches = list(re.finditer(r'data-product-id="(\d+)"', html))
     for i, m in enumerate(matches):
         pid = m.group(1)
-        start = m.end()
+        if pid in products:
+            continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
-        block = html[start:end]
+        block = html[m.end():end]
+        in_stock = "在庫なし" not in block and "stock soldout" not in block
         nm = re.search(r'<span class="goods_name">(.*?)</span>', block, re.S)
-        name = ""
-        if nm:
-            name = _unescape(re.sub(r"<[^>]+>", "", nm.group(1)).strip())
-        if pid not in products:
-            products[pid] = name
-        elif name and not products[pid]:
-            products[pid] = name
+        name = _unescape(re.sub(r"<[^>]+>", "", nm.group(1)).strip()) if nm else ""
+        products[pid] = {"name": name, "in_stock": in_stock}
     return products
 
 
@@ -101,14 +102,18 @@ def main():
         print(f"ERROR: 抓取失敗，跳過本次（不更新狀態）：{e}")
         return
 
-    current = parse_products(html)
-    if not current:
-        print("WARN: 解析到 0 個商品，跳過本次（不更新狀態、不誤報）")
+    raw = parse_products(html)
+    if not raw:
+        print("WARN: 解析到 0 個商品（原始），跳過本次（不更新狀態、不誤報）")
         return
 
     total = parse_total(html)
-    if total is not None and len(current) < total:
-        print(f"WARN: 只解析到 {len(current)}/{total} 件（可能分頁未抓全）")
+    if total is not None and len(raw) < total:
+        print(f"WARN: 只解析到 {len(raw)}/{total} 件（可能分頁未抓全）")
+
+    # 只保留有貨商品（售完不追蹤、不入報告）
+    current = {pid: v.get("name", "") for pid, v in raw.items() if v.get("in_stock")}
+    print(f"原始 {len(raw)} 件，有貨 {len(current)}，售完 {len(raw) - len(current)}")
 
     prev = state.get("products")
 
