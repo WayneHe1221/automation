@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 148 件**
+**合計 147 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -14,18 +14,18 @@
 - [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105041)
 - [【予約商品・全額前金制】【6/26(金)発売】ヴァイスシュヴァルツ グランブルーファンタジー トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/102392)
 
-## torecolo ヴァイス新品（每天）— 0 件
+## torecolo ヴァイス新品（每天）— 1 件
 
+- [【カートン予約販売】ブースター「【推しの子】Vol.3」](https://www.torecolo.jp/shop/g/g4573616014465/)
 
 ## c-labo 2421（有庫存）（每天）— 1 件
 
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 12 件
+## gurapan 1081（每天）— 11 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [TVアニメ『Summer Pockets』【カートン】](https://gurapan.jp/products/detail/213271)
-- [【簡易版】【TD付】グランブルーファンタジーRR以下4枚ずつセット](https://gurapan.jp/products/detail/218401)
 - [【TD付】グランブルーファンタジーRR以下4枚ずつセット](https://gurapan.jp/products/detail/217228)
 - [【簡易版】【TD付】ブラウンダストRR以下4枚ずつセット](https://gurapan.jp/products/detail/218402)
 - [【TD付】ブラウンダスト2RR以下4枚ずつセット](https://gurapan.jp/products/detail/218033)
@@ -65,7 +65,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 108 件
+## square-bushiroad 284（每天）— 107 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
@@ -168,7 +168,6 @@
 - [ヴァイスシュヴァルツ D4DJ Groovy Mix Peaky P-key & Photon Maiden トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/36039)
 - [ヴァイスシュヴァルツ ありふれた職業で世界最強 (1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/36043)
 - [ヴァイスシュヴァルツ プレミアムブースター MARVEL(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/36877)
-- [ヴァイスシュヴァルツ プレミアムブースター STAR WARS(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/36879)
 - [【再版仕様】ヴァイスシュヴァルツ Key all-star(1カートン・18BOX入)(1BOXあたり7040円)(新品商品)](https://www.square-bushiroad.com/product/33678)
 - [ヴァイスシュヴァルツ プレミアムブースター ラブライブ！スクフェスシリーズ感謝祭 2022(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/30487)
 - [ヴァイスシュヴァルツ 映画「五等分の花嫁」(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/29924)
