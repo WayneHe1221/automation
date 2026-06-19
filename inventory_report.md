@@ -1,11 +1,12 @@
 # 追蹤商品清單
 
-**合計 147 件**
+**合計 145 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
-## cardshop-serra（每小時・價格監控）— 2 件
+## cardshop-serra（每小時・價格監控）— 3 件
 
+- [【hBP08】hololive OFFICIAL CARD GAME ブースターボックス「バウンサーバウンド」 ※発送方法は「ゆうパック」を選択してください。](https://cardshop-serra.com/ws/products/detail/397242) — 5,280円
 - [“黒と紅の少女”狂三(DAL-WE33-P02)](https://cardshop-serra.com/ws/products/detail/198398) — 40円 / 60円 / 100円
 - [虹ヶ咲学園3年生 果林&彼方&エマ(PR)(LNJ-W85-P04)](https://cardshop-serra.com/ws/products/detail/198396) — 24円 / 36円 / 60円
 
@@ -22,21 +23,18 @@
 
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 11 件
+## gurapan 1081（每天）— 8 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [TVアニメ『Summer Pockets』【カートン】](https://gurapan.jp/products/detail/213271)
-- [【TD付】グランブルーファンタジーRR以下4枚ずつセット](https://gurapan.jp/products/detail/217228)
-- [【簡易版】【TD付】ブラウンダストRR以下4枚ずつセット](https://gurapan.jp/products/detail/218402)
 - [【TD付】ブラウンダスト2RR以下4枚ずつセット](https://gurapan.jp/products/detail/218033)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [「Re:ゼロから始める異世界生活」Vol.4【カートン】](https://gurapan.jp/products/detail/221728)
-- [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 7 件
+## manasource 2268（每天）— 9 件
 
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
@@ -44,6 +42,8 @@
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [予約 Z/X -Zillions of enemy ジェネレート ドラゴン 1カートン(12BOX）](https://www.manasource.net/product/186132)
+- [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ コレクター・ブースター 日本語版 1BOX（12パック）](https://www.manasource.net/product/186129)
+- [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ プレイ・ブースター日本語版 1BOX（30パック）](https://www.manasource.net/product/171544)
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム プレミアムブースター ラブライブ！スーパースター！！ DUO 1BOX](https://www.manasource.net/product/190717)
 
 ## cardmax ct1849（每天）— 16 件
@@ -65,7 +65,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 107 件
+## square-bushiroad 284（每天）— 105 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
@@ -83,8 +83,6 @@
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/89776)
 - [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/89771)
 - [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1カートン・30BOX入)(1BOXあたり3960円)(新品商品)](https://www.square-bushiroad.com/product/89772)
-- [★SALE★ヴァイスシュヴァルツ ブルーアーカイブ The Animation(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/89785)
-- [★SALE★ヴァイスシュヴァルツ ブルーアーカイブ The Animation(1カートン・24BOX入)(1BOXあたり3000円)(新品商品)](https://www.square-bushiroad.com/product/89786)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/86677)
 - [★SALE★ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1カートン・30BOX入)(1BOXあたり2500円)(新品商品)](https://www.square-bushiroad.com/product/86678)
 - [ヴァイスシュヴァルツ MARVEL Vol.3 (MARVEL STUDIOS) (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/87815)
