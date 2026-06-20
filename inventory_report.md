@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 145 件**
+**合計 144 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -19,29 +19,28 @@
 
 - [【カートン予約販売】ブースター「【推しの子】Vol.3」](https://www.torecolo.jp/shop/g/g4573616014465/)
 
-## c-labo 2421（有庫存）（每天）— 1 件
+## c-labo 2421（有庫存）（每天）— 2 件
 
+- [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『【推しの子】Vol.3』(1BOX=10パック) (2608/07)](https://www.c-labo-online.jp/product/382227)
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 8 件
+## gurapan 1081（每天）— 7 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [TVアニメ『Summer Pockets』【カートン】](https://gurapan.jp/products/detail/213271)
 - [【TD付】ブラウンダスト2RR以下4枚ずつセット](https://gurapan.jp/products/detail/218033)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
-- [「Re:ゼロから始める異世界生活」Vol.4【カートン】](https://gurapan.jp/products/detail/221728)
-- [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
+- [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 9 件
+## manasource 2268（每天）— 8 件
 
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
 - [予約 タカラトミー(TAKARA TOMY) HV-P03 ハイキュー!! バボカ!! BREAK ブースターパック ユース＆選抜強化合宿 1BOX](https://www.manasource.net/product/187175)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
-- [予約 Z/X -Zillions of enemy ジェネレート ドラゴン 1カートン(12BOX）](https://www.manasource.net/product/186132)
 - [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ コレクター・ブースター 日本語版 1BOX（12パック）](https://www.manasource.net/product/186129)
 - [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ プレイ・ブースター日本語版 1BOX（30パック）](https://www.manasource.net/product/171544)
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム プレミアムブースター ラブライブ！スーパースター！！ DUO 1BOX](https://www.manasource.net/product/190717)
