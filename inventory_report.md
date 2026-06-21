@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 144 件**
+**合計 143 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -24,11 +24,10 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『【推しの子】Vol.3』(1BOX=10パック) (2608/07)](https://www.c-labo-online.jp/product/382227)
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 7 件
+## gurapan 1081（每天）— 6 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [TVアニメ『Summer Pockets』【カートン】](https://gurapan.jp/products/detail/213271)
-- [【TD付】ブラウンダスト2RR以下4枚ずつセット](https://gurapan.jp/products/detail/218033)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
