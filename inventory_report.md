@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 140 件**
+**合計 137 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -10,10 +10,9 @@
 - [“黒と紅の少女”狂三(DAL-WE33-P02)](https://cardshop-serra.com/ws/products/detail/198398) — 40円 / 60円 / 100円
 - [虹ヶ咲学園3年生 果林&彼方&エマ(PR)(LNJ-W85-P04)](https://cardshop-serra.com/ws/products/detail/198396) — 24円 / 36円 / 60円
 
-## square-bushiroad 668（每天）— 2 件
+## square-bushiroad 668（每天）— 1 件
 
 - [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105041)
-- [【予約商品・全額前金制】【6/26(金)発売】ヴァイスシュヴァルツ グランブルーファンタジー トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/102392)
 
 ## torecolo ヴァイス新品（每天）— 1 件
 
@@ -33,7 +32,7 @@
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 7 件
+## manasource 2268（每天）— 6 件
 
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
@@ -41,9 +40,8 @@
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ コレクター・ブースター 日本語版 1BOX（12パック）](https://www.manasource.net/product/186129)
-- [予約 ラブライブ!シリーズ オフィシャルカードゲーム プレミアムブースター ラブライブ！スーパースター！！ DUO 1BOX](https://www.manasource.net/product/190717)
 
-## cardmax ct1849（每天）— 16 件
+## cardmax ct1849（每天）— 15 件
 
 - [プレミアムブースター アイドルマスター ミリオンライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000211443/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
@@ -53,7 +51,6 @@
 - [トライアルデッキ 学園アイドルマスター BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000177549/)
 - [トライアルデッキ 角川スニーカー文庫 Vol.2 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000164534/)
 - [ブースターパック 推しの子 Vol.2 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000161178/)
-- [ブースターパック ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000159156/)
 - [ブースターパック ゆるキャン△ SEASON3 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000156097/)
 - [ブースターパック キャプテン翼 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000150200/)
 - [トライアルデッキ るろうに剣心 -明治剣客浪漫譚- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000144100/)
