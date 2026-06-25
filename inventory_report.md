@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 137 件**
+**合計 134 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -14,29 +14,26 @@
 
 - [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105041)
 
-## torecolo ヴァイス新品（每天）— 1 件
+## torecolo ヴァイス新品（每天）— 0 件
 
-- [【カートン予約販売】ブースター「【推しの子】Vol.3」](https://www.torecolo.jp/shop/g/g4573616014465/)
 
 ## c-labo 2421（有庫存）（每天）— 1 件
 
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 7 件
+## gurapan 1081（每天）— 6 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
-- [TVアニメ『Summer Pockets』【カートン】](https://gurapan.jp/products/detail/213271)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 6 件
+## manasource 2268（每天）— 5 件
 
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
-- [予約 タカラトミー(TAKARA TOMY) HV-P03 ハイキュー!! バボカ!! BREAK ブースターパック ユース＆選抜強化合宿 1BOX](https://www.manasource.net/product/187175)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ コレクター・ブースター 日本語版 1BOX（12パック）](https://www.manasource.net/product/186129)
