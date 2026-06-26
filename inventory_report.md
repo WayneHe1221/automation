@@ -21,27 +21,27 @@
 
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 6 件
+## gurapan 1081（每天）— 7 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
+- [【簡易版】【TD付】ブラウンダストRR以下4枚ずつセット](https://gurapan.jp/products/detail/218402)
+- [【TD付】ブラウンダスト2RR以下4枚ずつセット](https://gurapan.jp/products/detail/218033)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
-- [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 5 件
+## manasource 2268（每天）— 6 件
 
+- [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
+- [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
+- [予約 Z/X -Zillions of enemy X- アセンション・サマー 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/186132)
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
 - [予約 タカラトミー(TAKARA TOMY) HV-P03 ハイキュー!! バボカ!! BREAK ブースターパック ユース＆選抜強化合宿 1BOX](https://www.manasource.net/product/187175)
-- [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
-- [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 
-## cardmax ct1849（每天）— 17 件
+## cardmax ct1849（每天）— 15 件
 
-- [【予約販売 7月24日発売予定】ブースターパック ｢Re:ゼロから始める異世界生活｣Vol.4 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000219308/)
-- [ブースターパック グランブルーファンタジー BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000217416/)
 - [プレミアムブースター アイドルマスター ミリオンライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000211443/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
 - [トライアルデッキ 怪獣８号 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000185672/)
