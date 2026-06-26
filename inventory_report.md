@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 134 件**
+**合計 135 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -34,12 +34,14 @@
 
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
+- [予約 タカラトミー(TAKARA TOMY) HV-P03 ハイキュー!! バボカ!! BREAK ブースターパック ユース＆選抜強化合宿 1BOX](https://www.manasource.net/product/187175)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
-- [マジック：ザ・ギャザリング | マーベル スーパー・ヒーローズ コレクター・ブースター 日本語版 1BOX（12パック）](https://www.manasource.net/product/186129)
 
-## cardmax ct1849（每天）— 15 件
+## cardmax ct1849（每天）— 17 件
 
+- [【予約販売 7月24日発売予定】ブースターパック ｢Re:ゼロから始める異世界生活｣Vol.4 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000219308/)
+- [ブースターパック グランブルーファンタジー BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000217416/)
 - [プレミアムブースター アイドルマスター ミリオンライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000211443/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
 - [トライアルデッキ 怪獣８号 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000185672/)
@@ -56,7 +58,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 103 件
+## square-bushiroad 284（每天）— 102 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
@@ -151,7 +153,6 @@
 - [ヴァイスシュヴァルツ D4DJ Groovy Mix (1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/38382)
 - [ヴァイスシュヴァルツ D4DJ Groovy Mix(1カートン・18BOX入)(1BOXあたり6000円)(新品商品)](https://www.square-bushiroad.com/product/38383)
 - [ヴァイスシュヴァルツ D4DJ Groovy Mix Happy Around! & Lyrical Lily トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/36035)
-- [ヴァイスシュヴァルツ D4DJ Groovy Mix Merm4id & 燐舞曲 トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/36037)
 - [ヴァイスシュヴァルツ D4DJ Groovy Mix Peaky P-key & Photon Maiden トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/36039)
 - [ヴァイスシュヴァルツ ありふれた職業で世界最強 (1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/36043)
 - [ヴァイスシュヴァルツ プレミアムブースター MARVEL(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/36877)
