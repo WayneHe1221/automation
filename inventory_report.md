@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 134 件**
+**合計 135 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -39,8 +39,9 @@
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
 
-## cardmax ct1849（每天）— 15 件
+## cardmax ct1849（每天）— 16 件
 
+- [【予約販売 7月24日発売予定】ブースターパック ｢Re:ゼロから始める異世界生活｣Vol.4 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000219308/)
 - [プレミアムブースター アイドルマスター ミリオンライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000211443/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
 - [トライアルデッキ 怪獣８号 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000185672/)
