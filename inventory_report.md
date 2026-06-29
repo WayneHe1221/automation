@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 135 件**
+**合計 132 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -39,9 +39,8 @@
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
 
-## cardmax ct1849（每天）— 16 件
+## cardmax ct1849（每天）— 15 件
 
-- [【予約販売 7月24日発売予定】ブースターパック ｢Re:ゼロから始める異世界生活｣Vol.4 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000219308/)
 - [プレミアムブースター アイドルマスター ミリオンライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000211443/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
 - [トライアルデッキ 怪獣８号 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000185672/)
@@ -58,7 +57,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 102 件
+## square-bushiroad 284（每天）— 100 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
@@ -74,7 +73,6 @@
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary トライアルデッキ(1カートン・48個入)(1個あたり1650円)(新品商品)](https://www.square-bushiroad.com/product/89774)
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/89775)
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/89776)
-- [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/89771)
 - [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1カートン・30BOX入)(1BOXあたり3960円)(新品商品)](https://www.square-bushiroad.com/product/89772)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/86677)
 - [★SALE★ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1カートン・30BOX入)(1BOXあたり2500円)(新品商品)](https://www.square-bushiroad.com/product/86678)
@@ -135,7 +133,6 @@
 - [【再版仕様】ヴァイスシュヴァルツ アイドルマスター シャイニーカラーズ(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/50346)
 - [ヴァイスシュヴァルツ アリス・ギア・アイギス Expansion(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/47322)
 - [しろくろカプセル 五等分の花嫁 BOX ver.(1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/45060)
-- [★SALE★ヴァイスシュヴァルツ 電撃文庫 (1カートン・18BOX入)(1BOXあたり5000円)(新品商品)](https://www.square-bushiroad.com/product/44496)
 - [ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44497)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44498)
 - [ヴァイスシュヴァルツ 電撃文庫 シュヴァルツサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44499)
