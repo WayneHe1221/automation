@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 136 件**
+**合計 137 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -16,9 +16,8 @@
 - [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3(1カートン・12BOX入)(1BOXあたり4100円)(新品商品)](https://www.square-bushiroad.com/product/105042)
 - [【予約商品・全額前金制】【7/24(金)発売】ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039)
 
-## torecolo ヴァイス新品（每天）— 1 件
+## torecolo ヴァイス新品（每天）— 0 件
 
-- [【カートン予約販売】ブースター「【推しの子】Vol.3」](https://www.torecolo.jp/shop/g/g4573616014465/)
 
 ## c-labo 2421（有庫存）（每天）— 1 件
 
@@ -35,13 +34,15 @@
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 5 件
+## manasource 2268（每天）— 7 件
 
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [予約 Z/X -Zillions of enemy X- アセンション・サマー 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/186132)
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
-- [フレッシュ&ブラッド(Flesh and Blood) 日本語版 『第三紀の凶兆 (Omens of the Third Age)』 1BOX](https://www.manasource.net/product/190156)
+- [予約 タイトルブースター「フューチャーカード バディファイト ディザスターフォース」 1BOX](https://www.manasource.net/product/190716)
+- [予約 バトルスピリッツ ブースターパック 幻惑の翔風 【26RBS02】 1BOX](https://www.manasource.net/product/189699)
+- [予約 Xross Stars ブースターパック第4弾 『Grand Resonance』 1BOX](https://www.manasource.net/product/145922)
 
 ## cardmax ct1849（每天）— 15 件
 
