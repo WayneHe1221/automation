@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 137 件**
+**合計 135 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -10,11 +10,9 @@
 - [“黒と紅の少女”狂三(DAL-WE33-P02)](https://cardshop-serra.com/ws/products/detail/198398) — 40円 / 60円 / 100円
 - [虹ヶ咲学園3年生 果林&彼方&エマ(PR)(LNJ-W85-P04)](https://cardshop-serra.com/ws/products/detail/198396) — 24円 / 36円 / 60円
 
-## square-bushiroad 668（每天）— 3 件
+## square-bushiroad 668（每天）— 1 件
 
 - [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105041)
-- [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3(1カートン・12BOX入)(1BOXあたり4100円)(新品商品)](https://www.square-bushiroad.com/product/105042)
-- [【予約商品・全額前金制】【7/24(金)発売】ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039)
 
 ## torecolo ヴァイス新品（每天）— 0 件
 
