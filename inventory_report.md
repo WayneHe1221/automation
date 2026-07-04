@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 133 件**
+**合計 139 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -30,15 +30,21 @@
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 
-## manasource 2268（每天）— 7 件
+## manasource 2268（每天）— 13 件
 
+- [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019)
+- [予約 ウィクロスTCG ブースターパック Lostorage SELECTOR 1カートン（16BOX)](https://www.manasource.net/product/152401)
+- [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482)
+- [予約 バトルスピリッツ ブースターパック 幻惑の翔風 【26RBS02】 1BOX](https://www.manasource.net/product/189699)
+- [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717)
+- [予約 Xross Stars ブースターパック第4弾 『Grand Resonance』 1BOX](https://www.manasource.net/product/145922)
+- [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498)
+- [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [予約 Z/X -Zillions of enemy X- アセンション・サマー 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/186132)
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [予約 タイトルブースター「フューチャーカード バディファイト ディザスターフォース」 1BOX](https://www.manasource.net/product/190716)
-- [予約 バトルスピリッツ ブースターパック 幻惑の翔風 【26RBS02】 1BOX](https://www.manasource.net/product/189699)
-- [予約 Xross Stars ブースターパック第4弾 『Grand Resonance』 1BOX](https://www.manasource.net/product/145922)
 
 ## cardmax ct1849（每天）— 15 件
 
