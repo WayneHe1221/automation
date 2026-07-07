@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 144 件**
+**合計 145 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -67,12 +67,14 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 102 件
+## square-bushiroad 284（每天）— 103 件
 
+- [ヴァイスシュヴァルツ TVアニメ『ダンダダン』Vol.2(1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/101671)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
+- [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797)
-- [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/98235)
+- [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/98234)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348)
 - [ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/95182)
@@ -117,7 +119,6 @@
 - [ヴァイスシュヴァルツ 富士見ファンタジア文庫 Vol.2 トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/65053)
 - [ヴァイスシュヴァルツ 『キャプテン翼』 (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/62337)
 - [ヴァイスシュヴァルツ 『キャプテン翼』 (1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/62338)
-- [ヴァイスシュヴァルツ プレミアムブースター STAR WARS Vol.2(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/61897)
 - [ヴァイスシュヴァルツ プレミアムブースター STAR WARS Vol.2 (1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/61898)
 - [ヴァイスシュヴァルツ ヘブンバーンズレッド Vol.2 (1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/61514)
 - [ヴァイスシュヴァルツ アイドルマスター シンデレラガールズ Next Twinkle!(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/58303)
