@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 145 件**
+**合計 142 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -34,14 +34,13 @@
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
 
-## manasource 2268（每天）— 13 件
+## manasource 2268（每天）— 12 件
 
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019)
 - [予約 ウィクロスTCG ブースターパック Lostorage SELECTOR 1カートン（16BOX)](https://www.manasource.net/product/152401)
 - [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482)
 - [予約 バトルスピリッツ ブースターパック 幻惑の翔風 【26RBS02】 1BOX](https://www.manasource.net/product/189699)
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717)
-- [予約 Xross Stars ブースターパック第4弾 『Grand Resonance』 1BOX](https://www.manasource.net/product/145922)
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498)
 - [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
@@ -67,7 +66,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 103 件
+## square-bushiroad 284（每天）— 101 件
 
 - [ヴァイスシュヴァルツ TVアニメ『ダンダダン』Vol.2(1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/101671)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
@@ -144,7 +143,6 @@
 - [【再版仕様】ヴァイスシュヴァルツ アイドルマスター シャイニーカラーズ(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/50346)
 - [ヴァイスシュヴァルツ アリス・ギア・アイギス Expansion(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/47322)
 - [しろくろカプセル 五等分の花嫁 BOX ver.(1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/45060)
-- [★SALE★ヴァイスシュヴァルツ 電撃文庫(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/44495)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 (1カートン・18BOX入)(1BOXあたり5000円)(新品商品)](https://www.square-bushiroad.com/product/44496)
 - [ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44497)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44498)
@@ -168,7 +166,6 @@
 - [ヴァイスシュヴァルツ プレミアムブースター MARVEL(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/36877)
 - [【再版仕様】ヴァイスシュヴァルツ Key all-star(1カートン・18BOX入)(1BOXあたり7040円)(新品商品)](https://www.square-bushiroad.com/product/33678)
 - [ヴァイスシュヴァルツ プレミアムブースター ラブライブ！スクフェスシリーズ感謝祭 2022(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/30487)
-- [ヴァイスシュヴァルツ 映画「五等分の花嫁」(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/29924)
 - [ヴァイスシュヴァルツ アニメ プリンセスコネクト！Re:Dive Season 2(1カートン・18BOX入)(1BOXあたり7040円)(新品商品)](https://www.square-bushiroad.com/product/29574)
 - [ヴァイスシュヴァルツ プレミアムブースター ホロライブプロダクション(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/25314)
 - [ヴァイスシュヴァルツ プレミアムセット アサルトリリィ BOUQUET(1個)(新品商品)](https://www.square-bushiroad.com/product/13359)
