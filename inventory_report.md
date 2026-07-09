@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 142 件**
+**合計 147 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -66,7 +66,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 101 件
+## square-bushiroad 284（每天）— 106 件
 
 - [ヴァイスシュヴァルツ TVアニメ『ダンダダン』Vol.2(1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/101671)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
@@ -74,6 +74,7 @@
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797)
 - [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/98234)
+- [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/98235)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348)
 - [ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/95182)
@@ -84,7 +85,10 @@
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary トライアルデッキ(1カートン・48個入)(1個あたり1650円)(新品商品)](https://www.square-bushiroad.com/product/89774)
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/89775)
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/89776)
+- [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/89771)
 - [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1カートン・30BOX入)(1BOXあたり3960円)(新品商品)](https://www.square-bushiroad.com/product/89772)
+- [★SALE★ヴァイスシュヴァルツ ブルーアーカイブ The Animation(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/89785)
+- [★SALE★ヴァイスシュヴァルツ ブルーアーカイブ The Animation(1カートン・24BOX入)(1BOXあたり4000円)(新品商品)](https://www.square-bushiroad.com/product/89786)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/86677)
 - [★SALE★ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1カートン・30BOX入)(1BOXあたり2500円)(新品商品)](https://www.square-bushiroad.com/product/86678)
 - [ヴァイスシュヴァルツ MARVEL Vol.3 (MARVEL STUDIOS) (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/87815)
@@ -118,8 +122,10 @@
 - [ヴァイスシュヴァルツ 富士見ファンタジア文庫 Vol.2 トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/65053)
 - [ヴァイスシュヴァルツ 『キャプテン翼』 (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/62337)
 - [ヴァイスシュヴァルツ 『キャプテン翼』 (1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/62338)
+- [ヴァイスシュヴァルツ プレミアムブースター STAR WARS Vol.2(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/61897)
 - [ヴァイスシュヴァルツ プレミアムブースター STAR WARS Vol.2 (1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/61898)
 - [ヴァイスシュヴァルツ ヘブンバーンズレッド Vol.2 (1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/61514)
+- [ヴァイスシュヴァルツ 映画クレヨンしんちゃん トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/57410)
 - [ヴァイスシュヴァルツ アイドルマスター シンデレラガールズ Next Twinkle!(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/58303)
 - [ヴァイスシュヴァルツ アイドルマスター シンデレラガールズ Next Twinkle! (1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/58304)
 - [★SALE★ヴァイスシュヴァルツ アイドルマスター シンデレラガールズ Type:Cuteトライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/58305)
@@ -135,7 +141,6 @@
 - [ヴァイスシュヴァルツ アイドルマスター シャイニーカラーズ Shine More!(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/56178)
 - [ヴァイスシュヴァルツ プレミアムブースター ホロライブプロダクション Summer Collection(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/55317)
 - [ヴァイスシュヴァルツ プレミアムブースター ホロライブプロダクション Summer Collection (1カートン・30BOX入)(1BOXあたり3990円)(新品商品)](https://www.square-bushiroad.com/product/55318)
-- [※倉庫在庫品※【再版仕様】ヴァイスシュヴァルツ ブルーアーカイブ(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/55314)
 - [【再販仕様】ヴァイスシュヴァルツ プロジェクトセカイ カラフルステージ！ feat. 初音ミク Vol.2(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/50348)
 - [ヴァイスシュヴァルツ 推しの子 (1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/49271)
 - [ヴァイスシュヴァルツ 推しの子 (1カートン・18BOX入)(1BOXあたり7040円)(新品商品)](https://www.square-bushiroad.com/product/49272)
@@ -143,6 +148,7 @@
 - [【再版仕様】ヴァイスシュヴァルツ アイドルマスター シャイニーカラーズ(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/50346)
 - [ヴァイスシュヴァルツ アリス・ギア・アイギス Expansion(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/47322)
 - [しろくろカプセル 五等分の花嫁 BOX ver.(1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/45060)
+- [★SALE★ヴァイスシュヴァルツ 電撃文庫(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/44495)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 (1カートン・18BOX入)(1BOXあたり5000円)(新品商品)](https://www.square-bushiroad.com/product/44496)
 - [ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44497)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44498)
@@ -150,7 +156,6 @@
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 シュヴァルツサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44500)
 - [ヴァイスシュヴァルツ SPY×FAMILY トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/42225)
 - [★SALE★ヴァイスシュヴァルツ SPY×FAMILY トライアルデッキ(1カートン・48個入)(1個あたり1000円)(新品商品)](https://www.square-bushiroad.com/product/42226)
-- [ヴァイスシュヴァルツ SPY×FAMILY(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/42227)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41116)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1カートン・48個入)(1個あたり500円)(新品商品)](https://www.square-bushiroad.com/product/41117)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第2R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41118)
