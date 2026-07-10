@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 147 件**
+**合計 141 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -21,20 +21,19 @@
 
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 10 件
+## gurapan 1081（每天）— 9 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
-- [【推しの子】Vol.3【カートン】](https://gurapan.jp/products/detail/221730)
 - [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417)
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416)
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
 
-## manasource 2268（每天）— 12 件
+## manasource 2268（每天）— 11 件
 
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019)
 - [予約 ウィクロスTCG ブースターパック Lostorage SELECTOR 1カートン（16BOX)](https://www.manasource.net/product/152401)
@@ -42,7 +41,6 @@
 - [予約 バトルスピリッツ ブースターパック 幻惑の翔風 【26RBS02】 1BOX](https://www.manasource.net/product/189699)
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717)
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498)
-- [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [予約 Z/X -Zillions of enemy X- アセンション・サマー 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/186132)
@@ -66,15 +64,13 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 106 件
+## square-bushiroad 284（每天）— 102 件
 
 - [ヴァイスシュヴァルツ TVアニメ『ダンダダン』Vol.2(1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/101671)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797)
-- [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/98234)
-- [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/98235)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348)
 - [ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/95182)
@@ -109,7 +105,6 @@
 - [ヴァイスシュヴァルツ 甘神さんちの縁結び(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/75298)
 - [ヴァイスシュヴァルツ エクストラブースター ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/72885)
 - [ヴァイスシュヴァルツ エクストラブースター ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/72886)
-- [ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/73437)
 - [★SALE★ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/73438)
 - [ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73439)
 - [※倉庫在庫品※ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/73440)
@@ -149,7 +144,6 @@
 - [ヴァイスシュヴァルツ アリス・ギア・アイギス Expansion(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/47322)
 - [しろくろカプセル 五等分の花嫁 BOX ver.(1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/45060)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/44495)
-- [★SALE★ヴァイスシュヴァルツ 電撃文庫 (1カートン・18BOX入)(1BOXあたり5000円)(新品商品)](https://www.square-bushiroad.com/product/44496)
 - [ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44497)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44498)
 - [ヴァイスシュヴァルツ 電撃文庫 シュヴァルツサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44499)
