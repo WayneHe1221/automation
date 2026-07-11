@@ -66,11 +66,9 @@
 
 ## square-bushiroad 284（每天）— 102 件
 
-- [ヴァイスシュヴァルツ TVアニメ『ダンダダン』Vol.2(1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/101671)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796)
-- [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348)
 - [ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/95182)
@@ -108,6 +106,7 @@
 - [★SALE★ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/73438)
 - [ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73439)
 - [※倉庫在庫品※ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/73440)
+- [ヴァイスシュヴァルツ 【推しの子】Vol.2(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73126)
 - [ヴァイスシュヴァルツ ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/70317)
 - [ヴァイスシュヴァルツ ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/70318)
 - [ヴァイスシュヴァルツ プレミアムブースター ガールズバンドクライ (1カートン・30BOX入)(1BOXあたり3960円)(新品商品)](https://www.square-bushiroad.com/product/69368)
@@ -150,6 +149,7 @@
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 シュヴァルツサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44500)
 - [ヴァイスシュヴァルツ SPY×FAMILY トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/42225)
 - [★SALE★ヴァイスシュヴァルツ SPY×FAMILY トライアルデッキ(1カートン・48個入)(1個あたり1000円)(新品商品)](https://www.square-bushiroad.com/product/42226)
+- [ヴァイスシュヴァルツ SPY×FAMILY(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/42227)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41116)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1カートン・48個入)(1個あたり500円)(新品商品)](https://www.square-bushiroad.com/product/41117)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第2R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41118)
