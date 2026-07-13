@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 142 件**
+**合計 138 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -21,7 +21,7 @@
 
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 11 件
+## gurapan 1081（每天）— 10 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
@@ -30,7 +30,6 @@
 - [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417)
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416)
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480)
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479)
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
@@ -49,13 +48,11 @@
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [予約 タイトルブースター「フューチャーカード バディファイト ディザスターフォース」 1BOX](https://www.manasource.net/product/190716)
 
-## cardmax ct1849（每天）— 14 件
+## cardmax ct1849（每天）— 12 件
 
-- [プレミアムブースター アイドルマスター ミリオンライブ！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000211443/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
 - [トライアルデッキ 怪獣８号 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000185672/)
 - [トライアルデッキ 負けヒロインが多すぎる！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000180669/)
-- [ブースターパック 学園アイドルマスター BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000177548/)
 - [トライアルデッキ 学園アイドルマスター BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000177549/)
 - [トライアルデッキ 角川スニーカー文庫 Vol.2 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000164534/)
 - [ブースターパック 推しの子 Vol.2 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000161178/)
@@ -66,7 +63,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 101 件
+## square-bushiroad 284（每天）— 100 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
@@ -110,7 +107,6 @@
 - [ヴァイスシュヴァルツ 【推しの子】Vol.2(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73126)
 - [ヴァイスシュヴァルツ ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/70317)
 - [ヴァイスシュヴァルツ ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/70318)
-- [ヴァイスシュヴァルツ プレミアムブースター ガールズバンドクライ (1カートン・30BOX入)(1BOXあたり3960円)(新品商品)](https://www.square-bushiroad.com/product/69368)
 - [ヴァイスシュヴァルツ ゆるキャン△ SEASON３ (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/66233)
 - [ヴァイスシュヴァルツ ゆるキャン△ SEASON３ (1カートン・24BOX入)(1BOXあたり5000円)(新品商品)](https://www.square-bushiroad.com/product/66234)
 - [ヴァイスシュヴァルツ 富士見ファンタジア文庫 Vol.2 トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/65052)
