@@ -1,14 +1,8 @@
 # 追蹤商品清單
 
-**合計 142 件**
+**合計 139 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
-
-## cardshop-serra（每小時・價格監控）— 3 件
-
-- [【hBP08】hololive OFFICIAL CARD GAME ブースターボックス「バウンサーバウンド」 ※発送方法は「ゆうパック」を選択してください。](https://cardshop-serra.com/ws/products/detail/397242) — 5,280円
-- [“黒と紅の少女”狂三(DAL-WE33-P02)](https://cardshop-serra.com/ws/products/detail/198398) — 40円 / 60円 / 100円
-- [虹ヶ咲学園3年生 果林&彼方&エマ(PR)(LNJ-W85-P04)](https://cardshop-serra.com/ws/products/detail/198396) — 24円 / 36円 / 60円
 
 ## square-bushiroad 668（每天）— 0 件
 

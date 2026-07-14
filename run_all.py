@@ -12,6 +12,7 @@ GitHub Actions 每小時呼叫一次本檔。
 import importlib
 import os
 import pkgutil
+import sys
 import traceback
 
 import tasks
@@ -25,35 +26,47 @@ def discover_tasks():
     return sorted(names)
 
 
+def execute_tasks(loaded):
+    failures = 0
+    for name, module in loaded:
+        print(f"\n=== 執行任務：{name} ===")
+        try:
+            if hasattr(module, "main"):
+                result = module.main()
+                if result is False:
+                    failures += 1
+                    print(f"ERROR: 任務 {name} 回報失敗")
+            else:
+                failures += 1
+                print(f"WARN: tasks.{name} 沒有 main()，略過")
+        except Exception:  # noqa: BLE001
+            failures += 1
+            print(f"ERROR: 任務 {name} 例外：")
+            traceback.print_exc()
+    return failures
+
+
 def main():
     task_names = discover_tasks()
     print(f"探索到 {len(task_names)} 個任務：{', '.join(task_names) or '(無)'}")
 
     # 先載入模組，再依 ORDER（預設 100）+ 名稱排序決定執行順序。
     loaded = []
+    failures = 0
     for name in task_names:
         try:
             loaded.append((name, importlib.import_module(f"tasks.{name}")))
         except Exception:  # noqa: BLE001
+            failures += 1
             print(f"ERROR: 載入任務 {name} 失敗：")
             traceback.print_exc()
     loaded.sort(key=lambda it: (getattr(it[1], "ORDER", 100), it[0]))
 
-    failures = 0
-    for name, module in loaded:
-        print(f"\n=== 執行任務：{name} ===")
-        try:
-            if hasattr(module, "main"):
-                module.main()
-            else:
-                print(f"WARN: tasks.{name} 沒有 main()，略過")
-        except Exception:  # noqa: BLE001
-            failures += 1
-            print(f"ERROR: 任務 {name} 例外：")
-            traceback.print_exc()
+    failures += execute_tasks(loaded)
     print(f"\n完成。失敗 {failures}/{len(loaded)}。")
+    return failures
 
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    main()
+    sys.exit(1 if main() else 0)
