@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 139 件**
+**合計 152 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -18,9 +18,9 @@
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
-- [【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221732)
 - [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417)
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416)
+- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480)
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479)
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
@@ -164,14 +164,32 @@
 
 ## 販售牌組
 
-### 福福トレカ WSデッキ販売（每天）— 0 件
+### 福福トレカ WSデッキ販売（每天）— 1 件
 
-### torecolo WSデッキ販売（每天）— 0 件
+- [テイルズオブシリーズ【宝チャンス】デッキ](https://weis.fukufukutoreka.com/products/detail/81399)
 
-### c-labo WSデッキ販売（每天）— 0 件
+### torecolo WSデッキ販売（每天）— 7 件
 
-### Hobby Station WSデッキ販売（每天）— 0 件
+- [【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス](https://www.torecolo.jp/shop/g/gDECK-WSTAL/)
+- [【ヴァイス】デッキ販売 BanG Dream! 扉門](https://www.torecolo.jp/shop/g/gDECK-WSBD3/)
+- [【ヴァイス】デッキ販売 アイドルマスター ミリオンライブ！ 電源門](https://www.torecolo.jp/shop/g/gDECK-WSIMS/)
+- [【ヴァイス】デッキ販売 BanG Dream! 宝門](https://www.torecolo.jp/shop/g/gDECK-WSBD/)
+- [【ヴァイス】デッキ販売 BanG Dream! 門枝](https://www.torecolo.jp/shop/g/gDECK-WSBD2/)
+- [【ヴァイス】デッキ販売 カードキャプターさくら 扉電源](https://www.torecolo.jp/shop/g/gDECK-WSCCS/)
+- [【ヴァイス】デッキ販売 リコリス・リコイル 枝](https://www.torecolo.jp/shop/g/gDECK-WSLRC/)
 
-### gurapan WSデッキ販売（每天）— 0 件
+### c-labo WSデッキ販売（每天）— 2 件
+
+- [【WS】《黄緑青》プリンセスコネクト！Re:Dive 宝チョイス デッキ](https://www.c-labo-online.jp/product/385324)
+- [【WS】《青赤》アイドルマスターシンデレラガールズ 門ストブ デッキ](https://www.c-labo-online.jp/product/384770)
+
+### Hobby Station WSデッキ販売（每天）— 2 件
+
+- [ラブライブ！サンシャイン!! 8電源デッキ](https://www.hobbystation-single.jp/ws/product/detail/303450)
+- [ダ・カーポ 8枝（フルホイル）デッキ](https://www.hobbystation-single.jp/ws/product/detail/307182)
+
+### gurapan WSデッキ販売（每天）— 1 件
+
+- [キャプテン翼(8宝)デッキ](https://gurapan.jp/products/detail/177561)
 
 ### square-bushiroad WSデッキ販売（每天）— 0 件
