@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 138 件**
+**合計 142 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -10,9 +10,8 @@
 - [“黒と紅の少女”狂三(DAL-WE33-P02)](https://cardshop-serra.com/ws/products/detail/198398) — 40円 / 60円 / 100円
 - [虹ヶ咲学園3年生 果林&彼方&エマ(PR)(LNJ-W85-P04)](https://cardshop-serra.com/ws/products/detail/198396) — 24円 / 36円 / 60円
 
-## square-bushiroad 668（每天）— 1 件
+## square-bushiroad 668（每天）— 0 件
 
-- [【予約商品・全額前金制】【8/7(金)発売】ヴァイスシュヴァルツ 【推しの子】Vol.3 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105041)
 
 ## torecolo ヴァイス新品（每天）— 0 件
 
@@ -63,11 +62,12 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 100 件
+## square-bushiroad 284（每天）— 105 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796)
+- [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348)
 - [ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/95182)
@@ -97,10 +97,12 @@
 - [ヴァイスシュヴァルツ あおぎり高校 トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/78531)
 - [★SALE★ヴァイスシュヴァルツ 学園アイドルマスター トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/77693)
 - [★SALE★ヴァイスシュヴァルツ 学園アイドルマスター トライアルデッキ(1カートン・48個入)(1個あたり1000円)(新品商品)](https://www.square-bushiroad.com/product/77694)
+- [ヴァイスシュヴァルツ 学園アイドルマスター(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/77695)
 - [ヴァイスシュヴァルツ 甘神さんちの縁結び(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/75297)
 - [ヴァイスシュヴァルツ 甘神さんちの縁結び(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/75298)
 - [ヴァイスシュヴァルツ エクストラブースター ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/72885)
 - [ヴァイスシュヴァルツ エクストラブースター ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/72886)
+- [ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/73437)
 - [★SALE★ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/73438)
 - [ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73439)
 - [※倉庫在庫品※ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/73440)
@@ -140,6 +142,7 @@
 - [ヴァイスシュヴァルツ アリス・ギア・アイギス Expansion(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/47322)
 - [しろくろカプセル 五等分の花嫁 BOX ver.(1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/45060)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/44495)
+- [★SALE★ヴァイスシュヴァルツ 電撃文庫 (1カートン・18BOX入)(1BOXあたり6000円)(新品商品)](https://www.square-bushiroad.com/product/44496)
 - [ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44497)
 - [★SALE★ヴァイスシュヴァルツ 電撃文庫 ヴァイスサイド トライアルデッキ(1カートン・48個入)(1個あたり750円)(新品商品)](https://www.square-bushiroad.com/product/44498)
 - [ヴァイスシュヴァルツ 電撃文庫 シュヴァルツサイド トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/44499)
@@ -150,6 +153,7 @@
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41116)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1カートン・48個入)(1個あたり500円)(新品商品)](https://www.square-bushiroad.com/product/41117)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第2R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41118)
+- [【再販商品(再販仕様))】ヴァイスシュヴァルツ ホロライブプロダクション(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/15432)
 - [★SALE★ヴァイスシュヴァルツ リコリス・リコイル トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41124)
 - [★SALE★ヴァイスシュヴァルツ リコリス・リコイル トライアルデッキ(1カートン・48個入)(1個あたり1300円)(新品商品)](https://www.square-bushiroad.com/product/41125)
 - [ヴァイスシュヴァルツ リコリス・リコイル(1カートン・18BOX入)(1BOXあたり7040円)(新品商品)](https://www.square-bushiroad.com/product/41127)
