@@ -9,6 +9,7 @@
 已成功的站因基準已更新不會重複通知。
 """
 
+import html
 import json
 import math
 import os
@@ -26,20 +27,24 @@ STATE_PATH = os.path.join(REPO_ROOT, "state", "shop_watch.json")
 
 MAX_PAGES = 10  # 分頁安全上限
 NOTIFY_MAX_ITEMS = 25  # 單站單則訊息最多列出幾件，其餘以「…等 N 件」收尾
+RAW_DROP_GUARD_MINIMUM = 10
+RAW_DROP_GUARD_RATIO = 0.5
 
 
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def _unescape(s):
-    for a, b in (("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&quot;", '"'), ("&#39;", "'")):
-        s = s.replace(a, b)
-    return s
-
-
 def _clean(s):
-    return _unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s)).strip())
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s)).strip())
+
+
+def is_suspicious_raw_drop(previous_count, current_count):
+    return (
+        isinstance(previous_count, int)
+        and previous_count >= RAW_DROP_GUARD_MINIMUM
+        and current_count < previous_count * RAW_DROP_GUARD_RATIO
+    )
 
 
 def parse_count_number(html):
@@ -148,28 +153,40 @@ def _set_query(url, key, value):
     return urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(q)))
 
 
-def fetch_paged(url, parser, page_param="page", encoding=None):
+def fetch_paged(url, parser, page_param="page", encoding=None, required_markers=()):
     """抓第 1 頁；若 count_number 顯示還有更多則翻頁補齊。"""
-    html = fetch_html(url, encoding=encoding)
-    products = parser(html)
-    total = parse_count_number(html)
+    expected_path = urllib.parse.urlparse(url).path
+    page_html = fetch_html(
+        url,
+        encoding=encoding,
+        required_markers=required_markers,
+        expected_path_prefix=expected_path,
+    )
+    products = parser(page_html)
+    total = parse_count_number(page_html)
     if total is not None and products:
         per_page = len(products)
         pages = min(math.ceil(total / per_page), MAX_PAGES)
         for p in range(2, pages + 1):
             try:
-                page_products = parser(fetch_html(_set_query(url, page_param, p), encoding=encoding))
+                page_url = _set_query(url, page_param, p)
+                next_html = fetch_html(
+                    page_url,
+                    encoding=encoding,
+                    required_markers=required_markers,
+                    expected_path_prefix=expected_path,
+                )
+                page_products = parser(next_html)
             except Exception as e:  # noqa: BLE001
-                print(f"WARN: 第 {p} 頁抓取失敗：{e}")
-                break
+                raise RuntimeError(f"第 {p} 頁抓取失敗：{e}") from e
             if not page_products:
-                break
+                raise RuntimeError(f"第 {p} 頁解析到 0 件")
             before = len(products)
             products.update(page_products)
             if len(products) >= total or len(products) == before:
                 break
     if total is not None and len(products) < total:
-        print(f"WARN: 只解析到 {len(products)}/{total} 件")
+        raise RuntimeError(f"只解析到 {len(products)}/{total} 件")
     return products
 
 
@@ -180,21 +197,31 @@ SITES = [
         "key": "bushiroad_284",
         "label": "square-bushiroad 284",
         "fetch": lambda: fetch_paged(
-            "https://www.square-bushiroad.com/product-list/284", parse_squarebushi
+            "https://www.square-bushiroad.com/product-list/284",
+            parse_squarebushi,
+            required_markers=("data-product-id=", "goods_name"),
         ),
         "item_url": lambda pid: f"https://www.square-bushiroad.com/product/{pid}",
     },
     {
         "key": "torecolo",
         "label": "torecolo ヴァイス新品",
-        "fetch": lambda: parse_torecolo(fetch_html("https://www.torecolo.jp/shop/c/c10309996/")),
+        "fetch": lambda: parse_torecolo(
+            fetch_html(
+                "https://www.torecolo.jp/shop/c/c10309996/",
+                required_markers="js-enhanced-ecommerce-item",
+                expected_path_prefix="/shop/c/c10309996/",
+            )
+        ),
         "item_url": lambda pid: f"https://www.torecolo.jp/shop/g/g{pid}/",
     },
     {
         "key": "manasource",
         "label": "manasource 2268",
         "fetch": lambda: fetch_paged(
-            "https://www.manasource.net/product-list/2268/0/photo", parse_product_links
+            "https://www.manasource.net/product-list/2268/0/photo",
+            parse_product_links,
+            required_markers=("/product/", "goods_name"),
         ),
         "item_url": lambda pid: f"https://www.manasource.net/product/{pid}",
     },
@@ -202,7 +229,12 @@ SITES = [
         "key": "cardmax",
         "label": "cardmax ct1849",
         "fetch": lambda: parse_cardmax(
-            fetch_html("https://www.cardmax.jp/shopbrand/ct1849/", encoding="euc_jp")
+            fetch_html(
+                "https://www.cardmax.jp/shopbrand/ct1849/",
+                encoding="euc_jp",
+                required_markers="/shopdetail/",
+                expected_path_prefix="/shopbrand/ct1849/",
+            )
         ),
         "item_url": lambda pid: f"https://www.cardmax.jp/shopdetail/{pid}/",
     },
@@ -210,7 +242,11 @@ SITES = [
         "key": "gurapan",
         "label": "gurapan 1081",
         "fetch": lambda: parse_gurapan(
-            fetch_html("https://gurapan.jp/products/list?category_id=1081")
+            fetch_html(
+                "https://gurapan.jp/products/list?category_id=1081",
+                required_markers="/products/detail/",
+                expected_path_prefix="/products/list",
+            )
         ),
         "item_url": lambda pid: f"https://gurapan.jp/products/detail/{pid}",
     },
@@ -220,6 +256,7 @@ SITES = [
         "fetch": lambda: fetch_paged(
             "https://www.c-labo-online.jp/product-list/2421/0/photo?num=60&available=1",
             parse_product_links,
+            required_markers=("/product/", "goods_name"),
         ),
         "item_url": lambda pid: f"https://www.c-labo-online.jp/product/{pid}",
     },
@@ -261,7 +298,7 @@ def main():
 
     if state.get("last_run_date") == today:
         print(f"今天({today})已執行過，跳過")
-        return
+        return True
 
     sites_state = state.setdefault("sites", {})
     first_run = not sites_state
@@ -283,6 +320,22 @@ def main():
             all_ok = False
             continue
 
+        missing_names = sum(not product.get("name") for product in raw.values())
+        if missing_names:
+            print(f"ERROR: [{key}] {missing_names} 件商品缺少名稱，跳過（不更新基準）")
+            all_ok = False
+            continue
+
+        previous_site_state = sites_state.get(key, {})
+        previous_raw_count = previous_site_state.get("raw_count")
+        if is_suspicious_raw_drop(previous_raw_count, len(raw)):
+            print(
+                f"ERROR: [{key}] 原始商品數由 {previous_raw_count} 驟降為 {len(raw)}，"
+                "跳過（不更新基準）"
+            )
+            all_ok = False
+            continue
+
         # 只保留有貨商品（售完不追蹤、不入報告）
         current = {pid: v.get("name", "") for pid, v in raw.items() if v.get("in_stock")}
         sold = len(raw) - len(current)
@@ -292,29 +345,30 @@ def main():
 
         if not isinstance(prev, dict):
             print(f"[{key}] 首次執行，建立基準：{len(current)} 件（有貨）")
-            sites_state[key] = {"products": current}
+            sites_state[key] = {"products": current, "raw_count": len(raw)}
             startup_summary.append(f"• {esc(site['label'])}：{len(current)} 件（有貨）")
             continue
 
         new_ids = [pid for pid in current if pid not in prev]
         if not new_ids:
             print(f"[{key}] 無新增：{len(current)} 件")
-            sites_state[key] = {"products": current}
+            sites_state[key] = {"products": current, "raw_count": len(raw)}
             continue
 
         print(f"[{key}] 新增 {len(new_ids)} 件，發送通知")
         if notify_new_items(site, new_ids, current):
-            sites_state[key] = {"products": current}
+            sites_state[key] = {"products": current, "raw_count": len(raw)}
         else:
             print(f"[{key}] 通知失敗，保留舊基準，稍後重試")
             all_ok = False
 
     if startup_summary:
-        send_telegram(
+        if not send_telegram(
             "✅ <b>多站商品追蹤已啟動</b>\n\n"
             + "\n".join(startup_summary)
             + "\n\n之後每天檢查一次，有新增商品會逐站通知。"
-        )
+        ):
+            all_ok = False
 
     if all_ok:
         state["last_run_date"] = today
@@ -323,6 +377,7 @@ def main():
     save_state(state)
     if first_run:
         print(f"首次執行完成：{len(startup_summary)}/{len(SITES)} 站建立基準")
+    return all_ok
 
 
 if __name__ == "__main__":

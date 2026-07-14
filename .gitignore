@@ -9,5 +9,17 @@ __pycache__/
 .venv/
 venv/
 
+# Frontend
+node_modules/
+dist/
+web/public/demo-data.json
+*.tsbuildinfo
+
+# Firebase CLI
+.firebase/
+firebase-debug.log
+*firebase-adminsdk*.json
+*service-account*.json
+
 # macOS
 .DS_Store

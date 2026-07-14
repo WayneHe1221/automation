@@ -9,6 +9,7 @@
 若今天(UTC)已跑過就直接跳過、不抓網頁。
 """
 
+import html as html_lib
 import json
 import os
 import re
@@ -25,12 +26,6 @@ STATE_PATH = os.path.join(REPO_ROOT, "state", "bushiroad_668.json")
 LIST_URL = os.environ.get(
     "BUSHIROAD_668_URL", "https://www.square-bushiroad.com/product-list/668"
 )
-
-
-def _unescape(s):
-    for a, b in (("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&quot;", '"'), ("&#39;", "'")):
-        s = s.replace(a, b)
-    return s
 
 
 def parse_total(html):
@@ -54,7 +49,7 @@ def parse_products(html):
         block = html[m.end():end]
         in_stock = "在庫なし" not in block and "stock soldout" not in block
         nm = re.search(r'<span class="goods_name">(.*?)</span>', block, re.S)
-        name = _unescape(re.sub(r"<[^>]+>", "", nm.group(1)).strip()) if nm else ""
+        name = html_lib.unescape(re.sub(r"<[^>]+>", "", nm.group(1)).strip()) if nm else ""
         products[pid] = {"name": name, "in_stock": in_stock}
     return products
 
@@ -94,22 +89,30 @@ def main():
     # 每天只跑一次：今天已執行就跳過。
     if state.get("last_run_date") == today:
         print(f"今天({today})已執行過，跳過")
-        return
+        return True
 
     try:
-        html = fetch_html(LIST_URL)
+        page = fetch_html(
+            LIST_URL,
+            required_markers=("data-product-id=", "goods_name"),
+            expected_path_prefix="/product-list/668",
+        )
     except Exception as e:  # noqa: BLE001
         print(f"ERROR: 抓取失敗，跳過本次（不更新狀態）：{e}")
-        return
+        return False
 
-    raw = parse_products(html)
+    raw = parse_products(page)
     if not raw:
         print("WARN: 解析到 0 個商品（原始），跳過本次（不更新狀態、不誤報）")
-        return
+        return False
 
-    total = parse_total(html)
+    total = parse_total(page)
     if total is not None and len(raw) < total:
-        print(f"WARN: 只解析到 {len(raw)}/{total} 件（可能分頁未抓全）")
+        print(f"ERROR: 只解析到 {len(raw)}/{total} 件，不更新基準")
+        return False
+    if any(not product.get("name") for product in raw.values()):
+        print("ERROR: 有商品缺少名稱，不更新基準")
+        return False
 
     # 只保留有貨商品（售完不追蹤、不入報告）
     current = {pid: v.get("name", "") for pid, v in raw.items() if v.get("in_stock")}
@@ -119,20 +122,21 @@ def main():
 
     if not isinstance(prev, dict):
         print(f"首次執行，建立基準：{len(current)} 件商品")
-        send_telegram(
+        if not send_telegram(
             f"✅ <b>bushiroad 668 追蹤已啟動</b>\n\n"
             f"目前共 <b>{len(current)}</b> 件商品。\n"
             f"之後每天檢查一次，有<b>新增商品</b>會通知你。"
-        )
+        ):
+            return False
         save_state({"products": current, "last_run_date": today})
-        return
+        return True
 
     new_ids = [pid for pid in current if pid not in prev]
 
     if not new_ids:
         print(f"無新增：{len(current)} 件商品")
         save_state({"products": current, "last_run_date": today})
-        return
+        return True
 
     lines = [f"🆕 <b>bushiroad 668 新增商品 ({len(new_ids)})</b>", ""]
     lines += [product_line(pid, current[pid]) for pid in new_ids]
@@ -140,9 +144,11 @@ def main():
     print(f"新增 {len(new_ids)} 件，發送通知")
     if send_telegram(message):
         save_state({"products": current, "last_run_date": today})
+        return True
     else:
         # 通知失敗：不更新狀態（含 last_run_date），下個整點重試。
         print("通知失敗，保留舊基準，稍後重試")
+        return False
 
 
 if __name__ == "__main__":

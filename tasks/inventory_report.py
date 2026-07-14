@@ -31,7 +31,6 @@ def _load(name):
 
 # 各來源的商品頁連結組法
 URL = {
-    "cardshop": lambda pid: f"https://cardshop-serra.com/ws/products/detail/{pid}",
     "bushiroad": lambda pid: f"https://www.square-bushiroad.com/product/{pid}",
     "torecolo": lambda pid: f"https://www.torecolo.jp/shop/g/g{pid}/",
     "manasource": lambda pid: f"https://www.manasource.net/product/{pid}",
@@ -56,16 +55,6 @@ def build_report():
     lines.append("> 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。")
     lines.append("")
     total = 0
-
-    # cardshop-serra（含價格）
-    cs = _load("cardshop_list.json").get("products", {})
-    lines.append(f"## cardshop-serra（每小時・價格監控）— {len(cs)} 件")
-    lines.append("")
-    for pid, p in cs.items():
-        prices = " / ".join(f"{x:,}円" for x in p.get("prices", []))
-        lines.append(_item_line(p.get("name", ""), URL["cardshop"](pid), f" — {prices}" if prices else ""))
-    lines.append("")
-    total += len(cs)
 
     # square-bushiroad 668
     b6 = _load("bushiroad_668.json").get("products", {})
@@ -108,10 +97,11 @@ def main():
             old = f.read()
     if report == old:
         print("報告無變化，不需更新")
-        return
+        return True
     with open(REPORT_PATH, "w", encoding="utf-8") as f:
         f.write(report)
     print(f"已更新 {os.path.basename(REPORT_PATH)}")
+    return True
 
 
 if __name__ == "__main__":

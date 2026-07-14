@@ -1,0 +1,62 @@
+name: firebase-dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "state/**"
+      - "lib/catalog.py"
+      - "scripts/export_dashboard_data.py"
+      - "firebase.json"
+      - "firestore.rules"
+      - "firestore.indexes.json"
+      - ".github/workflows/firebase-hosting.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+      VITE_FIREBASE_API_KEY: ${{ vars.FIREBASE_API_KEY }}
+      VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.FIREBASE_AUTH_DOMAIN }}
+      VITE_FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+      VITE_FIREBASE_APP_ID: ${{ vars.FIREBASE_APP_ID }}
+      VITE_ALLOWED_EMAIL: ${{ vars.FIREBASE_ALLOWED_EMAIL }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build dashboard
+        working-directory: web
+        run: npm ci && npm run build
+
+      - name: Prepare Firebase CLI
+        run: npx --yes firebase-tools@15.23.0 --version
+
+      - name: Deploy dashboard and rules
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$FIREBASE_PROJECT_ID" ] || [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then
+            echo "Firebase project settings are incomplete."
+            exit 1
+          fi
+          umask 077
+          credential_file="$RUNNER_TEMP/firebase-service-account.json"
+          trap 'rm -f "$credential_file"' EXIT
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$credential_file"
+          GOOGLE_APPLICATION_CREDENTIALS="$credential_file" \
+            npx --offline --yes firebase-tools@15.23.0 deploy \
+              --only hosting,firestore:rules \
+              --project "$FIREBASE_PROJECT_ID"
