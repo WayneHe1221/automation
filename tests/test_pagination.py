@@ -15,6 +15,16 @@ def parse_fake_products(page):
 
 class PaginationTests(unittest.TestCase):
     @mock.patch("tasks.shop_watch.fetch_html")
+    def test_zero_total_returns_empty_catalog(self, fetch):
+        fetch.return_value = (
+            '<div class="count_number"><span class="number">0</span></div>'
+        )
+
+        self.assertEqual(
+            fetch_paged("https://example.test/list", parse_fake_products), {}
+        )
+
+    @mock.patch("tasks.shop_watch.fetch_html")
     def test_incomplete_pagination_raises(self, fetch):
         fetch.side_effect = [
             '<div class="count_number"><span class="number">3</span></div>\nproduct:1\nproduct:2',

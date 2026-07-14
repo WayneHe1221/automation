@@ -53,6 +53,16 @@ def parse_count_number(html):
     return int(m.group(1).replace(",", "")) if m else None
 
 
+def parse_fukufuku_count(html):
+    m = re.search(r'product-list__result[^>]*>.*?<span>([\d,]+)</span>件', html, re.S)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
+def parse_hobbystation_count(html):
+    m = re.search(r'ec-searchnavRole__counter.*?ec-font-bold[^>]*>([\d,]+)件', html, re.S)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
 # ---------------------------------------------------------------- 各站解析器
 # 解析器一律回傳「原始」清單 {id(str): {"name": str, "in_stock": bool}}
 # （含售完品；售完過濾在 main 統一處理，以免影響分頁件數估算）
@@ -95,7 +105,7 @@ def parse_torecolo(html):
     """torecolo：/shop/g/g<編號> 區塊 + goods-name；「売切れ」為售完。"""
     products = {}
     for block in re.split(r'js-enhanced-ecommerce-item', html)[1:]:
-        idm = re.search(r'/shop/g/g(\w+)', block)
+        idm = re.search(r'/shop/g/g([^/?"#]+)/', block)
         if not idm:
             continue
         pid = idm.group(1)
@@ -104,6 +114,52 @@ def parse_torecolo(html):
         in_stock = "売切れ" not in block
         nm = re.search(r'class="[^"]*goods-name[^"]*"[^>]*>(.*?)</a>', block, re.S)
         products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
+    return products
+
+
+def parse_fukufuku(html):
+    """福福トレカ：商品標題連結 + 商品區塊內的品切れ訊息。"""
+    products = {}
+    for block in re.split(r'<li class="product-list__item">', html)[1:]:
+        match = re.search(
+            r'class="[^"]*product-list__item__title--name[^"]*"'
+            r'[^>]+href="[^"]*/products/detail/(\d+)"[^>]*>(.*?)</a>',
+            block,
+            re.S,
+        )
+        if not match:
+            continue
+        product_id = match.group(1)
+        if product_id in products:
+            continue
+        sold_out = any(marker in block for marker in ("品切れ", "売り切れ", "SOLD OUT"))
+        products[product_id] = {
+            "name": _clean(match.group(2)),
+            "in_stock": not sold_out,
+        }
+    return products
+
+
+def parse_hobbystation(html):
+    """Hobby Station：商品詳細連結 + PC 商品名；SOLD OUT/disabled 為售完。"""
+    products = {}
+    for block in re.findall(r'<li(?:\s[^>]*)?>(.*?)</li>', html, re.S):
+        id_match = re.search(r'href="[^"]*/ws/product/detail/(\d+)"', block)
+        name_match = re.search(
+            r'class="list_product_Name_pc".*?<a[^>]*>(.*?)</a>', block, re.S
+        )
+        if not id_match or not name_match:
+            continue
+        product_id = id_match.group(1)
+        if product_id in products:
+            continue
+        sold_out = 'alt="SOLD OUT"' in block or re.search(
+            r'class="shopCart"[^>]*\bdisabled\b', block
+        )
+        products[product_id] = {
+            "name": _clean(name_match.group(1)),
+            "in_stock": not sold_out,
+        }
     return products
 
 
@@ -153,7 +209,14 @@ def _set_query(url, key, value):
     return urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(q)))
 
 
-def fetch_paged(url, parser, page_param="page", encoding=None, required_markers=()):
+def fetch_paged(
+    url,
+    parser,
+    page_param="page",
+    encoding=None,
+    required_markers=(),
+    count_parser=None,
+):
     """抓第 1 頁；若 count_number 顯示還有更多則翻頁補齊。"""
     expected_path = urllib.parse.urlparse(url).path
     page_html = fetch_html(
@@ -163,7 +226,7 @@ def fetch_paged(url, parser, page_param="page", encoding=None, required_markers=
         expected_path_prefix=expected_path,
     )
     products = parser(page_html)
-    total = parse_count_number(page_html)
+    total = (count_parser or parse_count_number)(page_html)
     if total is not None and products:
         per_page = len(products)
         pages = min(math.ceil(total / per_page), MAX_PAGES)
@@ -260,6 +323,75 @@ SITES = [
         ),
         "item_url": lambda pid: f"https://www.c-labo-online.jp/product/{pid}",
     },
+    {
+        "key": "fukufuku_deck",
+        "label": "福福トレカ WSデッキ販売",
+        "fetch": lambda: fetch_paged(
+            "https://weis.fukufukutoreka.com/products/list?category_id=2",
+            parse_fukufuku,
+            page_param="pageno",
+            required_markers=("product-list__result", "/products/detail/"),
+            count_parser=parse_fukufuku_count,
+        ),
+        "item_url": lambda pid: f"https://weis.fukufukutoreka.com/products/detail/{pid}",
+    },
+    {
+        "key": "torecolo_deck",
+        "label": "torecolo WSデッキ販売",
+        "fetch": lambda: parse_torecolo(
+            fetch_html(
+                "https://www.torecolo.jp/shop/c/c10309010/",
+                required_markers="js-enhanced-ecommerce-item",
+                expected_path_prefix="/shop/c/c10309010/",
+            )
+        ),
+        "item_url": lambda pid: f"https://www.torecolo.jp/shop/g/g{pid}/",
+    },
+    {
+        "key": "clabo_deck",
+        "label": "c-labo WSデッキ販売",
+        "fetch": lambda: fetch_paged(
+            "https://www.c-labo-online.jp/product-list/1070/0/photo?num=120&available=1&sort=&Submit=",
+            parse_product_links,
+            required_markers=("/product/", "goods_name"),
+        ),
+        "item_url": lambda pid: f"https://www.c-labo-online.jp/product/{pid}",
+    },
+    {
+        "key": "hobbystation_deck",
+        "label": "Hobby Station WSデッキ販売",
+        "fetch": lambda: fetch_paged(
+            "https://www.hobbystation-single.jp/ws/product/list?HbstSearchOptions%5B0%5D%5Bid%5D=16&HbstSearchOptions%5B0%5D%5Bsearch_keyword%5D=%28BANNER%29%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%87%E3%83%83%E3%82%AD%28BANNER%29&HbstSearchOptions%5B0%5D%5BType%5D=2",
+            parse_hobbystation,
+            page_param="pageno",
+            required_markers=("searchRsultList", "ec-searchnavRole__counter"),
+            count_parser=parse_hobbystation_count,
+        ),
+        "item_url": lambda pid: f"https://www.hobbystation-single.jp/ws/product/detail/{pid}",
+    },
+    {
+        "key": "gurapan_deck",
+        "label": "gurapan WSデッキ販売",
+        "fetch": lambda: parse_gurapan(
+            fetch_html(
+                "https://gurapan.jp/products/list?category_id=1253",
+                required_markers="/products/detail/",
+                expected_path_prefix="/products/list",
+            )
+        ),
+        "item_url": lambda pid: f"https://gurapan.jp/products/detail/{pid}",
+    },
+    {
+        "key": "bushiroad_deck",
+        "label": "square-bushiroad WSデッキ販売",
+        "fetch": lambda: fetch_paged(
+            "https://www.square-bushiroad.com/product-group/78",
+            parse_squarebushi,
+            required_markers=("WSデッキ販売", "count_number"),
+        ),
+        "item_url": lambda pid: f"https://www.square-bushiroad.com/product/{pid}",
+        "allow_empty": True,
+    },
 ]
 
 
@@ -295,12 +427,13 @@ def notify_new_items(site, new_ids, current):
 def main():
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     state = load_state()
+    sites_state = state.setdefault("sites", {})
+    missing_site_keys = {site["key"] for site in SITES} - set(sites_state)
 
-    if state.get("last_run_date") == today:
+    if state.get("last_run_date") == today and not missing_site_keys:
         print(f"今天({today})已執行過，跳過")
         return True
 
-    sites_state = state.setdefault("sites", {})
     first_run = not sites_state
     startup_summary = []
     all_ok = True
@@ -314,7 +447,7 @@ def main():
             all_ok = False
             continue
 
-        if not raw:
+        if not raw and not site.get("allow_empty"):
             # 原始清單為空 = 疑似抓取/解析問題（非「全部售完」），保守跳過。
             print(f"WARN: [{key}] 解析到 0 件（原始），跳過（不更新基準、不誤報）")
             all_ok = False
@@ -328,7 +461,7 @@ def main():
 
         previous_site_state = sites_state.get(key, {})
         previous_raw_count = previous_site_state.get("raw_count")
-        if is_suspicious_raw_drop(previous_raw_count, len(raw)):
+        if raw and is_suspicious_raw_drop(previous_raw_count, len(raw)):
             print(
                 f"ERROR: [{key}] 原始商品數由 {previous_raw_count} 驟降為 {len(raw)}，"
                 "跳過（不更新基準）"

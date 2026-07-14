@@ -28,12 +28,14 @@ flowchart LR
 
 | 來源 | 追蹤範圍 |
 | --- | --- |
-| square-bushiroad | 商品分類 668、284 |
-| torecolo | Weiss Schwarz 新品 |
+| square-bushiroad | 商品分類 668、284，以及 WS 牌組販售 |
+| torecolo | Weiss Schwarz 新品與牌組販售 |
 | manasource | 商品分類 2268 |
 | cardmax | 商品分類 ct1849 |
-| gurapan | 商品分類 1081 |
-| c-labo | 商品分類 2421 的有庫存商品 |
+| gurapan | 商品分類 1081 與牌組販售 |
+| c-labo | 商品分類 2421 的有庫存商品與牌組販售 |
+| 福福トレカ | WS 牌組販售 |
+| Hobby Station | WS 牌組販售 |
 
 CardShop-Serra 已停止販售 Weiss Schwarz，因此不再抓取；同步時也會清除其舊 Firestore 文件。
 

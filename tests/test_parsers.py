@@ -4,9 +4,14 @@ import unittest
 from tasks.bushiroad_668 import parse_products as parse_bushiroad_668
 from tasks.bushiroad_668 import parse_total
 from tasks.shop_watch import (
+    SITES,
     is_suspicious_raw_drop,
     parse_cardmax,
+    parse_fukufuku,
+    parse_fukufuku_count,
     parse_gurapan,
+    parse_hobbystation,
+    parse_hobbystation_count,
     parse_product_links,
     parse_squarebushi,
     parse_torecolo,
@@ -42,8 +47,26 @@ class ParserTests(unittest.TestCase):
     def test_torecolo_parser(self):
         products = parse_torecolo(load_fixture("torecolo.html"))
 
-        self.assertTrue(products["TCG001"]["in_stock"])
+        self.assertTrue(products["DECK-WS001"]["in_stock"])
         self.assertFalse(products["TCG002"]["in_stock"])
+
+    def test_fukufuku_parser(self):
+        page = load_fixture("fukufuku_deck.html")
+        products = parse_fukufuku(page)
+
+        self.assertEqual(parse_fukufuku_count(page), 2)
+        self.assertEqual(products["501"]["name"], "Fukufuku One")
+        self.assertTrue(products["501"]["in_stock"])
+        self.assertFalse(products["502"]["in_stock"])
+
+    def test_hobbystation_parser(self):
+        page = load_fixture("hobbystation_deck.html")
+        products = parse_hobbystation(page)
+
+        self.assertEqual(parse_hobbystation_count(page), 2)
+        self.assertEqual(products["601"]["name"], "Hobby One")
+        self.assertTrue(products["601"]["in_stock"])
+        self.assertFalse(products["602"]["in_stock"])
 
     def test_cardmax_parser(self):
         products = parse_cardmax(load_fixture("cardmax.html"))
@@ -62,6 +85,21 @@ class ParserTests(unittest.TestCase):
         self.assertFalse(is_suspicious_raw_drop(30, 20))
         self.assertFalse(is_suspicious_raw_drop(3, 1))
         self.assertFalse(is_suspicious_raw_drop(None, 1))
+
+    def test_deck_sources_are_configured(self):
+        sites = {site["key"]: site for site in SITES}
+
+        self.assertTrue(
+            {
+                "fukufuku_deck",
+                "torecolo_deck",
+                "clabo_deck",
+                "hobbystation_deck",
+                "gurapan_deck",
+                "bushiroad_deck",
+            }.issubset(sites)
+        )
+        self.assertTrue(sites["bushiroad_deck"]["allow_empty"])
 
 
 if __name__ == "__main__":
