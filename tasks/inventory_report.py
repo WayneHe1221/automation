@@ -37,6 +37,8 @@ URL = {
     "cardmax": lambda pid: f"https://www.cardmax.jp/shopdetail/{pid}/",
     "gurapan": lambda pid: f"https://gurapan.jp/products/detail/{pid}",
     "clabo": lambda pid: f"https://www.c-labo-online.jp/product/{pid}",
+    "fukufuku": lambda pid: f"https://weis.fukufukutoreka.com/products/detail/{pid}",
+    "hobbystation": lambda pid: f"https://www.hobbystation-single.jp/ws/product/detail/{pid}",
 }
 
 
@@ -62,7 +64,8 @@ def build_report():
     lines.append("")
     for pid, name in b6.items():
         lines.append(_item_line(name, URL["bushiroad"](pid)))
-    lines.append("")
+    if b6:
+        lines.append("")
     total += len(b6)
 
     # shop_watch 多站
@@ -81,12 +84,33 @@ def build_report():
         lines.append("")
         for pid, name in prods.items():
             lines.append(_item_line(name, URL[urlkey](pid)))
+        if prods:
+            lines.append("")
+        total += len(prods)
+
+    lines.append("## 販售牌組")
+    lines.append("")
+    deck_sites = [
+        ("fukufuku_deck", "福福トレカ WSデッキ販売", "fukufuku"),
+        ("torecolo_deck", "torecolo WSデッキ販売", "torecolo"),
+        ("clabo_deck", "c-labo WSデッキ販売", "clabo"),
+        ("hobbystation_deck", "Hobby Station WSデッキ販売", "hobbystation"),
+        ("gurapan_deck", "gurapan WSデッキ販売", "gurapan"),
+        ("bushiroad_deck", "square-bushiroad WSデッキ販売", "bushiroad"),
+    ]
+    for key, label, urlkey in deck_sites:
+        prods = sw.get(key, {}).get("products", {})
+        lines.append(f"### {label}（每天）— {len(prods)} 件")
         lines.append("")
+        for pid, name in prods.items():
+            lines.append(_item_line(name, URL[urlkey](pid)))
+        if prods:
+            lines.append("")
         total += len(prods)
 
     lines.insert(2, f"**合計 {total} 件**")
     lines.insert(3, "")
-    return "\n".join(lines) + "\n"
+    return "\n".join(lines).rstrip() + "\n"
 
 
 def main():

@@ -6,9 +6,7 @@
 
 ## square-bushiroad 668（每天）— 0 件
 
-
 ## torecolo ヴァイス新品（每天）— 0 件
-
 
 ## c-labo 2421（有庫存）（每天）— 1 件
 
@@ -164,3 +162,16 @@
 - [ヴァイスシュヴァルツ プレミアムブースター ホロライブプロダクション(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/25314)
 - [ヴァイスシュヴァルツ プレミアムセット アサルトリリィ BOUQUET(1個)(新品商品)](https://www.square-bushiroad.com/product/13359)
 
+## 販售牌組
+
+### 福福トレカ WSデッキ販売（每天）— 0 件
+
+### torecolo WSデッキ販売（每天）— 0 件
+
+### c-labo WSデッキ販売（每天）— 0 件
+
+### Hobby Station WSデッキ販売（每天）— 0 件
+
+### gurapan WSデッキ販売（每天）— 0 件
+
+### square-bushiroad WSデッキ販売（每天）— 0 件
