@@ -29,6 +29,10 @@ MAX_PAGES = 10  # 分頁安全上限
 NOTIFY_MAX_ITEMS = 25  # 單站單則訊息最多列出幾件，其餘以「…等 N 件」收尾
 RAW_DROP_GUARD_MINIMUM = 10
 RAW_DROP_GUARD_RATIO = 0.5
+MOBILE_USER_AGENT = (
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
+    "AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1"
+)
 
 
 def esc(s):
@@ -164,11 +168,32 @@ def parse_hobbystation(html):
 
 
 def parse_cardmax(html):
-    """cardmax (MakeShop, EUC-JP)：/shopdetail/<id>/ 連結文字即名稱。
-    售完字樣「売り切れ」在連結後方的價格區，故看連結之後的小範圍。
-    需先移除 HTML 註解（內含舊廣告的 shopdetail 連結）。"""
+    """cardmax (MakeShop, EUC-JP)：支援手機版價格與舊桌面版清單。"""
     html = re.sub(r"<!--.*?-->", " ", html, flags=re.S)
     products = {}
+
+    for block in re.findall(r'<li(?:\s[^>]*)?>(.*?)</li>', html, re.S):
+        id_match = re.search(r'detail\.html\?id=(\d+)', block)
+        name_match = re.search(r'<img[^>]+alt="([^"]+)"', block, re.S)
+        if not id_match or not name_match:
+            continue
+        product_id = id_match.group(1)
+        if product_id in products:
+            continue
+        sold_out = 'class="soldout"' in block or "売り切れ" in block
+        price_match = re.search(
+            r'<p[^>]+class="price"[^>]*>.*?<em>([\d,]+)</em>', block, re.S
+        )
+        prices = [int(price_match.group(1).replace(",", ""))] if price_match else []
+        products[product_id] = {
+            "name": _clean(name_match.group(1)),
+            "in_stock": not sold_out,
+            "prices": prices,
+        }
+
+    if products:
+        return products
+
     matches = list(re.finditer(r'<a href="/shopdetail/(\d+)/[^"]*"[^>]*>(.*?)</a>', html, re.S))
     for i, m in enumerate(matches):
         pid = m.group(1)
@@ -177,7 +202,13 @@ def parse_cardmax(html):
             continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
         after = html[m.end():min(m.end() + 400, end if end > m.end() else len(html))]
-        products[pid] = {"name": name, "in_stock": "売り切れ" not in after}
+        price_match = re.search(r'([\d,]+)円', after)
+        prices = [int(price_match.group(1).replace(",", ""))] if price_match else []
+        products[pid] = {
+            "name": name,
+            "in_stock": "売り切れ" not in after,
+            "prices": prices,
+        }
     return products
 
 
@@ -291,12 +322,15 @@ SITES = [
     {
         "key": "cardmax",
         "label": "cardmax ct1849",
+        "revision": 2,
+        "require_prices": True,
         "fetch": lambda: parse_cardmax(
             fetch_html(
-                "https://www.cardmax.jp/shopbrand/ct1849/",
+                "https://www.cardmax.jp/smartphone/list.html?category_code=ct1849",
                 encoding="euc_jp",
-                required_markers="/shopdetail/",
-                expected_path_prefix="/shopbrand/ct1849/",
+                required_markers=('id="list_item"', 'class="price"'),
+                expected_path_prefix="/smartphone/list.html",
+                user_agent=MOBILE_USER_AGENT,
             )
         ),
         "item_url": lambda pid: f"https://www.cardmax.jp/shopdetail/{pid}/",
@@ -414,10 +448,23 @@ def save_state(state):
         json.dump(state, f, ensure_ascii=False, indent=2)
 
 
+def _product_name(value):
+    if isinstance(value, dict):
+        return value.get("name", "")
+    return value if isinstance(value, str) else ""
+
+
+def _state_product(product):
+    name = product.get("name", "")
+    prices = product.get("prices", [])
+    return {"name": name, "prices": prices} if prices else name
+
+
 def notify_new_items(site, new_ids, current):
     lines = [f"🆕 <b>{esc(site['label'])} 新增商品 ({len(new_ids)})</b>", ""]
     for pid in new_ids[:NOTIFY_MAX_ITEMS]:
-        name = esc(current[pid]) if current[pid] else f"商品 {pid}"
+        product_name = _product_name(current[pid])
+        name = esc(product_name) if product_name else f"商品 {pid}"
         lines.append(f"• <b>{name}</b>\n  {site['item_url'](pid)}")
     if len(new_ids) > NOTIFY_MAX_ITEMS:
         lines.append(f"…等共 {len(new_ids)} 件")
@@ -429,16 +476,29 @@ def main():
     state = load_state()
     sites_state = state.setdefault("sites", {})
     missing_site_keys = {site["key"] for site in SITES} - set(sites_state)
+    stale_site_keys = {
+        site["key"]
+        for site in SITES
+        if site.get("revision") is not None
+        and sites_state.get(site["key"], {}).get("revision") != site["revision"]
+    }
+    pending_site_keys = missing_site_keys | stale_site_keys
 
-    if state.get("last_run_date") == today and not missing_site_keys:
+    if state.get("last_run_date") == today and not pending_site_keys:
         print(f"今天({today})已執行過，跳過")
         return True
+
+    sites_to_run = (
+        [site for site in SITES if site["key"] in pending_site_keys]
+        if state.get("last_run_date") == today
+        else SITES
+    )
 
     first_run = not sites_state
     startup_summary = []
     all_ok = True
 
-    for site in SITES:
+    for site in sites_to_run:
         key = site["key"]
         try:
             raw = site["fetch"]()
@@ -459,6 +519,15 @@ def main():
             all_ok = False
             continue
 
+        missing_prices = sum(
+            product.get("in_stock") and not product.get("prices")
+            for product in raw.values()
+        )
+        if site.get("require_prices") and missing_prices:
+            print(f"ERROR: [{key}] {missing_prices} 件有貨商品缺少價格，跳過（不更新基準）")
+            all_ok = False
+            continue
+
         previous_site_state = sites_state.get(key, {})
         previous_raw_count = previous_site_state.get("raw_count")
         if raw and is_suspicious_raw_drop(previous_raw_count, len(raw)):
@@ -470,7 +539,7 @@ def main():
             continue
 
         # 只保留有貨商品（售完不追蹤、不入報告）
-        current = {pid: v.get("name", "") for pid, v in raw.items() if v.get("in_stock")}
+        current = {pid: _state_product(v) for pid, v in raw.items() if v.get("in_stock")}
         sold = len(raw) - len(current)
         print(f"[{key}] 原始 {len(raw)} 件，有貨 {len(current)}，售完 {sold}")
 
@@ -479,6 +548,8 @@ def main():
         if not isinstance(prev, dict):
             print(f"[{key}] 首次執行，建立基準：{len(current)} 件（有貨）")
             sites_state[key] = {"products": current, "raw_count": len(raw)}
+            if site.get("revision") is not None:
+                sites_state[key]["revision"] = site["revision"]
             startup_summary.append(f"• {esc(site['label'])}：{len(current)} 件（有貨）")
             continue
 
@@ -486,11 +557,15 @@ def main():
         if not new_ids:
             print(f"[{key}] 無新增：{len(current)} 件")
             sites_state[key] = {"products": current, "raw_count": len(raw)}
+            if site.get("revision") is not None:
+                sites_state[key]["revision"] = site["revision"]
             continue
 
         print(f"[{key}] 新增 {len(new_ids)} 件，發送通知")
         if notify_new_items(site, new_ids, current):
             sites_state[key] = {"products": current, "raw_count": len(raw)}
+            if site.get("revision") is not None:
+                sites_state[key]["revision"] = site["revision"]
         else:
             print(f"[{key}] 通知失敗，保留舊基準，稍後重試")
             all_ok = False

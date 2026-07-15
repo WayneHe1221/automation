@@ -47,6 +47,12 @@ def _md_escape(s):
     return s.replace("[", "(").replace("]", ")")
 
 
+def _product_name(value):
+    if isinstance(value, dict):
+        return value.get("name", "")
+    return value if isinstance(value, str) else ""
+
+
 def _item_line(name, url, suffix=""):
     label = _md_escape(name) if name else url
     return f"- [{label}]({url}){suffix}"
@@ -82,8 +88,8 @@ def build_report():
         prods = sw.get(key, {}).get("products", {})
         lines.append(f"## {label}（每天）— {len(prods)} 件")
         lines.append("")
-        for pid, name in prods.items():
-            lines.append(_item_line(name, URL[urlkey](pid)))
+        for pid, value in prods.items():
+            lines.append(_item_line(_product_name(value), URL[urlkey](pid)))
         if prods:
             lines.append("")
         total += len(prods)
@@ -102,8 +108,8 @@ def build_report():
         prods = sw.get(key, {}).get("products", {})
         lines.append(f"### {label}（每天）— {len(prods)} 件")
         lines.append("")
-        for pid, name in prods.items():
-            lines.append(_item_line(name, URL[urlkey](pid)))
+        for pid, value in prods.items():
+            lines.append(_item_line(_product_name(value), URL[urlkey](pid)))
         if prods:
             lines.append("")
         total += len(prods)

@@ -20,6 +20,8 @@ GitHub cron 使用 UTC。爬取任務以 UTC 日期判斷「今天是否成功�
 2. `firebase_sync`（`ORDER = 800`）在有設定 `FIREBASE_PROJECT_ID` 時同步 Firestore。
 3. `inventory_report`（`ORDER = 900`）以最新 state 重建報告。
 
+CardMax `ct1849` 使用手機版頁面取得商品名稱、庫存與含稅價格；價格會保存在 state，並由 `firebase_sync` 寫入 Firestore 供儀表板顯示及追蹤後續變化。
+
 在 GitHub Actions 中，抓取 job 本身不提供 Firebase 憑證，所以其中的 `firebase_sync` 會安全略過；state commit 完成後，獨立的 `sync-firestore` job 才以限制範圍的憑證同步 `main` 最新資料。
 
 安全策略：

@@ -160,8 +160,12 @@ def collect_catalog(repo_root):
 
         source_products = []
         for product_id, value in raw_products.items():
-            name = value if isinstance(value, str) else ""
-            prices = []
+            if isinstance(value, dict):
+                name = value.get("name", "")
+                prices = value.get("prices", [])
+            else:
+                name = value if isinstance(value, str) else ""
+                prices = []
 
             product = {
                 "id": f"{definition['id']}__{product_id}",
