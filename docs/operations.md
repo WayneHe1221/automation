@@ -84,7 +84,7 @@ test ! -e dist/demo-data.json
 
 ### 儀表板顯示沒有權限
 
-依序確認：登入 email 是否符合 `FIREBASE_ALLOWED_EMAIL`、Authentication UID 是否存在 `admins/{UID}`、文件的 `enabled` 是否為 `true`、Rules 是否已部署。
+依序確認：Authentication UID 是否存在 `admins/{UID}`、文件的 `enabled` 是否為 `true`、Rules 是否已部署。新增觀看者不需要重新部署網站。
 
 ### Firestore 沒有最新資料
 

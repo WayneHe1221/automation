@@ -9,6 +9,7 @@ import {
   Clock3,
   ExternalLink,
   Eye,
+  Layers3,
   LogOut,
   PackageCheck,
   Radar,
@@ -24,20 +25,28 @@ import {
 import type { ReactNode } from "react";
 import {
   User,
+  browserLocalPersistence,
   getRedirectResult,
   onAuthStateChanged,
+  setPersistence,
   signInWithPopup,
   signInWithRedirect,
   signOut,
 } from "firebase/auth";
-import { loadDemoData, subscribeDashboard } from "./data";
+import { hasDashboardAccess, loadDemoData, subscribeDashboard } from "./data";
 import {
   auth,
   database,
   firebaseEnabled,
   googleProvider,
 } from "./firebase";
-import { DashboardData, EventType, Product, ProductEvent } from "./types";
+import {
+  DashboardData,
+  EventType,
+  Product,
+  ProductCategory,
+  ProductEvent,
+} from "./types";
 
 const EMPTY_DATA: DashboardData = {
   generatedAt: "",
@@ -185,6 +194,39 @@ function LoginScreen({ error, onLogin }: { error: string; onLogin: () => void })
   );
 }
 
+function AccountMenu({ user, onLogout }: { user: User; onLogout: () => void }) {
+  return (
+    <details className="account-menu">
+      <summary className="avatar-button" aria-label="開啟我的帳戶選單">
+        {user.photoURL ? (
+          <img src={user.photoURL} alt="" />
+        ) : (
+          <span className="avatar-fallback">{user.email?.slice(0, 1).toUpperCase()}</span>
+        )}
+        <span>{user.displayName || user.email}</span>
+        <ChevronDown size={15} />
+      </summary>
+      <div className="account-popover">
+        <div className="account-identity">
+          {user.photoURL ? (
+            <img src={user.photoURL} alt="" />
+          ) : (
+            <span className="avatar-fallback">{user.email?.slice(0, 1).toUpperCase()}</span>
+          )}
+          <span>
+            <strong>{user.displayName || "Google 帳戶"}</strong>
+            <small>{user.email}</small>
+          </span>
+        </div>
+        <button className="logout-button" onClick={onLogout} type="button">
+          <LogOut size={16} />
+          登出
+        </button>
+      </div>
+    </details>
+  );
+}
+
 function ProductRow({ product }: { product: Product }) {
   return (
     <article className="product-row">
@@ -240,10 +282,12 @@ export default function App() {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
   const [sourceFilter, setSourceFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState<ProductCategory | "all">("all");
   const [statusFilter, setStatusFilter] = useState("active");
   const [sortOrder, setSortOrder] = useState("source");
-  const allowedEmail = import.meta.env.VITE_ALLOWED_EMAIL?.trim().toLowerCase();
-  const isAllowedUser = !allowedEmail || user?.email?.toLowerCase() === allowedEmail;
+  const [accessState, setAccessState] = useState<
+    "idle" | "checking" | "authorized" | "denied"
+  >(firebaseEnabled ? "idle" : "authorized");
 
   useEffect(() => {
     if (!auth) return;
@@ -254,6 +298,7 @@ export default function App() {
 
     return onAuthStateChanged(auth, (nextUser) => {
       setUser(nextUser);
+      setAccessState(nextUser ? "checking" : "idle");
       setAuthReady(true);
     });
   }, []);
@@ -270,27 +315,50 @@ export default function App() {
       return;
     }
 
-    if (!database || !user || !isAllowedUser) {
+    const firestore = database;
+    if (!firestore || !user) {
       setLoading(false);
       return;
     }
 
-    return subscribeDashboard(
-      database,
-      (nextData) => {
-        setData(nextData);
-        setLoading(false);
-      },
-      (reason) => {
-        setError(
-          reason.message.includes("permission")
-            ? "此帳號尚未加入 Firestore 管理員清單。"
-            : "即時資料載入失敗，請稍後再試。",
+    let cancelled = false;
+    let unsubscribe: (() => void) | undefined;
+    setAccessState("checking");
+
+    hasDashboardAccess(firestore, user.uid)
+      .then((hasAccess) => {
+        if (cancelled) return;
+        if (!hasAccess) {
+          setAccessState("denied");
+          setLoading(false);
+          return;
+        }
+
+        setAccessState("authorized");
+        unsubscribe = subscribeDashboard(
+          firestore,
+          (nextData) => {
+            setData(nextData);
+            setLoading(false);
+          },
+          () => {
+            setError("即時資料載入失敗，請稍後再試。");
+            setLoading(false);
+          },
         );
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setAccessState("denied");
+        setError("無法確認此帳號的儀表板權限，請稍後再試。");
         setLoading(false);
-      },
-    );
-  }, [user, isAllowedUser]);
+      });
+
+    return () => {
+      cancelled = true;
+      unsubscribe?.();
+    };
+  }, [user]);
 
   const handleLogin = async () => {
     if (!auth) return;
@@ -302,6 +370,7 @@ export default function App() {
     }
 
     try {
+      await setPersistence(auth, browserLocalPersistence);
       if (isMobileDevice()) {
         await signInWithRedirect(auth, googleProvider);
         return;
@@ -313,6 +382,16 @@ export default function App() {
     }
   };
 
+  const handleLogout = async () => {
+    if (!auth) return;
+    setError("");
+    try {
+      await signOut(auth);
+    } catch {
+      setError("登出失敗，請稍後再試。");
+    }
+  };
+
   const filteredProducts = useMemo(() => {
     const keyword = search.trim().toLocaleLowerCase();
     const filtered = data.products.filter((product) => {
@@ -321,10 +400,12 @@ export default function App() {
         product.name.toLocaleLowerCase().includes(keyword) ||
         product.productId.toLocaleLowerCase().includes(keyword);
       const matchesSource = sourceFilter === "all" || product.sourceId === sourceFilter;
+      const matchesCategory =
+        categoryFilter === "all" || product.category === categoryFilter;
       const matchesStatus =
         statusFilter === "all" ||
         (statusFilter === "active" ? product.active : !product.active);
-      return matchesKeyword && matchesSource && matchesStatus;
+      return matchesKeyword && matchesSource && matchesCategory && matchesStatus;
     });
 
     return filtered.sort((left, right) => {
@@ -339,7 +420,29 @@ export default function App() {
         left.name.localeCompare(right.name, "zh-Hant")
       );
     });
-  }, [data.products, search, sourceFilter, statusFilter, sortOrder]);
+  }, [data.products, search, sourceFilter, categoryFilter, statusFilter, sortOrder]);
+
+  const visibleSources = useMemo(
+    () =>
+      categoryFilter === "all"
+        ? data.sources
+        : data.sources.filter((source) => source.category === categoryFilter),
+    [data.sources, categoryFilter],
+  );
+
+  const categoryCounts = useMemo(
+    () => ({
+      all: data.products.length,
+      product: data.products.filter((product) => product.category === "product").length,
+      deck: data.products.filter((product) => product.category === "deck").length,
+    }),
+    [data.products],
+  );
+
+  const selectCategory = (category: ProductCategory | "all") => {
+    setCategoryFilter(category);
+    setSourceFilter("all");
+  };
 
   if (!authReady) {
     return <main className="loading-screen"><RefreshCw className="spin" />正在確認登入狀態</main>;
@@ -349,14 +452,19 @@ export default function App() {
     return <LoginScreen error={error} onLogin={handleLogin} />;
   }
 
-  if (firebaseEnabled && !isAllowedUser) {
+  if (firebaseEnabled && user && accessState === "checking") {
+    return <main className="loading-screen"><RefreshCw className="spin" />正在確認帳號權限</main>;
+  }
+
+  if (firebaseEnabled && user && accessState === "denied") {
     return (
       <main className="login-shell">
         <section className="login-card compact">
           <ShieldCheck size={38} />
           <h1>此帳號未獲授權</h1>
           <p>{user?.email}</p>
-          <button className="login-button" onClick={() => auth && signOut(auth)} type="button">
+          {error && <p className="form-error">{error}</p>}
+          <button className="login-button" onClick={handleLogout} type="button">
             改用其他帳號
           </button>
         </section>
@@ -380,13 +488,7 @@ export default function App() {
         <div className="topbar-status">
           {!firebaseEnabled && <span className="demo-pill"><Eye size={14} />預覽模式</span>}
           <span className="live-pill"><Wifi size={14} />即時連線</span>
-          {user && (
-            <button className="avatar-button" onClick={() => auth && signOut(auth)} type="button">
-              {user.photoURL ? <img src={user.photoURL} alt="" /> : user.email?.slice(0, 1).toUpperCase()}
-              <span>{user.displayName || user.email}</span>
-              <LogOut size={15} />
-            </button>
-          )}
+          {user && <AccountMenu user={user} onLogout={handleLogout} />}
         </div>
       </header>
 
@@ -414,7 +516,7 @@ export default function App() {
         </section>
 
         <section className="source-strip" aria-label="來源狀態">
-          {data.sources.map((source) => (
+          {visibleSources.map((source) => (
             <button
               key={source.id}
               className={sourceFilter === source.id ? "source-chip selected" : "source-chip"}
@@ -434,6 +536,29 @@ export default function App() {
               <div><p className="section-kicker">CATALOG</p><h2>追蹤商品</h2></div>
               <span className="result-count">{filteredProducts.length} 件</span>
             </div>
+            <div className="catalog-tabs" role="group" aria-label="商品分類">
+              <button
+                className={categoryFilter === "all" ? "selected" : ""}
+                onClick={() => selectCategory("all")}
+                type="button"
+              >
+                <ShoppingBag size={15} />全部商品<span>{categoryCounts.all}</span>
+              </button>
+              <button
+                className={categoryFilter === "product" ? "selected" : ""}
+                onClick={() => selectCategory("product")}
+                type="button"
+              >
+                <PackageCheck size={15} />一般商品<span>{categoryCounts.product}</span>
+              </button>
+              <button
+                className={categoryFilter === "deck" ? "selected" : ""}
+                onClick={() => selectCategory("deck")}
+                type="button"
+              >
+                <Layers3 size={15} />Deck 販售<span>{categoryCounts.deck}</span>
+              </button>
+            </div>
             <div className="filters">
               <label className="search-box">
                 <Search size={17} />
@@ -443,7 +568,7 @@ export default function App() {
               <label className="select-box">
                 <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value)} aria-label="選擇商店">
                   <option value="all">全部商店</option>
-                  {data.sources.map((source) => <option key={source.id} value={source.id}>{source.label}</option>)}
+                  {visibleSources.map((source) => <option key={source.id} value={source.id}>{source.label}</option>)}
                 </select>
                 <ChevronDown size={15} />
               </label>

@@ -67,6 +67,7 @@ SOURCE_DEFINITIONS = [
     },
     {
         "id": "fukufuku_deck",
+        "category": "deck",
         "label": "福福トレカ WSデッキ販売",
         "schedule": "每天",
         "state_file": "shop_watch.json",
@@ -75,6 +76,7 @@ SOURCE_DEFINITIONS = [
     },
     {
         "id": "torecolo_deck",
+        "category": "deck",
         "label": "torecolo WSデッキ販売",
         "schedule": "每天",
         "state_file": "shop_watch.json",
@@ -83,6 +85,7 @@ SOURCE_DEFINITIONS = [
     },
     {
         "id": "clabo_deck",
+        "category": "deck",
         "label": "c-labo WSデッキ販売",
         "schedule": "每天",
         "state_file": "shop_watch.json",
@@ -91,6 +94,7 @@ SOURCE_DEFINITIONS = [
     },
     {
         "id": "hobbystation_deck",
+        "category": "deck",
         "label": "Hobby Station WSデッキ販売",
         "schedule": "每天",
         "state_file": "shop_watch.json",
@@ -99,6 +103,7 @@ SOURCE_DEFINITIONS = [
     },
     {
         "id": "gurapan_deck",
+        "category": "deck",
         "label": "gurapan WSデッキ販売",
         "schedule": "每天",
         "state_file": "shop_watch.json",
@@ -107,6 +112,7 @@ SOURCE_DEFINITIONS = [
     },
     {
         "id": "bushiroad_deck",
+        "category": "deck",
         "label": "square-bushiroad WSデッキ販売",
         "schedule": "每天",
         "state_file": "shop_watch.json",
@@ -133,6 +139,7 @@ def collect_catalog(repo_root):
     sources = []
 
     for definition in SOURCE_DEFINITIONS:
+        category = definition.get("category", "product")
         state_file = definition["state_file"]
         if state_file not in state_cache:
             state_cache[state_file] = _load_json(os.path.join(state_dir, state_file))
@@ -165,6 +172,7 @@ def collect_catalog(repo_root):
                 "url": definition["url"](product_id),
                 "prices": prices,
                 "currency": "JPY",
+                "category": category,
                 "active": True,
             }
             products.append(product)
@@ -175,6 +183,7 @@ def collect_catalog(repo_root):
                 "id": definition["id"],
                 "label": definition["label"],
                 "schedule": definition["schedule"],
+                "category": category,
                 "activeCount": len(source_products),
                 "status": "ok",
                 "lastRunDate": state.get("last_run_date"),

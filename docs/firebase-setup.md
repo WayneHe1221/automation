@@ -1,6 +1,6 @@
 # Firebase 設定與部署
 
-本專案使用 Firebase Authentication、Cloud Firestore 與 Firebase Hosting。正式環境資料預設不公開，只有同時通過前端帳號檢查及 Firestore 管理員規則的使用者可以讀取。
+本專案使用 Firebase Authentication、Cloud Firestore 與 Firebase Hosting。正式環境資料預設不公開，只有完成 Google 登入且 UID 已加入 Firestore 觀看者清單的使用者可以讀取。
 
 ## 1. 啟用 Firebase 服務
 
@@ -14,9 +14,9 @@
 
 本 repository 的 `.firebaserc` 預設指向 `card-shop-tracker`。若使用其他專案，請同步更新該檔案或部署時明確傳入 `--project`。
 
-## 2. 建立管理員
+## 2. 新增或移除觀看者
 
-1. 先使用預定帳號登入一次網站，讓 Firebase Authentication 建立使用者。
+1. 請觀看者先使用預定的 Google 帳號登入一次網站；畫面會顯示尚未授權，同時 Firebase Authentication 會建立使用者。
 2. 在 **Authentication → Users** 複製該使用者的 UID。
 3. 在 Firestore 建立 `admins/{UID}` 文件，內容為：
 
@@ -26,7 +26,11 @@
 }
 ```
 
-`firestore.rules` 會檢查這個文件。前端的 email allowlist 只是提早阻擋錯誤帳號；即使繞過前端，沒有啟用的 `admins/{UID}` 仍無法讀取資料。
+4. 請觀看者重新整理網站，即可讀取儀表板，不需要重新建置或部署。
+
+每位觀看者各自建立一份 `admins/{UID}` 文件。要移除權限時，將 `enabled` 改為 `false` 或刪除該文件；若也不希望對方再次登入，可同時在 Authentication 停用或刪除該使用者。
+
+`firestore.rules` 以 UID 文件作為唯一的資料授權依據。沒有啟用的 `admins/{UID}`，即使已完成 Google 登入也無法讀取監控資料。
 
 ## 3. 設定 GitHub Actions
 
@@ -46,7 +50,6 @@
 | `FIREBASE_API_KEY` | `apiKey` |
 | `FIREBASE_AUTH_DOMAIN` | Hosting 網域，例如 `your-project.web.app` |
 | `FIREBASE_APP_ID` | `appId` |
-| `FIREBASE_ALLOWED_EMAIL` | 允許使用儀表板的 Google email |
 
 請使用專用、最小權限的 service account，不要使用個人憑證。下載後不要把 JSON 放進 repository；`.gitignore` 會排除常見 service-account 檔名，但不能取代正確的秘密管理與金鑰輪替。
 

@@ -1,12 +1,20 @@
 import {
   Firestore,
   collection,
+  doc,
+  getDoc,
   limit,
   onSnapshot,
   orderBy,
   query,
 } from "firebase/firestore";
-import { DashboardData, Product, ProductEvent, Source } from "./types";
+import {
+  DashboardData,
+  Product,
+  ProductCategory,
+  ProductEvent,
+  Source,
+} from "./types";
 
 type FirestoreTimestamp = { toDate: () => Date };
 
@@ -18,6 +26,17 @@ function toIso(value: unknown): string | undefined {
     return (value as FirestoreTimestamp).toDate().toISOString();
   }
   return undefined;
+}
+
+function toCategory(value: unknown, sourceId: unknown): ProductCategory {
+  return value === "deck" || String(sourceId ?? "").endsWith("_deck")
+    ? "deck"
+    : "product";
+}
+
+export async function hasDashboardAccess(database: Firestore, userId: string) {
+  const snapshot = await getDoc(doc(database, "admins", userId));
+  return snapshot.exists() && snapshot.data().enabled === true;
 }
 
 export async function loadDemoData(): Promise<DashboardData> {
@@ -63,6 +82,7 @@ export function subscribeDashboard(
           url: data.url,
           prices: data.prices ?? [],
           currency: "JPY",
+          category: toCategory(data.category, data.sourceId),
           active: data.active !== false,
           firstSeenAt: toIso(data.firstSeenAt),
           updatedAt: toIso(data.updatedAt),
@@ -83,6 +103,7 @@ export function subscribeDashboard(
           id: document.id,
           label: data.label,
           schedule: data.schedule,
+          category: toCategory(data.category, document.id),
           activeCount: data.activeCount ?? 0,
           status: data.status === "error" ? "error" : "ok",
           lastRunDate: data.lastRunDate ?? null,
@@ -113,6 +134,7 @@ export function subscribeDashboard(
           productName: data.productName,
           sourceId: data.sourceId,
           sourceLabel: data.sourceLabel,
+          category: toCategory(data.category, data.sourceId),
           url: data.url,
           oldPrices: data.oldPrices ?? [],
           newPrices: data.newPrices ?? [],
