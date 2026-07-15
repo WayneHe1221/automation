@@ -39,12 +39,13 @@ def fetch_html(
     backoff=1.0,
     required_markers=(),
     expected_path_prefix=None,
+    user_agent=None,
 ):
     """抓取 HTML，並驗證最終網址與頁面關鍵標記。"""
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": USER_AGENT,
+            "User-Agent": user_agent or USER_AGENT,
             "Accept": "text/html,application/xhtml+xml",
             "Accept-Language": "ja,en;q=0.8,zh-TW;q=0.6",
         },

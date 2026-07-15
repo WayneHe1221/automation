@@ -35,6 +35,19 @@ class FetchTests(unittest.TestCase):
             fetch_html("https://example.test/list", required_markers="product-card")
 
     @mock.patch("lib.fetch.urllib.request.urlopen")
+    def test_supports_custom_user_agent(self, urlopen):
+        urlopen.return_value = FakeResponse("<html>product-card</html>")
+
+        fetch_html(
+            "https://example.test/list",
+            required_markers="product-card",
+            user_agent="Mobile Browser",
+        )
+
+        request = urlopen.call_args.args[0]
+        self.assertEqual(request.get_header("User-agent"), "Mobile Browser")
+
+    @mock.patch("lib.fetch.urllib.request.urlopen")
     def test_rejects_unexpected_redirect_path(self, urlopen):
         urlopen.return_value = FakeResponse(
             "<html>product-card</html>",

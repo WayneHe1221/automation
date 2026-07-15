@@ -99,7 +99,7 @@ def main():
         if not previous.get("active", True):
             event_type = "restocked"
             changes["active"] = True
-        elif old_prices != product["prices"]:
+        elif old_prices and old_prices != product["prices"]:
             event_type = "price_changed"
 
         for field in ("name", "url", "prices", "sourceLabel", "category"):

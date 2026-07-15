@@ -9,7 +9,7 @@ Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓
 - 透過 Telegram 發送首次建立基準與新品通知。
 - 自動產生 [`inventory_report.md`](inventory_report.md) 靜態清單。
 - 將商品、來源、同步紀錄與異動事件寫入 Cloud Firestore。
-- 提供 React + Firebase Hosting 儀表板，支援一般商品／Deck 販售分類、搜尋、來源／狀態篩選及即時更新。
+- 提供 React + Firebase Hosting 儀表板，支援一般商品／Deck 販售分類、價格、搜尋、來源／狀態篩選及即時更新。
 
 ## 系統流程
 
@@ -31,7 +31,7 @@ flowchart LR
 | square-bushiroad | 商品分類 668、284，以及 WS 牌組販售 |
 | torecolo | Weiss Schwarz 新品與牌組販售 |
 | manasource | 商品分類 2268 |
-| cardmax | 商品分類 ct1849 |
+| cardmax | 手機版商品分類 ct1849，包含含稅售價 |
 | gurapan | 商品分類 1081 與牌組販售 |
 | c-labo | 商品分類 2421 的有庫存商品與牌組販售 |
 | 福福トレカ | WS 牌組販售 |

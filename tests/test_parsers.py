@@ -72,7 +72,16 @@ class ParserTests(unittest.TestCase):
         products = parse_cardmax(load_fixture("cardmax.html"))
 
         self.assertTrue(products["301"]["in_stock"])
+        self.assertEqual(products["301"]["prices"], [1000])
         self.assertFalse(products["302"]["in_stock"])
+
+    def test_cardmax_mobile_parser(self):
+        products = parse_cardmax(load_fixture("cardmax_mobile.html"))
+
+        self.assertEqual(products["000000301"]["name"], "Cardmax Mobile One & Bonus")
+        self.assertEqual(products["000000301"]["prices"], [4000])
+        self.assertTrue(products["000000301"]["in_stock"])
+        self.assertFalse(products["000000302"]["in_stock"])
 
     def test_gurapan_parser(self):
         products = parse_gurapan(load_fixture("gurapan.html"))

@@ -44,6 +44,11 @@ class CatalogTests(unittest.TestCase):
                         "sites": {
                             "torecolo": {"products": {"normal": "一般商品"}},
                             "torecolo_deck": {"products": {"deck": "牌組商品"}},
+                            "cardmax": {
+                                "products": {
+                                    "priced": {"name": "有價格商品", "prices": [4000]}
+                                }
+                            },
                         }
                     }
                 ),
@@ -53,13 +58,21 @@ class CatalogTests(unittest.TestCase):
             products, sources = collect_catalog(directory)
 
         self.assertEqual(
-            {"normal": "product", "deck": "deck"},
+            {"normal": "product", "deck": "deck", "priced": "product"},
             {product["productId"]: product["category"] for product in products},
         )
         self.assertEqual(
-            {"torecolo": "product", "torecolo_deck": "deck"},
+            {
+                "torecolo": "product",
+                "torecolo_deck": "deck",
+                "cardmax": "product",
+            },
             {source["id"]: source["category"] for source in sources},
         )
+        priced_product = next(
+            product for product in products if product["productId"] == "priced"
+        )
+        self.assertEqual(priced_product["prices"], [4000])
 
 
 if __name__ == "__main__":
