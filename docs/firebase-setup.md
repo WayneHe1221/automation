@@ -120,4 +120,5 @@ npx --yes firebase-tools@15.23.0 deploy \
 - Firebase API key 可出現在前端，但應在 Google Cloud Console 對 key 設定適用的 API 與網站限制。
 - Hosting 的 `Referrer-Policy` 必須允許跨網域請求傳送來源網域（目前使用 `strict-origin-when-cross-origin`），否則 HTTP referrer 限制會拒絕 Firebase Authentication 請求。
 - Hosting 的 CSP 必須允許 `https://apis.google.com` 腳本及同網域 iframe；Firebase Authentication 會使用這兩者完成 popup 與 redirect 登入初始化。
+- SPA 頁面不得快取，避免 Firebase Auth 或安全標頭更新後，瀏覽器仍沿用舊版登入設定；帶雜湊的 JS/CSS 檔案仍可長期快取。
 - 部署後檢查 Hosting response headers，確認 CSP、frame protection 與 MIME sniffing protection 仍存在。

@@ -21,6 +21,11 @@ class FirebaseConfigTests(unittest.TestCase):
         self.assertIn("script-src 'self' https://apis.google.com", content_security_policy)
         self.assertIn("frame-src 'self'", content_security_policy)
 
+    def test_html_shell_is_not_cached(self):
+        cache_control = hosting_header("Cache-Control")
+
+        self.assertEqual("no-cache, no-store, must-revalidate", cache_control)
+
 
 if __name__ == "__main__":
     unittest.main()
