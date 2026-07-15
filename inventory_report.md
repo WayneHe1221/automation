@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 151 件**
+**合計 152 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -39,8 +39,9 @@
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
 - [予約 タイトルブースター「フューチャーカード バディファイト ディザスターフォース」 1BOX](https://www.manasource.net/product/190716)
 
-## cardmax ct1849（每天）— 12 件
+## cardmax ct1849（每天）— 13 件
 
+- [【予約販売 8月7日発売予定】ブースターパック 「推しの子」Vol.3 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000224281/)
 - [トライアルデッキ きんいろモザイク 15th Anniversary BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000193811/)
 - [トライアルデッキ 怪獣８号 BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000185672/)
 - [トライアルデッキ 負けヒロインが多すぎる！ BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000180669/)
