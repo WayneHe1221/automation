@@ -1,3 +1,5 @@
+export type ProductCategory = "product" | "deck";
+
 export type Product = {
   id: string;
   sourceId: string;
@@ -7,6 +9,7 @@ export type Product = {
   url: string;
   prices: number[];
   currency: "JPY";
+  category: ProductCategory;
   active: boolean;
   firstSeenAt?: string;
   updatedAt?: string;
@@ -16,6 +19,7 @@ export type Source = {
   id: string;
   label: string;
   schedule: string;
+  category: ProductCategory;
   activeCount: number;
   status: "ok" | "error";
   lastRunDate?: string | null;
@@ -32,6 +36,7 @@ export type ProductEvent = {
   productName: string;
   sourceId: string;
   sourceLabel: string;
+  category: ProductCategory;
   url: string;
   oldPrices: number[];
   newPrices: number[];

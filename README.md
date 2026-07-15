@@ -9,7 +9,7 @@ Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓
 - 透過 Telegram 發送首次建立基準與新品通知。
 - 自動產生 [`inventory_report.md`](inventory_report.md) 靜態清單。
 - 將商品、來源、同步紀錄與異動事件寫入 Cloud Firestore。
-- 提供 React + Firebase Hosting 儀表板，支援搜尋、來源／狀態篩選及即時更新。
+- 提供 React + Firebase Hosting 儀表板，支援一般商品／Deck 販售分類、搜尋、來源／狀態篩選及即時更新。
 
 ## 系統流程
 
@@ -88,7 +88,6 @@ cd web && npm audit --omit=dev --audit-level=high
 | `FIREBASE_API_KEY` | Variable | Firebase Web App API key |
 | `FIREBASE_AUTH_DOMAIN` | Variable | Firebase Authentication domain |
 | `FIREBASE_APP_ID` | Variable | Firebase Web App app id |
-| `FIREBASE_ALLOWED_EMAIL` | Variable | 前端允許顯示資料的 Google 帳號 |
 
 完整 Firebase 建置流程請參考 [`docs/firebase-setup.md`](docs/firebase-setup.md)，排程、故障排除及新增任務方式請參考 [`docs/operations.md`](docs/operations.md)。
 
@@ -113,6 +112,5 @@ automation/
 
 - Telegram token 與 service account JSON 只能存放於 GitHub Secrets 或本機安全憑證路徑。
 - Firebase Web API key 不是伺服器密鑰；資料權限由 Authentication、`admins/{uid}` 與 Firestore Rules 控制。
-- `FIREBASE_ALLOWED_EMAIL` 只是前端的額外檢查，不能取代 Firestore Rules。
 - 瀏覽器端只能讀取允許的集合，所有寫入都由 Firebase Admin SDK 執行。
 - GitHub Actions 使用最小權限，外部 action 以完整 commit SHA 固定版本。

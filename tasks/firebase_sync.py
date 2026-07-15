@@ -36,6 +36,7 @@ def _event_data(event_type, product, occurred_at, old_prices=None):
         "productName": product["name"],
         "sourceId": product["sourceId"],
         "sourceLabel": product["sourceLabel"],
+        "category": product["category"],
         "url": product["url"],
         "oldPrices": old_prices or [],
         "newPrices": product.get("prices", []),
@@ -101,7 +102,7 @@ def main():
         elif old_prices != product["prices"]:
             event_type = "price_changed"
 
-        for field in ("name", "url", "prices", "sourceLabel"):
+        for field in ("name", "url", "prices", "sourceLabel", "category"):
             if previous.get(field) != product[field]:
                 changes[field] = product[field]
 
@@ -132,6 +133,10 @@ def main():
             "name": previous.get("name", ""),
             "sourceId": previous.get("sourceId", ""),
             "sourceLabel": previous.get("sourceLabel", ""),
+            "category": previous.get(
+                "category",
+                "deck" if previous.get("sourceId", "").endswith("_deck") else "product",
+            ),
             "url": previous.get("url", ""),
             "prices": [],
         }
