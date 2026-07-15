@@ -118,4 +118,5 @@ npx --yes firebase-tools@15.23.0 deploy \
 - 移除使用者時，同時停用 Authentication 使用者並刪除或停用 `admins/{UID}`。
 - 不要把 service account JSON 貼到 issue、PR、Actions log 或前端環境變數。
 - Firebase API key 可出現在前端，但應在 Google Cloud Console 對 key 設定適用的 API 與網站限制。
+- Hosting 的 `Referrer-Policy` 必須允許跨網域請求傳送來源網域（目前使用 `strict-origin-when-cross-origin`），否則 HTTP referrer 限制會拒絕 Firebase Authentication 請求。
 - 部署後檢查 Hosting response headers，確認 CSP、frame protection 與 MIME sniffing protection 仍存在。
