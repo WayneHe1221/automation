@@ -6,10 +6,11 @@
 
 在 Firebase Console 的目標專案完成以下設定：
 
-1. 建立 Web App，記下 `apiKey`、`authDomain`、`projectId`、`appId`。
+1. 建立 Web App，記下 `apiKey`、`projectId`、`appId`；`authDomain` 建議使用 Hosting 網域（例如 `your-project.web.app`）。
 2. 建立 Cloud Firestore database。
 3. 在 **Authentication → Sign-in method** 啟用 Google provider。
 4. 確認 Hosting 已啟用，且實際網域已加入 Authentication 的 authorized domains。
+5. 在 Google Cloud Console 的 OAuth 網頁用戶端加入 `https://your-project.web.app/__/auth/handler` 作為已授權的重新導向 URI。這可讓行動版 redirect 登入維持在同一個網域，避免 Safari 的跨站儲存限制。
 
 本 repository 的 `.firebaserc` 預設指向 `card-shop-tracker`。若使用其他專案，請同步更新該檔案或部署時明確傳入 `--project`。
 
@@ -43,7 +44,7 @@
 | --- | --- |
 | `FIREBASE_PROJECT_ID` | `projectId` |
 | `FIREBASE_API_KEY` | `apiKey` |
-| `FIREBASE_AUTH_DOMAIN` | `authDomain` |
+| `FIREBASE_AUTH_DOMAIN` | Hosting 網域，例如 `your-project.web.app` |
 | `FIREBASE_APP_ID` | `appId` |
 | `FIREBASE_ALLOWED_EMAIL` | 允許使用儀表板的 Google email |
 

@@ -24,8 +24,10 @@ import {
 import type { ReactNode } from "react";
 import {
   User,
+  getRedirectResult,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
 } from "firebase/auth";
 import { loadDemoData, subscribeDashboard } from "./data";
@@ -50,6 +52,56 @@ const EVENT_LABELS: Record<EventType, string> = {
   removed: "售完／下架",
   restocked: "重新上架",
 };
+
+function isMobileDevice() {
+  const userAgent = navigator.userAgent;
+  return (
+    /Android|iPhone|iPad|iPod/i.test(userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  );
+}
+
+function isEmbeddedBrowser() {
+  const userAgent = navigator.userAgent;
+  return (
+    /FBAN|FBAV|Instagram|Line\/|Telegram/i.test(userAgent) ||
+    (/iPhone|iPad|iPod/i.test(userAgent) &&
+      /AppleWebKit/i.test(userAgent) &&
+      !/Safari/i.test(userAgent))
+  );
+}
+
+function authErrorMessage(reason: unknown) {
+  const code =
+    typeof reason === "object" && reason !== null && "code" in reason
+      ? String((reason as { code?: unknown }).code ?? "")
+      : "";
+
+  if (code === "auth/popup-closed-by-user" || code === "auth/cancelled-popup-request") {
+    return "";
+  }
+  if (code === "auth/popup-blocked") {
+    return "瀏覽器阻擋了登入視窗，請允許彈出式視窗後再試一次。";
+  }
+  if (code === "auth/web-storage-unsupported") {
+    return "瀏覽器封鎖了登入所需的網站儲存空間，請關閉無痕模式或內容阻擋器後再試一次。";
+  }
+  if (code === "auth/network-request-failed") {
+    return "無法連線到 Google 登入服務，請確認公司網路未封鎖 Google 或改用其他網路。";
+  }
+  if (code === "auth/unauthorized-domain") {
+    return "目前網站網域尚未獲 Firebase 授權，請聯絡管理員。";
+  }
+  if (code === "auth/operation-not-allowed") {
+    return "Firebase 尚未啟用 Google 登入，請聯絡管理員。";
+  }
+  if (code === "auth/operation-not-supported-in-this-environment") {
+    return "此內建瀏覽器不支援 Google 登入，請改用 Safari 或 Chrome 開啟網站。";
+  }
+
+  const suffix = code ? `（${code}）` : "";
+  return `Google 登入失敗${suffix}，請再試一次。`;
+}
 
 function formatPrice(prices: number[]) {
   if (!prices.length) return "—";
@@ -195,6 +247,11 @@ export default function App() {
 
   useEffect(() => {
     if (!auth) return;
+    getRedirectResult(auth).catch((reason) => {
+      const message = authErrorMessage(reason);
+      if (message) setError(message);
+    });
+
     return onAuthStateChanged(auth, (nextUser) => {
       setUser(nextUser);
       setAuthReady(true);
@@ -238,11 +295,21 @@ export default function App() {
   const handleLogin = async () => {
     if (!auth) return;
     setError("");
+
+    if (isEmbeddedBrowser()) {
+      setError("Telegram 等內建瀏覽器不支援 Google 登入，請改用 Safari 或 Chrome 開啟網站。");
+      return;
+    }
+
     try {
+      if (isMobileDevice()) {
+        await signInWithRedirect(auth, googleProvider);
+        return;
+      }
       await signInWithPopup(auth, googleProvider);
     } catch (reason) {
-      const message = reason instanceof Error ? reason.message : "登入失敗";
-      if (!message.includes("popup-closed")) setError("Google 登入失敗，請再試一次。");
+      const message = authErrorMessage(reason);
+      if (message) setError(message);
     }
   };
 
