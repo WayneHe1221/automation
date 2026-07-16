@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 152 件**
+**合計 154 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -17,7 +17,7 @@
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
-- [【簡易版】【推しの子】Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/221731)
+- [「Re:ゼロから始める異世界生活」Vol.4【カートン】](https://gurapan.jp/products/detail/221728)
 - [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417)
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416)
 - [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480)
@@ -25,12 +25,11 @@
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
 
-## manasource 2268（每天）— 11 件
+## manasource 2268（每天）— 10 件
 
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019)
 - [予約 ウィクロスTCG ブースターパック Lostorage SELECTOR 1カートン（16BOX)](https://www.manasource.net/product/152401)
 - [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482)
-- [予約 バトルスピリッツ ブースターパック 幻惑の翔風 【26RBS02】 1BOX](https://www.manasource.net/product/189699)
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717)
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498)
 - [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
@@ -173,9 +172,9 @@
 - [【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス](https://www.torecolo.jp/shop/g/gDECK-WSTAL/)
 - [【ヴァイス】デッキ販売 BanG Dream! 扉門](https://www.torecolo.jp/shop/g/gDECK-WSBD3/)
 - [【ヴァイス】デッキ販売 アイドルマスター ミリオンライブ！ 電源門](https://www.torecolo.jp/shop/g/gDECK-WSIMS/)
+- [【ヴァイス】デッキ販売 カードキャプターさくら 扉電源](https://www.torecolo.jp/shop/g/gDECK-WSCCS/)
 - [【ヴァイス】デッキ販売 BanG Dream! 宝門](https://www.torecolo.jp/shop/g/gDECK-WSBD/)
 - [【ヴァイス】デッキ販売 BanG Dream! 門枝](https://www.torecolo.jp/shop/g/gDECK-WSBD2/)
-- [【ヴァイス】デッキ販売 カードキャプターさくら 扉電源](https://www.torecolo.jp/shop/g/gDECK-WSCCS/)
 - [【ヴァイス】デッキ販売 リコリス・リコイル 枝](https://www.torecolo.jp/shop/g/gDECK-WSLRC/)
 
 ### c-labo WSデッキ販売（每天）— 2 件
@@ -183,9 +182,12 @@
 - [【WS】《黄緑青》プリンセスコネクト！Re:Dive 宝チョイス デッキ](https://www.c-labo-online.jp/product/385324)
 - [【WS】《青赤》アイドルマスターシンデレラガールズ 門ストブ デッキ](https://www.c-labo-online.jp/product/384770)
 
-### Hobby Station WSデッキ販売（每天）— 2 件
+### Hobby Station WSデッキ販売（每天）— 5 件
 
+- [ダ・カーポ 枝宝デッキ](https://www.hobbystation-single.jp/ws/product/detail/254634)
+- [東方Project ドラ門デッキ](https://www.hobbystation-single.jp/ws/product/detail/299519)
 - [ラブライブ！サンシャイン!! 8電源デッキ](https://www.hobbystation-single.jp/ws/product/detail/303450)
+- [青ブタ 8扉デッキ](https://www.hobbystation-single.jp/ws/product/detail/306318)
 - [ダ・カーポ 8枝（フルホイル）デッキ](https://www.hobbystation-single.jp/ws/product/detail/307182)
 
 ### gurapan WSデッキ販売（每天）— 1 件
