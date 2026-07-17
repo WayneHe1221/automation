@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 154 件**
+**合計 153 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -54,7 +54,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 104 件
+## square-bushiroad 284（每天）— 103 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
@@ -144,7 +144,6 @@
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41116)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第1R トライアルデッキ(1カートン・48個入)(1個あたり500円)(新品商品)](https://www.square-bushiroad.com/product/41117)
 - [★SALE★ヴァイスシュヴァルツ ウマ娘 プリティーダービー 第2R トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41118)
-- [【再販商品(再販仕様))】ヴァイスシュヴァルツ ホロライブプロダクション(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/15432)
 - [★SALE★ヴァイスシュヴァルツ リコリス・リコイル トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/41124)
 - [★SALE★ヴァイスシュヴァルツ リコリス・リコイル トライアルデッキ(1カートン・48個入)(1個あたり1300円)(新品商品)](https://www.square-bushiroad.com/product/41125)
 - [ヴァイスシュヴァルツ リコリス・リコイル(1カートン・18BOX入)(1BOXあたり7040円)(新品商品)](https://www.square-bushiroad.com/product/41127)
