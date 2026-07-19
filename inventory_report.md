@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 152 件**
+**合計 153 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -24,7 +24,7 @@
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
 
-## manasource 2268（每天）— 11 件
+## manasource 2268（每天）— 10 件
 
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019)
 - [予約 ウィクロスTCG ブースターパック Lostorage SELECTOR 1カートン（16BOX)](https://www.manasource.net/product/152401)
@@ -32,7 +32,6 @@
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717)
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498)
 - [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499)
-- [予約 Z/X -Zillions of enemy X- ジェネレート エヴォリューション 1カートン(12BOX）](https://www.manasource.net/product/190989)
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675)
 - [予約 Z/X -Zillions of enemy X- アセンション・サマー 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/186132)
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.7 “可愛さ”マシマシ、チョモランマ！ 1BOX(12パック)](https://www.manasource.net/product/153147)
@@ -54,12 +53,13 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 102 件
+## square-bushiroad 284（每天）— 104 件
 
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805)
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796)
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797)
+- [ヴァイスシュヴァルツ 青春ブタ野郎は サンタクロースの夢を見ない (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/98234)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347)
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348)
 - [ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/95182)
@@ -122,6 +122,7 @@
 - [ヴァイスシュヴァルツ Disney ミラー・ウォリアーズ トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/57398)
 - [★SALE★ヴァイスシュヴァルツ Disney ミラー・ウォリアーズ トライアルデッキ(1カートン・48個入)(1個あたり1000円)(新品商品)](https://www.square-bushiroad.com/product/57399)
 - [ヴァイスシュヴァルツ アイドルマスター シャイニーカラーズ Shine More!(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/56177)
+- [ヴァイスシュヴァルツ アイドルマスター シャイニーカラーズ Shine More!(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/56178)
 - [ヴァイスシュヴァルツ プレミアムブースター ホロライブプロダクション Summer Collection(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/55317)
 - [ヴァイスシュヴァルツ プレミアムブースター ホロライブプロダクション Summer Collection (1カートン・30BOX入)(1BOXあたり3990円)(新品商品)](https://www.square-bushiroad.com/product/55318)
 - [【再販仕様】ヴァイスシュヴァルツ プロジェクトセカイ カラフルステージ！ feat. 初音ミク Vol.2(1BOX・16パック入)(新品商品)](https://www.square-bushiroad.com/product/50348)
