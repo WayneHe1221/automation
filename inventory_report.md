@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 150 件**
+**合計 151 件**
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -8,25 +8,26 @@
 
 ## torecolo ヴァイス新品（每天）— 0 件
 
-## c-labo 2421（有庫存）（每天）— 1 件
+## c-labo 2421（有庫存）（每天）— 2 件
 
+- [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『【推しの子】Vol.3』(1BOX=10パック) (2608/07)](https://www.c-labo-online.jp/product/382227)
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 8 件
+## gurapan 1081（每天）— 9 件
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686)
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726)
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727)
 - [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417)
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416)
+- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480)
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479)
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419)
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420)
 
-## manasource 2268（每天）— 10 件
+## manasource 2268（每天）— 9 件
 
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019)
-- [予約 ウィクロスTCG ブースターパック Lostorage SELECTOR 1カートン（16BOX)](https://www.manasource.net/product/152401)
 - [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482)
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717)
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498)
