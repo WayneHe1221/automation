@@ -163,9 +163,11 @@ def collect_catalog(repo_root):
             if isinstance(value, dict):
                 name = value.get("name", "")
                 prices = value.get("prices", [])
+                qty = value.get("qty")
             else:
                 name = value if isinstance(value, str) else ""
                 prices = []
+                qty = None
 
             product = {
                 "id": f"{definition['id']}__{product_id}",
@@ -175,6 +177,7 @@ def collect_catalog(repo_root):
                 "name": name,
                 "url": definition["url"](product_id),
                 "prices": prices,
+                "qty": qty,
                 "currency": "JPY",
                 "category": category,
                 "active": True,
@@ -182,6 +185,9 @@ def collect_catalog(repo_root):
             products.append(product)
             source_products.append(product)
 
+        stock_quantity = sum(
+            product["qty"] for product in source_products if product["qty"] is not None
+        )
         sources.append(
             {
                 "id": definition["id"],
@@ -189,6 +195,7 @@ def collect_catalog(repo_root):
                 "schedule": definition["schedule"],
                 "category": category,
                 "activeCount": len(source_products),
+                "stockQuantity": stock_quantity,
                 "status": "ok",
                 "lastRunDate": state.get("last_run_date"),
             }

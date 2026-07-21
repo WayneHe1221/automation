@@ -14,6 +14,7 @@ from tasks.shop_watch import (
     parse_hobbystation_count,
     parse_product_links,
     parse_squarebushi,
+    parse_stock_quantity,
     parse_torecolo,
 )
 
@@ -34,7 +35,9 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(parse_total(page), 2)
         self.assertEqual(products["101"]["name"], "Alpha & Beta")
         self.assertTrue(products["101"]["in_stock"])
+        self.assertEqual(products["101"]["qty"], 29)
         self.assertFalse(products["102"]["in_stock"])
+        self.assertIsNone(products["102"]["qty"])
         self.assertEqual(parse_bushiroad_668(page), products)
 
     def test_product_link_parser(self):
@@ -42,13 +45,17 @@ class ParserTests(unittest.TestCase):
 
         self.assertEqual(products["201"]["name"], "First & Card")
         self.assertTrue(products["201"]["in_stock"])
+        self.assertEqual(products["201"]["qty"], 12)
         self.assertFalse(products["202"]["in_stock"])
+        self.assertIsNone(products["202"]["qty"])
 
     def test_torecolo_parser(self):
         products = parse_torecolo(load_fixture("torecolo.html"))
 
         self.assertTrue(products["DECK-WS001"]["in_stock"])
+        self.assertEqual(products["DECK-WS001"]["qty"], 7)
         self.assertFalse(products["TCG002"]["in_stock"])
+        self.assertIsNone(products["TCG002"]["qty"])
 
     def test_fukufuku_parser(self):
         page = load_fixture("fukufuku_deck.html")
@@ -66,7 +73,9 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(parse_hobbystation_count(page), 2)
         self.assertEqual(products["601"]["name"], "Hobby One")
         self.assertTrue(products["601"]["in_stock"])
+        self.assertEqual(products["601"]["qty"], 3)
         self.assertFalse(products["602"]["in_stock"])
+        self.assertIsNone(products["602"]["qty"])
 
     def test_cardmax_parser(self):
         products = parse_cardmax(load_fixture("cardmax.html"))
@@ -87,7 +96,21 @@ class ParserTests(unittest.TestCase):
         products = parse_gurapan(load_fixture("gurapan.html"))
 
         self.assertTrue(products["401"]["in_stock"])
+        self.assertEqual(products["401"]["qty"], 4)
         self.assertFalse(products["402"]["in_stock"])
+        self.assertIsNone(products["402"]["qty"])
+
+    def test_cardmax_has_no_quantity(self):
+        products = parse_cardmax(load_fixture("cardmax.html"))
+
+        self.assertIsNone(products["301"].get("qty"))
+
+    def test_parse_stock_quantity_variants(self):
+        self.assertEqual(parse_stock_quantity('<p class="stock">在庫数 29点</p>'), 29)
+        self.assertEqual(parse_stock_quantity("在庫数 1,024個"), 1024)
+        self.assertEqual(parse_stock_quantity("在庫数：9"), 9)
+        self.assertEqual(parse_stock_quantity("在庫数:\n      3"), 3)
+        self.assertIsNone(parse_stock_quantity("販売中"))
 
     def test_raw_drop_guard(self):
         self.assertTrue(is_suspicious_raw_drop(30, 10))

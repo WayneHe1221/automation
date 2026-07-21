@@ -67,6 +67,7 @@ def main():
     products, sources = collect_catalog(REPO_ROOT)
     current = {product["id"]: product for product in products}
     source_ids = {source["id"] for source in sources}
+    stock_quantity = sum(source.get("stockQuantity", 0) for source in sources)
 
     existing = {
         snapshot.id: snapshot.to_dict()
@@ -102,7 +103,7 @@ def main():
         elif old_prices and old_prices != product["prices"]:
             event_type = "price_changed"
 
-        for field in ("name", "url", "prices", "sourceLabel", "category"):
+        for field in ("name", "url", "prices", "qty", "sourceLabel", "category"):
             if previous.get(field) != product[field]:
                 changes[field] = product[field]
 
@@ -166,6 +167,7 @@ def main():
                 "completedAt": now,
                 "productCount": len(products),
                 "sourceCount": len(sources),
+                "stockQuantity": stock_quantity,
                 "changes": event_counts,
                 "status": "ok",
             },
@@ -180,6 +182,7 @@ def main():
                 "lastSyncAt": now,
                 "productCount": len(products),
                 "sourceCount": len(sources),
+                "stockQuantity": stock_quantity,
             },
         )
     )
@@ -187,8 +190,8 @@ def main():
     _commit_operations(database, operations)
     print(
         "Firestore 同步完成："
-        f"{len(products)} 件商品、{len(sources)} 個來源、"
-        f"{sum(event_counts.values())} 筆異動"
+        f"{len(products)} 件商品、庫存共 {stock_quantity} 件、"
+        f"{len(sources)} 個來源、{sum(event_counts.values())} 筆異動"
     )
     return True
 

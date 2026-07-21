@@ -3,6 +3,7 @@ import {
   Activity,
   ArrowDownRight,
   BellRing,
+  Boxes,
   Check,
   ChevronDown,
   CircleDollarSign,
@@ -237,7 +238,12 @@ function ProductRow({ product }: { product: Product }) {
             {product.name || `商品 ${product.productId}`}
             <ExternalLink size={13} />
           </a>
-          <span className="mobile-source">{product.sourceLabel}</span>
+          <span className="product-sub">
+            <span className="mobile-source">{product.sourceLabel}</span>
+            {product.qty != null && (
+              <span className="stock-badge"><Boxes size={12} />在庫 {product.qty}</span>
+            )}
+          </span>
         </div>
       </div>
       <span className="source-name">{product.sourceLabel}</span>
@@ -473,6 +479,10 @@ export default function App() {
   }
 
   const activeProducts = data.products.filter((product) => product.active).length;
+  const trackedStock = data.products.reduce(
+    (sum, product) => (product.active && product.qty != null ? sum + product.qty : sum),
+    0,
+  );
   const namedProducts = data.products.filter((product) => product.active && product.name).length;
   const dataCompleteness = activeProducts ? Math.round((namedProducts / activeProducts) * 100) : 100;
   const todayEvents = data.events.filter((event) => isToday(event.occurredAt));
@@ -510,9 +520,10 @@ export default function App() {
 
         <section className="metrics-grid" aria-label="監控摘要">
           <MetricCard icon={<ShoppingBag size={20} />} label="追蹤中商品" value={activeProducts} note={`共 ${data.products.length} 筆商品紀錄`} tone="green" />
+          <MetricCard icon={<Boxes size={20} />} label="追蹤庫存總數" value={trackedStock.toLocaleString("ja-JP")} note="已回報庫存數的商品加總" tone="violet" />
           <MetricCard icon={<BellRing size={20} />} label="今日異動" value={todayEvents.length} note="新品、價格與庫存事件" tone="amber" />
           <MetricCard icon={<Store size={20} />} label="站台狀態" value={`${healthySources}/${data.sources.length}`} note="目前正常同步來源" tone="blue" />
-          <MetricCard icon={<PackageCheck size={20} />} label="資料完整度" value={`${dataCompleteness}%`} note="追蹤商品名稱解析成功率" tone="violet" />
+          <MetricCard icon={<PackageCheck size={20} />} label="資料完整度" value={`${dataCompleteness}%`} note="追蹤商品名稱解析成功率" tone="green" />
         </section>
 
         <section className="source-strip" aria-label="來源狀態">
@@ -524,7 +535,7 @@ export default function App() {
               type="button"
             >
               <span className={source.status === "ok" ? "health-dot" : "health-dot error"} />
-              <span><b>{source.label}</b><small>{source.activeCount} 件 · {source.schedule}</small></span>
+              <span><b>{source.label}</b><small>{source.activeCount} 件{source.stockQuantity ? ` · 在庫 ${source.stockQuantity}` : ""} · {source.schedule}</small></span>
               <Check size={14} />
             </button>
           ))}

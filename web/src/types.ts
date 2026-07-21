@@ -8,6 +8,7 @@ export type Product = {
   name: string;
   url: string;
   prices: number[];
+  qty: number | null;
   currency: "JPY";
   category: ProductCategory;
   active: boolean;
@@ -21,6 +22,7 @@ export type Source = {
   schedule: string;
   category: ProductCategory;
   activeCount: number;
+  stockQuantity: number;
   status: "ok" | "error";
   lastRunDate?: string | null;
   lastSyncAt?: string;

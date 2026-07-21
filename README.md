@@ -4,8 +4,8 @@ Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓
 
 ## 主要功能
 
-- 每小時由 GitHub Actions 喚醒；各商店任務以 UTC 日期限制為每天成功執行一次。
-- 監控新品與在庫狀態，抓取或解析異常時保留舊基準，避免誤報大量下架。
+- 每小時由 GitHub Actions 喚醒；各商店任務以 UTC 日期限制為每天成功執行一次。可另在本機加開 crontab 補足遺漏的整點（見 [`docs/operations.md`](docs/operations.md)）。
+- 監控新品與在庫狀態，並追蹤各商品的在庫數量（列表頁有標示時）；抓取或解析異常時保留舊基準，避免誤報大量下架。
 - 透過 Telegram 發送首次建立基準與新品通知。
 - 自動產生 [`inventory_report.md`](inventory_report.md) 靜態清單。
 - 將商品、來源、同步紀錄與異動事件寫入 Cloud Firestore。

@@ -33,8 +33,14 @@ def parse_total(html):
     return int(m.group(1).replace(",", "")) if m else None
 
 
+def parse_stock_quantity(text):
+    """從商品區塊擷取「在庫数 N」庫存數量；沒有數字（售完或未顯示）回傳 None。"""
+    m = re.search(r"在庫数[\s:：]*([\d,]+)", text)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
 def parse_products(html):
-    """解析 -> {id(str): {"name": str, "in_stock": bool}}（原始清單，含售完）。
+    """解析 -> {id(str): {"name": str, "in_stock": bool, "qty": int|None}}（原始清單，含售完）。
 
     以 data-product-id 為分界切塊；在庫なし / stock soldout 視為售完。
     每個 id 以第一次出現為準。售完過濾在 main 處理。
@@ -50,7 +56,7 @@ def parse_products(html):
         in_stock = "在庫なし" not in block and "stock soldout" not in block
         nm = re.search(r'<span class="goods_name">(.*?)</span>', block, re.S)
         name = html_lib.unescape(re.sub(r"<[^>]+>", "", nm.group(1)).strip()) if nm else ""
-        products[pid] = {"name": name, "in_stock": in_stock}
+        products[pid] = {"name": name, "in_stock": in_stock, "qty": parse_stock_quantity(block)}
     return products
 
 
@@ -73,6 +79,19 @@ def save_state(state):
 def esc(s):
     """HTML 跳脫，供 parse_mode=HTML 訊息安全顯示名稱。"""
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _state_product(product):
+    """依是否有庫存數量決定存成字串或含 qty 的 dict，未知數量沿用舊字串格式。"""
+    name = product.get("name", "")
+    qty = product.get("qty")
+    return {"name": name, "qty": qty} if qty is not None else name
+
+
+def _product_name(value):
+    if isinstance(value, dict):
+        return value.get("name", "")
+    return value if isinstance(value, str) else ""
 
 
 def product_line(pid, name):
@@ -115,7 +134,7 @@ def main():
         return False
 
     # 只保留有貨商品（售完不追蹤、不入報告）
-    current = {pid: v.get("name", "") for pid, v in raw.items() if v.get("in_stock")}
+    current = {pid: _state_product(v) for pid, v in raw.items() if v.get("in_stock")}
     print(f"原始 {len(raw)} 件，有貨 {len(current)}，售完 {len(raw) - len(current)}")
 
     prev = state.get("products")
@@ -139,7 +158,7 @@ def main():
         return True
 
     lines = [f"🆕 <b>bushiroad 668 新增商品 ({len(new_ids)})</b>", ""]
-    lines += [product_line(pid, current[pid]) for pid in new_ids]
+    lines += [product_line(pid, _product_name(current[pid])) for pid in new_ids]
     message = "\n".join(lines)
     print(f"新增 {len(new_ids)} 件，發送通知")
     if send_telegram(message):
