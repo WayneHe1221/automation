@@ -53,9 +53,30 @@ def _product_name(value):
     return value if isinstance(value, str) else ""
 
 
-def _item_line(name, url, suffix=""):
+def _product_qty(value):
+    return value.get("qty") if isinstance(value, dict) else None
+
+
+def _qty_suffix(value):
+    qty = _product_qty(value)
+    return f" — 在庫 {qty}" if qty is not None else ""
+
+
+def _item_line(value, url):
+    name = _product_name(value)
     label = _md_escape(name) if name else url
-    return f"- [{label}]({url}){suffix}"
+    return f"- [{label}]({url}){_qty_suffix(value)}"
+
+
+def _section_stock(products):
+    """回傳該區塊已知庫存數量的合計；沒有任何數量資訊時回傳 None。"""
+    quantities = [q for q in (_product_qty(v) for v in products.values()) if q is not None]
+    return sum(quantities) if quantities else None
+
+
+def _count_label(products):
+    stock = _section_stock(products)
+    return f"{len(products)} 件" + (f"、在庫共 {stock}" if stock is not None else "")
 
 
 def build_report():
@@ -63,16 +84,18 @@ def build_report():
     lines.append("> 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。")
     lines.append("")
     total = 0
+    total_stock = 0
 
     # square-bushiroad 668
     b6 = _load("bushiroad_668.json").get("products", {})
-    lines.append(f"## square-bushiroad 668（每天）— {len(b6)} 件")
+    lines.append(f"## square-bushiroad 668（每天）— {_count_label(b6)}")
     lines.append("")
-    for pid, name in b6.items():
-        lines.append(_item_line(name, URL["bushiroad"](pid)))
+    for pid, value in b6.items():
+        lines.append(_item_line(value, URL["bushiroad"](pid)))
     if b6:
         lines.append("")
     total += len(b6)
+    total_stock += _section_stock(b6) or 0
 
     # shop_watch 多站
     sw = _load("shop_watch.json").get("sites", {})
@@ -86,13 +109,14 @@ def build_report():
     ]
     for key, label, urlkey in sw_sites:
         prods = sw.get(key, {}).get("products", {})
-        lines.append(f"## {label}（每天）— {len(prods)} 件")
+        lines.append(f"## {label}（每天）— {_count_label(prods)}")
         lines.append("")
         for pid, value in prods.items():
-            lines.append(_item_line(_product_name(value), URL[urlkey](pid)))
+            lines.append(_item_line(value, URL[urlkey](pid)))
         if prods:
             lines.append("")
         total += len(prods)
+        total_stock += _section_stock(prods) or 0
 
     lines.append("## 販售牌組")
     lines.append("")
@@ -106,15 +130,19 @@ def build_report():
     ]
     for key, label, urlkey in deck_sites:
         prods = sw.get(key, {}).get("products", {})
-        lines.append(f"### {label}（每天）— {len(prods)} 件")
+        lines.append(f"### {label}（每天）— {_count_label(prods)}")
         lines.append("")
         for pid, value in prods.items():
-            lines.append(_item_line(_product_name(value), URL[urlkey](pid)))
+            lines.append(_item_line(value, URL[urlkey](pid)))
         if prods:
             lines.append("")
         total += len(prods)
+        total_stock += _section_stock(prods) or 0
 
-    lines.insert(2, f"**合計 {total} 件**")
+    summary = f"**合計 {total} 件**"
+    if total_stock:
+        summary += f"，已知在庫共 {total_stock} 件"
+    lines.insert(2, summary)
     lines.insert(3, "")
     return "\n".join(lines).rstrip() + "\n"
 

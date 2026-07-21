@@ -57,6 +57,15 @@ def parse_count_number(html):
     return int(m.group(1).replace(",", "")) if m else None
 
 
+def parse_stock_quantity(text):
+    """從商品區塊擷取「在庫数 N」庫存數量；沒有數字（售完或未顯示）回傳 None。
+
+    相容多站寫法：`在庫数 29点`、`在庫数 48個`、`在庫数：9`、`在庫数:\n 1`。
+    """
+    m = re.search(r"在庫数[\s:：]*([\d,]+)", text)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
 def parse_fukufuku_count(html):
     m = re.search(r'product-list__result[^>]*>.*?<span>([\d,]+)</span>件', html, re.S)
     return int(m.group(1).replace(",", "")) if m else None
@@ -85,7 +94,11 @@ def parse_squarebushi(html):
         block = html[m.end():end]
         in_stock = "在庫なし" not in block and "stock soldout" not in block
         nm = re.search(r'<span class="goods_name">(.*?)</span>', block, re.S)
-        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
+        products[pid] = {
+            "name": _clean(nm.group(1)) if nm else "",
+            "in_stock": in_stock,
+            "qty": parse_stock_quantity(block),
+        }
     return products
 
 
@@ -98,10 +111,16 @@ def parse_product_links(html):
         if pid in products:
             continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
-        window = html[m.end():min(m.end() + 3000, end if end > m.end() else len(html))]
+        block_end = end if end > m.end() else len(html)
+        window = html[m.end():min(m.end() + 3000, block_end)]
         in_stock = "在庫なし" not in window and "stock soldout" not in window
         nm = re.search(r'<span class="goods_name">(.*?)</span>', window, re.S)
-        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
+        # 在庫数 可能落在名稱之後較遠處，因此以整個商品區塊（到下一個商品連結為止）擷取數量。
+        products[pid] = {
+            "name": _clean(nm.group(1)) if nm else "",
+            "in_stock": in_stock,
+            "qty": parse_stock_quantity(html[m.end():block_end]),
+        }
     return products
 
 
@@ -117,7 +136,13 @@ def parse_torecolo(html):
             continue
         in_stock = "売切れ" not in block
         nm = re.search(r'class="[^"]*goods-name[^"]*"[^>]*>(.*?)</a>', block, re.S)
-        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
+        stock = re.search(r'data-stock-count="(\d+)"', block)
+        qty = int(stock.group(1)) if stock and int(stock.group(1)) > 0 else None
+        products[pid] = {
+            "name": _clean(nm.group(1)) if nm else "",
+            "in_stock": in_stock,
+            "qty": qty,
+        }
     return products
 
 
@@ -163,6 +188,7 @@ def parse_hobbystation(html):
         products[product_id] = {
             "name": _clean(name_match.group(1)),
             "in_stock": not sold_out,
+            "qty": parse_stock_quantity(block),
         }
     return products
 
@@ -221,12 +247,17 @@ def parse_gurapan(html):
         if pid in products:
             continue
         end = matches[i + 1].start() if i + 1 < len(matches) else len(html)
-        window = html[m.end():min(m.end() + 3000, end if end > m.end() else len(html))]
+        block_end = end if end > m.end() else len(html)
+        window = html[m.end():min(m.end() + 3000, block_end)]
         in_stock = not (
             "SOLD OUT" in window.upper() or "品切" in window or "売り切れ" in window
         )
         nm = re.search(r'class="ec-shelfGrid__item-name">(.*?)</p>', window, re.S)
-        products[pid] = {"name": _clean(nm.group(1)) if nm else "", "in_stock": in_stock}
+        products[pid] = {
+            "name": _clean(nm.group(1)) if nm else "",
+            "in_stock": in_stock,
+            "qty": parse_stock_quantity(html[m.end():block_end]),
+        }
     return products
 
 
@@ -457,7 +488,15 @@ def _product_name(value):
 def _state_product(product):
     name = product.get("name", "")
     prices = product.get("prices", [])
-    return {"name": name, "prices": prices} if prices else name
+    qty = product.get("qty")
+    if not prices and qty is None:
+        return name
+    stored = {"name": name}
+    if prices:
+        stored["prices"] = prices
+    if qty is not None:
+        stored["qty"] = qty
+    return stored
 
 
 def notify_new_items(site, new_ids, current):

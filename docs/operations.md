@@ -12,6 +12,35 @@ GitHub cron 使用 UTC。爬取任務以 UTC 日期判斷「今天是否成功�
 
 `scheduled-tasks` 使用 concurrency group，前一輪尚未結束時不會被新一輪取消。
 
+## 本機 cron（補足 GitHub Actions）
+
+GitHub 排程是 best-effort，可能整點延遲或跳過。可在本機加開 crontab，於錯開的分鐘再跑一次同樣的 `run_all.py`，補足遺漏的整點。任務本身每天（UTC）只實際抓取一次，因此當天若 GitHub Actions 已成功執行，本機這一輪會安全略過，不會重複通知或洗版。
+
+| 檔案 | 用途 |
+| --- | --- |
+| `scripts/local_run.sh` | 執行器：拉 `main` → `run_all.py`（抓取＋通知＋報告＋Firestore）→ commit／push |
+| `scripts/install_local_cron.sh` | 安裝／移除 crontab，並建立 `.venv`、安裝依賴 |
+| `scripts/local_cron.env.example` | 機密範本；複製成 `local_cron.env`（已被 gitignore）填入 `TG_*`、`FIREBASE_PROJECT_ID`、`GOOGLE_APPLICATION_CREDENTIALS` |
+
+設定步驟：
+
+```bash
+cp scripts/local_cron.env.example scripts/local_cron.env   # 填入 Telegram 與 Firebase 憑證
+scripts/install_local_cron.sh                              # 預設每小時第 55 分（與 GitHub 第 25 分錯開）
+scripts/install_local_cron.sh --minute 40                  # 自訂分鐘
+scripts/install_local_cron.sh --show                       # 檢視目前 crontab
+scripts/install_local_cron.sh --uninstall                  # 手動移除
+```
+
+重點行為：
+
+- **到期自動退場**：`local_run.sh` 內建 `END_DATE="2026-09-01"`，超過當天後執行時會自我移除 crontab 排程並停止（含 9/1，隔日起卸載）。要延長就改這個日期後重新安裝。
+- **憑證**：`local_cron.env` 缺項時，Telegram 或 Firestore 步驟會安全略過；要含 Firestore 同步就必須填 `FIREBASE_PROJECT_ID` 與指向 service account JSON 的 `GOOGLE_APPLICATION_CREDENTIALS`。
+- **SSL**：python.org 的 macOS Python 預設抓不到根憑證，執行器會自動把 `SSL_CERT_FILE` 指向 `.venv` 內 certifi 的憑證庫。
+- **不重疊**：以 `.local_cron.lock` 目錄鎖避免與前一輪重疊；push 遇衝突會 rebase 後重試。
+- **記錄**：輸出追加到 `scripts/local_cron.log`（已被 gitignore）。
+- **macOS 權限**：cron 需要「完整磁碟取用權限」；請於系統設定 → 隱私權與安全性 → 完整磁碟取用權限，加入 `/usr/sbin/cron`。
+
 ## 執行順序與失敗行為
 
 `run_all.py` 自動載入 `tasks/` 內的模組，依 `ORDER`（預設 100）及檔名排序：

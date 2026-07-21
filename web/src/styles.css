@@ -131,7 +131,8 @@ body::before {
 .pulse-dot { animation: pulse 2s ease-in-out infinite; }
 
 .error-banner { margin-bottom: 18px; padding: 13px 16px; display: flex; gap: 9px; align-items: center; color: #ffd5ca; background: rgba(235, 94, 75, 0.1); border: 1px solid rgba(235, 94, 75, 0.2); border-radius: 12px; font-size: 15.6px; }
-.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.metrics-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1180px) { .metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .metric-card { position: relative; min-height: 132px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(145deg, rgba(16, 33, 29, 0.94), rgba(10, 22, 19, 0.94)); overflow: hidden; }
 .metric-card::after { content: ""; position: absolute; width: 100px; height: 100px; right: -45px; bottom: -55px; border-radius: 50%; background: currentColor; opacity: 0.06; filter: blur(2px); }
 .metric-top { display: flex; align-items: center; gap: 10px; }
@@ -190,6 +191,9 @@ body::before {
 .product-main a svg { flex: 0 0 auto; color: #688077; }
 .source-name, .mobile-source { color: #8da198; font-size: 12px; }
 .mobile-source { display: none; margin-top: 3px; }
+.product-sub { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.stock-badge { display: inline-flex; align-items: center; gap: 4px; margin-top: 3px; padding: 2px 7px; color: #9ad9bd; background: rgba(112, 239, 181, 0.1); border-radius: 999px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.stock-badge svg { flex: 0 0 auto; color: #70efb5; }
 .price-value { color: #d8e6e0; font-size: 12px; line-height: 1.5; }
 .availability { justify-self: start; padding: 5px 8px; border-radius: 999px; font-size: 10.8px; font-weight: 700; }
 .availability.active { color: #8af3c3; background: rgba(112, 239, 181, 0.08); }
