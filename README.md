@@ -73,6 +73,8 @@ cd web && npm run build
 cd web && npm audit --omit=dev --audit-level=high
 ```
 
+本機輔助排程使用隔離的 `.local_cron/repo` clone，不會切換或修改目前工作的 Git branch；安裝與憑證設定請參考 [`docs/operations.md`](docs/operations.md)。
+
 `run_all.py` 會自動探索 `tasks/` 下具有 `main()` 的模組，依 `ORDER` 與檔名排序。單一任務失敗不會阻止後續任務，但整體程序最後會回傳失敗，讓 CI 正確標示異常。
 
 ## GitHub 設定

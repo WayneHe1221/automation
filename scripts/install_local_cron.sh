@@ -38,10 +38,26 @@ case "$ACTION" in
   install)
     chmod +x "$RUNNER"
     REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-    # 建立／補齊虛擬環境：requirements 內含 certifi（修正 macOS urllib 憑證）與 firebase-admin。
-    if [[ ! -x "$REPO_ROOT/.venv/bin/python" ]]; then
-      echo "建立虛擬環境 .venv …"
-      python3 -m venv "$REPO_ROOT/.venv"
+    # 優先使用 Homebrew 的新版 Python，避免 macOS 內建 Python 3.9／LibreSSL。
+    PYTHON=""
+    for candidate in "${CRON_PYTHON:-}" /opt/homebrew/bin/python3.13 /opt/homebrew/bin/python3.12 /usr/local/bin/python3.13 /usr/local/bin/python3.12 "$(command -v python3 || true)"; do
+      if [[ -n "$candidate" && -x "$candidate" ]]; then
+        PYTHON="$candidate"
+        break
+      fi
+    done
+    if [[ -z "$PYTHON" ]]; then
+      echo "找不到可用的 Python。"
+      exit 1
+    fi
+
+    venv_is_current=0
+    if [[ -x "$REPO_ROOT/.venv/bin/python" ]]; then
+      venv_is_current="$("$REPO_ROOT/.venv/bin/python" -c 'import sys; print(int(sys.version_info >= (3, 12)))')"
+    fi
+    if [[ "$venv_is_current" != "1" ]]; then
+      echo "以 $PYTHON 重建虛擬環境 .venv …"
+      "$PYTHON" -m venv --clear "$REPO_ROOT/.venv"
     fi
     echo "安裝／更新 Python 依賴 …"
     "$REPO_ROOT/.venv/bin/pip" install -q -r "$REPO_ROOT/requirements.txt"
@@ -49,7 +65,7 @@ case "$ACTION" in
       echo "提醒：尚未建立 $SCRIPT_DIR/local_cron.env，請先由 local_cron.env.example 複製並填值（含 Firestore 憑證）。"
     fi
     # 每小時第 $MINUTE 分執行一次；stdout/stderr 追加到 log。
-    line="$MINUTE * * * * /usr/bin/env bash $RUNNER >> $LOG_FILE 2>&1"
+    line="$MINUTE * * * * /usr/bin/env bash \"$RUNNER\" >> \"$LOG_FILE\" 2>&1"
     { without_runner; echo "$line"; } | crontab -
     echo "已安裝本機排程：每小時第 $MINUTE 分。"
     echo "  指令：$line"
