@@ -24,7 +24,7 @@ log() { printf '%s %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$*"; }
 # ---- 到期自我卸載 -------------------------------------------------------
 TODAY="$(date '+%Y-%m-%d')"
 if [[ "$TODAY" > "$END_DATE" ]]; then
-  log "已超過維護期限 $END_DATE，移除本機 crontab 排程並結束。"
+  log "已超過維護期限 ${END_DATE}，移除本機 crontab 排程並結束。"
   ( crontab -l 2>/dev/null | grep -Fv "$SCRIPT_DIR/local_run.sh" ) | crontab - 2>/dev/null || true
   exit 0
 fi
@@ -46,7 +46,7 @@ if [[ -f "$ENV_FILE" ]]; then
   source "$ENV_FILE"
   set +a
 else
-  log "警告：找不到 $ENV_FILE，Telegram／Firestore 相關步驟可能會略過。"
+  log "警告：找不到 ${ENV_FILE}，Telegram／Firestore 相關步驟可能會略過。"
 fi
 
 # ---- 選用 Python 直譯器 -------------------------------------------------
@@ -68,7 +68,7 @@ if [[ -z "${SSL_CERT_FILE:-}" ]]; then
 fi
 
 # ---- 以獨立 clone 取得最新 main，不碰使用者目前工作的 branch -----------
-log "=== 本機排程開始（$PYTHON）==="
+log "=== 本機排程開始（${PYTHON}）==="
 if [[ ! -d "$REPO_ROOT/.git" ]]; then
   origin_url="$(git -C "$SOURCE_ROOT" remote get-url origin 2>/dev/null || true)"
   if [[ -z "$origin_url" ]]; then
