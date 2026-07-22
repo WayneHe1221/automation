@@ -18,7 +18,7 @@ GitHub 排程是 best-effort，可能整點延遲或跳過。可在本機加開 
 
 | 檔案 | 用途 |
 | --- | --- |
-| `scripts/local_run.sh` | 執行器：拉 `main` → `run_all.py`（抓取＋通知＋報告＋Firestore）→ commit／push |
+| `scripts/local_run.sh` | 執行器：在 `.local_cron/repo` 的獨立 clone 拉 `main` → `run_all.py` → commit／push，不碰目前工作分支 |
 | `scripts/install_local_cron.sh` | 安裝／移除 crontab，並建立 `.venv`、安裝依賴 |
 | `scripts/local_cron.env.example` | 機密範本；複製成 `local_cron.env`（已被 gitignore）填入 `TG_*`、`FIREBASE_PROJECT_ID`、`GOOGLE_APPLICATION_CREDENTIALS` |
 
@@ -37,7 +37,9 @@ scripts/install_local_cron.sh --uninstall                  # 手動移除
 - **到期自動退場**：`local_run.sh` 內建 `END_DATE="2026-09-01"`，超過當天後執行時會自我移除 crontab 排程並停止（含 9/1，隔日起卸載）。要延長就改這個日期後重新安裝。
 - **憑證**：`local_cron.env` 缺項時，Telegram 或 Firestore 步驟會安全略過；要含 Firestore 同步就必須填 `FIREBASE_PROJECT_ID` 與指向 service account JSON 的 `GOOGLE_APPLICATION_CREDENTIALS`。
 - **SSL**：python.org 的 macOS Python 預設抓不到根憑證，執行器會自動把 `SSL_CERT_FILE` 指向 `.venv` 內 certifi 的憑證庫。
-- **不重疊**：以 `.local_cron.lock` 目錄鎖避免與前一輪重疊；push 遇衝突會 rebase 後重試。
+- **隔離工作目錄**：實際抓取在 `.local_cron/repo` 的獨立 clone 執行，即使主目錄正在 feature branch 開發也不會被切分支或改檔。
+- **不重疊**：以 `.local_cron/lock` 目錄鎖避免與前一輪重疊；push 遇衝突會 rebase 後重試。
+- **Python**：安裝器優先使用 Homebrew Python 3.13／3.12；若既有 `.venv` 還是 Python 3.9，會自動重建。
 - **記錄**：輸出追加到 `scripts/local_cron.log`（已被 gitignore）。
 - **macOS 權限**：cron 需要「完整磁碟取用權限」；請於系統設定 → 隱私權與安全性 → 完整磁碟取用權限，加入 `/usr/sbin/cron`。
 

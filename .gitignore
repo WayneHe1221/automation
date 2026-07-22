@@ -15,6 +15,10 @@ dist/
 web/public/demo-data.json
 *.tsbuildinfo
 
+# 本機輔助排程
+.local_cron/
+scripts/local_cron.log
+
 # Firebase CLI
 .firebase/
 firebase-debug.log

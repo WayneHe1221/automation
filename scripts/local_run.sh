@@ -12,7 +12,9 @@ set -uo pipefail
 END_DATE="2026-09-01"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+SOURCE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+RUNTIME_ROOT="${CARD_RADAR_CRON_HOME:-$SOURCE_ROOT/.local_cron}"
+REPO_ROOT="$RUNTIME_ROOT/repo"
 
 # cron 的 PATH 很精簡，補上常見的 git／python／node 位置。
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
@@ -28,14 +30,13 @@ if [[ "$TODAY" > "$END_DATE" ]]; then
 fi
 
 # ---- 防重疊：同一時間只允許一個執行個體 ---------------------------------
-LOCK_DIR="$REPO_ROOT/.local_cron.lock"
+mkdir -p "$RUNTIME_ROOT"
+LOCK_DIR="$RUNTIME_ROOT/lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
   log "偵測到前一輪仍在執行（$LOCK_DIR 已存在），本輪跳過。"
   exit 0
 fi
 trap 'rmdir "$LOCK_DIR" 2>/dev/null || true' EXIT
-
-cd "$REPO_ROOT" || { log "無法進入 $REPO_ROOT"; exit 1; }
 
 # ---- 載入本機機密（TG_*, FIREBASE_PROJECT_ID, GOOGLE_APPLICATION_CREDENTIALS）
 ENV_FILE="$SCRIPT_DIR/local_cron.env"
@@ -49,8 +50,8 @@ else
 fi
 
 # ---- 選用 Python 直譯器 -------------------------------------------------
-if [[ -x "$REPO_ROOT/.venv/bin/python" ]]; then
-  PYTHON="$REPO_ROOT/.venv/bin/python"
+if [[ -x "$SOURCE_ROOT/.venv/bin/python" ]]; then
+  PYTHON="$SOURCE_ROOT/.venv/bin/python"
 else
   PYTHON="$(command -v python3 || true)"
 fi
@@ -66,12 +67,35 @@ if [[ -z "${SSL_CERT_FILE:-}" ]]; then
   [[ -n "$certifi_path" ]] && export SSL_CERT_FILE="$certifi_path"
 fi
 
-# ---- 取得最新 main（保留任何本機殘留變更） -----------------------------
+# ---- 以獨立 clone 取得最新 main，不碰使用者目前工作的 branch -----------
 log "=== 本機排程開始（$PYTHON）==="
-git rev-parse --abbrev-ref HEAD | grep -qx "main" || log "警告：目前不在 main 分支。"
-if ! git pull --rebase --autostash origin main; then
+if [[ ! -d "$REPO_ROOT/.git" ]]; then
+  origin_url="$(git -C "$SOURCE_ROOT" remote get-url origin 2>/dev/null || true)"
+  if [[ -z "$origin_url" ]]; then
+    log "找不到 origin URL，無法建立獨立 clone。"
+    exit 1
+  fi
+  log "建立獨立排程 clone：$REPO_ROOT"
+  if ! git clone --branch main --single-branch "$origin_url" "$REPO_ROOT"; then
+    log "git clone 失敗，本輪跳過。"
+    exit 1
+  fi
+fi
+
+cd "$REPO_ROOT" || { log "無法進入 $REPO_ROOT"; exit 1; }
+git reset --hard HEAD >/dev/null
+if ! git pull --rebase origin main; then
   log "git pull 失敗，本輪跳過（不動 state）。"
   exit 1
+fi
+
+# 上一輪若 commit 成功但 push 暫時失敗，先補推再執行本輪。
+if [[ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]]; then
+  log "偵測到上一輪尚未推送的 commit，先補推。"
+  if ! git push origin main; then
+    log "補推失敗，本輪跳過以避免累積分歧。"
+    exit 1
+  fi
 fi
 
 # ---- 執行所有任務 -------------------------------------------------------
