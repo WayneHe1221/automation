@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 148 件**，已知在庫共 892 件
+**合計 149 件**，已知在庫共 868 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -13,22 +13,22 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『【推しの子】Vol.3』(1BOX=10パック) (2608/07)](https://www.c-labo-online.jp/product/382227)
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 9 件、在庫共 40
+## gurapan 1081（每天）— 9 件、在庫共 35
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 9
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726) — 在庫 2
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727) — 在庫 4
-- [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417) — 在庫 4
+- [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417) — 在庫 3
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 4
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 3
-- [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 3
+- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 2
+- [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 1
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 5
-- [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 6
+- [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 5
 
-## manasource 2268（每天）— 8 件、在庫共 234
+## manasource 2268（每天）— 8 件、在庫共 214
 
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019) — 在庫 46
-- [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 72
+- [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 52
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717) — 在庫 40
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498) — 在庫 32
 - [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499) — 在庫 32
@@ -160,9 +160,10 @@
 
 ### 福福トレカ WSデッキ販売（每天）— 0 件
 
-### torecolo WSデッキ販売（每天）— 7 件、在庫共 7
+### torecolo WSデッキ販売（每天）— 8 件、在庫共 8
 
 - [【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス](https://www.torecolo.jp/shop/g/gDECK-WSTAL/) — 在庫 1
+- [【ヴァイス】デッキ販売 東方 ８門](https://www.torecolo.jp/shop/g/gDECK-WSTHP/) — 在庫 1
 - [【ヴァイス】デッキ販売 BanG Dream! 扉門](https://www.torecolo.jp/shop/g/gDECK-WSBD3/) — 在庫 1
 - [【ヴァイス】デッキ販売 アイドルマスター ミリオンライブ！ 電源門](https://www.torecolo.jp/shop/g/gDECK-WSIMS/) — 在庫 1
 - [【ヴァイス】デッキ販売 カードキャプターさくら 扉電源](https://www.torecolo.jp/shop/g/gDECK-WSCCS/) — 在庫 1
