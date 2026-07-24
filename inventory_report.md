@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 149 件**，已知在庫共 874 件
+**合計 149 件**，已知在庫共 877 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -51,9 +51,10 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 102 件、在庫共 613
+## square-bushiroad 284（每天）— 103 件、在庫共 617
 
-- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039) — 在庫 16
+- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039) — 在庫 13
+- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/105040) — 在庫 7
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805) — 在庫 29
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806) — 在庫 2
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796) — 在庫 6
@@ -171,9 +172,8 @@
 - [【ヴァイス】デッキ販売 BanG Dream! 門枝](https://www.torecolo.jp/shop/g/gDECK-WSBD2/) — 在庫 1
 - [【ヴァイス】デッキ販売 リコリス・リコイル 枝](https://www.torecolo.jp/shop/g/gDECK-WSLRC/) — 在庫 1
 
-### c-labo WSデッキ販売（每天）— 2 件、在庫共 2
+### c-labo WSデッキ販売（每天）— 1 件、在庫共 1
 
-- [【WS】《黄緑青》プリンセスコネクト！Re:Dive 宝チョイス デッキ](https://www.c-labo-online.jp/product/385324) — 在庫 1
 - [【WS】《青赤》アイドルマスターシンデレラガールズ 門ストブ デッキ](https://www.c-labo-online.jp/product/384770) — 在庫 1
 
 ### Hobby Station WSデッキ販売（每天）— 5 件、在庫共 5
