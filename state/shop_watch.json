@@ -587,6 +587,10 @@
     },
     "torecolo_deck": {
       "products": {
+        "DECK-WSTHP01": {
+          "name": "【ヴァイス】デッキ販売 東方 ８扉",
+          "qty": 1
+        },
         "DECK-WSTAL": {
           "name": "【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス",
           "qty": 1

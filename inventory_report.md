@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 149 件**，已知在庫共 877 件
+**合計 150 件**，已知在庫共 878 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -161,8 +161,9 @@
 
 ### 福福トレカ WSデッキ販売（每天）— 0 件
 
-### torecolo WSデッキ販売（每天）— 8 件、在庫共 8
+### torecolo WSデッキ販売（每天）— 9 件、在庫共 9
 
+- [【ヴァイス】デッキ販売 東方 ８扉](https://www.torecolo.jp/shop/g/gDECK-WSTHP01/) — 在庫 1
 - [【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス](https://www.torecolo.jp/shop/g/gDECK-WSTAL/) — 在庫 1
 - [【ヴァイス】デッキ販売 東方 ８門](https://www.torecolo.jp/shop/g/gDECK-WSTHP/) — 在庫 1
 - [【ヴァイス】デッキ販売 BanG Dream! 扉門](https://www.torecolo.jp/shop/g/gDECK-WSBD3/) — 在庫 1
