@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 150 件**，已知在庫共 877 件
+**合計 147 件**，已知在庫共 866 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -14,16 +14,13 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『【推しの子】Vol.3』(1BOX=10パック) (2608/07)](https://www.c-labo-online.jp/product/382227)
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 9 件、在庫共 34
+## gurapan 1081（每天）— 6 件、在庫共 25
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 9
 - [【簡易版】「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221726) — 在庫 2
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/221727) — 在庫 4
-- [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417) — 在庫 2
-- [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 4
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 2
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 1
-- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 5
+- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 4
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 5
 
 ## manasource 2268（每天）— 7 件、在庫共 210
@@ -51,10 +48,10 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 103 件、在庫共 617
+## square-bushiroad 284（每天）— 103 件、在庫共 615
 
 - [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039) — 在庫 13
-- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/105040) — 在庫 7
+- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/105040) — 在庫 5
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805) — 在庫 29
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806) — 在庫 2
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796) — 在庫 6
