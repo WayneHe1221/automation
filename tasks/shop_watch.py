@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """任務：多站商品列表追蹤（每天一次）。
 
-監看多個卡牌商店的列表頁，偵測「新增商品」並用 Telegram 通知（名稱 + 連結）。
+監看多個卡牌商店的列表頁，偵測「異動」（新增／在庫／價格／下架）並用 Telegram 通知；
+只有真的有異動才發訊息，下架只給文案，其餘異動附上商品連結。
 各站結構不同，以 SITES 設定表 + 對應解析器處理。
 狀態存於 state/shop_watch.json。
 
@@ -17,26 +18,24 @@ import re
 import sys
 import urllib.parse
 from datetime import datetime, timezone
+from functools import partial
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from lib import digest  # noqa: E402
+from lib.changes import diff_products, has_changes  # noqa: E402
 from lib.fetch import fetch_html  # noqa: E402
-from lib.notify import send_telegram  # noqa: E402
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE_PATH = os.path.join(REPO_ROOT, "state", "shop_watch.json")
 
 MAX_PAGES = 10  # 分頁安全上限
-NOTIFY_MAX_ITEMS = 25  # 單站單則訊息最多列出幾件，其餘以「…等 N 件」收尾
+NOTIFY_MAX_ITEMS = 25  # 單站單一異動區塊最多列出幾件，其餘以「…等 N 件」收尾
 RAW_DROP_GUARD_MINIMUM = 10
 RAW_DROP_GUARD_RATIO = 0.5
 MOBILE_USER_AGENT = (
     "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) "
     "AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1"
 )
-
-
-def esc(s):
-    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def _clean(s):
@@ -479,12 +478,6 @@ def save_state(state):
         json.dump(state, f, ensure_ascii=False, indent=2)
 
 
-def _product_name(value):
-    if isinstance(value, dict):
-        return value.get("name", "")
-    return value if isinstance(value, str) else ""
-
-
 def _state_product(product):
     name = product.get("name", "")
     prices = product.get("prices", [])
@@ -499,15 +492,20 @@ def _state_product(product):
     return stored
 
 
-def notify_new_items(site, new_ids, current):
-    lines = [f"🆕 <b>{esc(site['label'])} 新增商品 ({len(new_ids)})</b>", ""]
-    for pid in new_ids[:NOTIFY_MAX_ITEMS]:
-        product_name = _product_name(current[pid])
-        name = esc(product_name) if product_name else f"商品 {pid}"
-        lines.append(f"• <b>{name}</b>\n  {site['item_url'](pid)}")
-    if len(new_ids) > NOTIFY_MAX_ITEMS:
-        lines.append(f"…等共 {len(new_ids)} 件")
-    return send_telegram("\n".join(lines))
+def _store_site(sites_state, site, current, raw_count):
+    entry = {"products": current, "raw_count": raw_count}
+    if site.get("revision") is not None:
+        entry["revision"] = site["revision"]
+    sites_state[site["key"]] = entry
+
+
+def _commit_site(ctx, site, current, raw_count):
+    """彙總通知送出成功後才更新基準；全部來源都 commit 完才記為今天已執行。"""
+    _store_site(ctx["sites_state"], site, current, raw_count)
+    ctx["committed"] += 1
+    if ctx["committed"] == ctx["pending"] and ctx["all_ok"]:
+        ctx["state"]["last_run_date"] = ctx["today"]
+    save_state(ctx["state"])
 
 
 def main():
@@ -536,6 +534,16 @@ def main():
     first_run = not sites_state
     startup_summary = []
     all_ok = True
+    # 有異動的站台先登記到本輪彙總通知，由 tasks/notify_digest.py 一次送出；
+    # 送出成功後才透過 _commit_site 更新基準與執行日。
+    ctx = {
+        "state": state,
+        "sites_state": sites_state,
+        "today": today,
+        "pending": 0,
+        "committed": 0,
+        "all_ok": True,
+    }
 
     for site in sites_to_run:
         key = site["key"]
@@ -585,41 +593,35 @@ def main():
         prev = sites_state.get(key, {}).get("products")
 
         if not isinstance(prev, dict):
+            # 建立基準本身不是異動，只記 log 不發通知。
             print(f"[{key}] 首次執行，建立基準：{len(current)} 件（有貨）")
-            sites_state[key] = {"products": current, "raw_count": len(raw)}
-            if site.get("revision") is not None:
-                sites_state[key]["revision"] = site["revision"]
-            startup_summary.append(f"• {esc(site['label'])}：{len(current)} 件（有貨）")
+            _store_site(sites_state, site, current, len(raw))
+            startup_summary.append(f"{site['label']}：{len(current)} 件（有貨）")
             continue
 
-        new_ids = [pid for pid in current if pid not in prev]
-        if not new_ids:
-            print(f"[{key}] 無新增：{len(current)} 件")
-            sites_state[key] = {"products": current, "raw_count": len(raw)}
-            if site.get("revision") is not None:
-                sites_state[key]["revision"] = site["revision"]
+        changes = diff_products(prev, current)
+        if not has_changes(changes):
+            print(f"[{key}] 無異動：{len(current)} 件")
+            _store_site(sites_state, site, current, len(raw))
             continue
 
-        print(f"[{key}] 新增 {len(new_ids)} 件，發送通知")
-        if notify_new_items(site, new_ids, current):
-            sites_state[key] = {"products": current, "raw_count": len(raw)}
-            if site.get("revision") is not None:
-                sites_state[key]["revision"] = site["revision"]
-        else:
-            print(f"[{key}] 通知失敗，保留舊基準，稍後重試")
-            all_ok = False
+        print(f"[{key}] 有異動，加入本輪彙總通知")
+        ctx["pending"] += 1
+        digest.add(
+            site["label"],
+            changes,
+            site["item_url"],
+            partial(_commit_site, ctx, site, current, len(raw)),
+            max_items=NOTIFY_MAX_ITEMS,
+        )
 
-    if startup_summary:
-        if not send_telegram(
-            "✅ <b>多站商品追蹤已啟動</b>\n\n"
-            + "\n".join(startup_summary)
-            + "\n\n之後每天檢查一次，有新增商品會逐站通知。"
-        ):
-            all_ok = False
+    for line in startup_summary:
+        print(f"建立基準：{line}")
 
-    if all_ok:
+    ctx["all_ok"] = all_ok
+    if all_ok and not ctx["pending"]:
         state["last_run_date"] = today
-    else:
+    if not all_ok:
         print("部分站台失敗，今天稍後將重試（已成功站台不會重複通知）")
     save_state(state)
     if first_run:
@@ -628,4 +630,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    ok = main()
+    # 單獨執行時沒有 notify_digest 任務，自己把彙總通知送出。
+    ok = digest.flush() and ok
+    sys.exit(0 if ok else 1)

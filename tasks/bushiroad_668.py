@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """任務：square-bushiroad 商品列表 668 監控（每天一次）。
 
-抓取 product-list/668 -> 解析商品(id/名稱) -> 與上次比較
--> 有「新增商品」就用同一個 Telegram bot 通知。
+抓取 product-list/668 -> 解析商品(id/名稱/在庫) -> 與上次比較
+-> 有「異動」（新增／下架）就登記到 lib/digest.py，與其他來源併成一則通知；
+下架只給文案，新增附上商品連結。
 狀態存於 state/bushiroad_668.json。
 
 節流：本任務每天只實際執行一次。run_all 每小時呼叫時，
@@ -17,8 +18,9 @@ import sys
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from lib import digest  # noqa: E402
+from lib.changes import diff_products, has_changes  # noqa: E402
 from lib.fetch import fetch_html  # noqa: E402
-from lib.notify import send_telegram  # noqa: E402
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE_PATH = os.path.join(REPO_ROOT, "state", "bushiroad_668.json")
@@ -76,9 +78,11 @@ def save_state(state):
         json.dump(state, f, ensure_ascii=False, indent=2)
 
 
-def esc(s):
-    """HTML 跳脫，供 parse_mode=HTML 訊息安全顯示名稱。"""
-    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+LABEL = "bushiroad 668"
+
+
+def _item_url(pid):
+    return f"https://www.square-bushiroad.com/product/{pid}"
 
 
 def _state_product(product):
@@ -86,19 +90,6 @@ def _state_product(product):
     name = product.get("name", "")
     qty = product.get("qty")
     return {"name": name, "qty": qty} if qty is not None else name
-
-
-def _product_name(value):
-    if isinstance(value, dict):
-        return value.get("name", "")
-    return value if isinstance(value, str) else ""
-
-
-def product_line(pid, name):
-    """一行：粗體名稱 + 下一行完整連結。"""
-    label = esc(name) if name else f"商品 {pid}"
-    url = f"https://www.square-bushiroad.com/product/{pid}"
-    return f"• <b>{label}</b>\n  {url}"
 
 
 def main():
@@ -140,35 +131,32 @@ def main():
     prev = state.get("products")
 
     if not isinstance(prev, dict):
+        # 建立基準本身不是異動，只記 log 不發通知。
         print(f"首次執行，建立基準：{len(current)} 件商品")
-        if not send_telegram(
-            f"✅ <b>bushiroad 668 追蹤已啟動</b>\n\n"
-            f"目前共 <b>{len(current)}</b> 件商品。\n"
-            f"之後每天檢查一次，有<b>新增商品</b>會通知你。"
-        ):
-            return False
         save_state({"products": current, "last_run_date": today})
         return True
 
-    new_ids = [pid for pid in current if pid not in prev]
+    changes = diff_products(prev, current)
 
-    if not new_ids:
-        print(f"無新增：{len(current)} 件商品")
+    if not has_changes(changes):
+        print(f"無異動：{len(current)} 件商品")
         save_state({"products": current, "last_run_date": today})
         return True
 
-    lines = [f"🆕 <b>bushiroad 668 新增商品 ({len(new_ids)})</b>", ""]
-    lines += [product_line(pid, _product_name(current[pid])) for pid in new_ids]
-    message = "\n".join(lines)
-    print(f"新增 {len(new_ids)} 件，發送通知")
-    if send_telegram(message):
-        save_state({"products": current, "last_run_date": today})
-        return True
-    else:
-        # 通知失敗：不更新狀態（含 last_run_date），下個整點重試。
-        print("通知失敗，保留舊基準，稍後重試")
-        return False
+    # 有異動：登記到本輪彙總通知。送出成功才更新狀態（含 last_run_date），
+    # 失敗就保留舊基準，下個整點重新比對並重試。
+    print("有異動，加入本輪彙總通知")
+    digest.add(
+        LABEL,
+        changes,
+        _item_url,
+        lambda: save_state({"products": current, "last_run_date": today}),
+    )
+    return True
 
 
 if __name__ == "__main__":
-    main()
+    ok = main()
+    # 單獨執行時沒有 notify_digest 任務，自己把彙總通知送出。
+    ok = digest.flush() and ok
+    sys.exit(0 if ok else 1)
