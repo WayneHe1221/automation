@@ -1,12 +1,12 @@
 # Card Radar
 
-Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓取多個商店的在庫商品，將狀態保存於 Git，透過 Telegram 通知新品，並把整理後的資料同步到受 Google 登入保護的 Firebase 儀表板。
+Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓取多個商店的在庫商品，將狀態保存於 Git，透過 Telegram 通知異動，並把整理後的資料同步到受 Google 登入保護的 Firebase 儀表板。
 
 ## 主要功能
 
 - 每小時由 GitHub Actions 喚醒；各商店任務以 UTC 日期限制為每天成功執行一次。可另在本機加開 crontab 補足遺漏的整點（見 [`docs/operations.md`](docs/operations.md)）。
 - 監控新品與在庫狀態，並追蹤各商品的在庫數量（列表頁有標示時）；抓取或解析異常時保留舊基準，避免誤報大量下架。
-- 透過 Telegram 發送首次建立基準與新品通知。
+- 只在有異動時發 Telegram 通知，且一輪只發**一則**：所有來源併成同一則訊息，新增與價格變化附上商品連結，下架只列文案；在庫數變動不通知（幾乎每天都變、會重複洗版），沒有異動或首次建立基準時完全不發訊息。
 - 自動產生 [`inventory_report.md`](inventory_report.md) 靜態清單。
 - 將商品、來源、同步紀錄與異動事件寫入 Cloud Firestore。
 - 提供 React + Firebase Hosting 儀表板，支援一般商品／Deck 販售分類、價格、搜尋、來源／狀態篩選及即時更新。
@@ -17,7 +17,7 @@ Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓
 flowchart LR
     A["GitHub Actions<br/>每小時 25 分"] --> B["Python 爬取任務"]
     B --> C["state/*.json"]
-    B --> D["Telegram 通知"]
+    B --> D["Telegram 彙總通知<br/>（一輪一則）"]
     C --> E["inventory_report.md"]
     C --> F["Cloud Firestore"]
     F --> G["React 儀表板"]

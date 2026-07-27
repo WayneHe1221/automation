@@ -47,9 +47,10 @@ scripts/install_local_cron.sh --uninstall                  # 手動移除
 
 `run_all.py` 自動載入 `tasks/` 內的模組，依 `ORDER`（預設 100）及檔名排序：
 
-1. 商店抓取任務更新 `state/*.json`。
-2. `firebase_sync`（`ORDER = 800`）在有設定 `FIREBASE_PROJECT_ID` 時同步 Firestore。
-3. `inventory_report`（`ORDER = 900`）以最新 state 重建報告。
+1. 商店抓取任務更新 `state/*.json`；有異動的來源改為登記到 `lib/digest.py`，先不寫入基準。
+2. `notify_digest`（`ORDER = 500`）把本輪所有來源的異動併成一則 Telegram 通知送出，成功後才逐一寫入基準與當日執行紀錄。
+3. `firebase_sync`（`ORDER = 800`）在有設定 `FIREBASE_PROJECT_ID` 時同步 Firestore。
+4. `inventory_report`（`ORDER = 900`）以最新 state 重建報告。
 
 CardMax `ct1849` 使用手機版頁面取得商品名稱、庫存與含稅價格；價格會保存在 state，並由 `firebase_sync` 寫入 Firestore 供儀表板顯示及追蹤後續變化。
 
@@ -59,7 +60,9 @@ CardMax `ct1849` 使用手機版頁面取得商品名稱、庫存與含稅價格
 
 - 抓取失敗、頁面被導向非預期網域、缺少關鍵 HTML 標記或解析為空時，不更新該來源基準。
 - 原始商品數異常驟降時，不接受新結果，避免網站改版被誤判成大量下架。
-- Telegram 通知失敗時保留舊基準，讓下一輪可以重試。
+- Telegram 通知失敗時所有登記中的來源都保留舊基準、當天不記為已執行，下一輪重新比對並重試。
+- 通知內容由 `lib/changes.py` 比對新舊基準產生：沒有異動就不送訊息；在庫數變動不算異動（幾乎每天都變，會重複洗版），價格其中一邊未知時也不算，避免列表頁缺標示造成誤報。
+- 單獨執行 `python tasks/shop_watch.py` 或 `tasks/bushiroad_668.py` 時，模組結尾會自己呼叫 `digest.flush()`，行為與完整排程一致。
 - 單一任務失敗時繼續執行其他任務，最後讓 workflow 失敗以保留可見性。
 - 無論抓取是否完全成功，已成功更新的 state 與報告都會先 commit。
 
