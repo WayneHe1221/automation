@@ -108,12 +108,14 @@ npx --yes firebase-tools@15.23.0 deploy \
 | --- | --- | --- |
 | `admins/{uid}` | 可讀取儀表板的 UID allowlist | 使用者只能讀自己的文件 |
 | `products/{source__product}` | 正規化商品與目前啟用狀態 | 管理員唯讀 |
-| `sources/{source}` | 來源狀態、商品數與同步時間 | 管理員唯讀 |
+| `sources/{source}` | 來源狀態、商品數、追蹤網頁原始連結（`pageUrl`）與同步時間 | 管理員唯讀；只有 `displayName` 一個欄位可由管理員改寫 |
 | `events/{autoId}` | 新品、價格、下架、重新上架事件 | 管理員唯讀 |
 | `runs/{autoId}` | 每次同步摘要 | 管理員唯讀 |
 | `meta/sync` | 最近一次同步摘要 | 管理員唯讀 |
 
-未列出的路徑以及所有瀏覽器寫入預設拒絕。
+未列出的路徑以及其餘瀏覽器寫入預設拒絕。`sources/{source}.displayName` 是唯一例外：
+儀表板的「追蹤網頁」清單可讓管理員自訂展示名稱，Rules 只允許這個欄位、限制為 1–60 字元，
+刪除欄位即還原監控任務產生的 `label`。
 
 ## 安全檢查
 

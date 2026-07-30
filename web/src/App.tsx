@@ -34,7 +34,17 @@ import {
   signInWithRedirect,
   signOut,
 } from "firebase/auth";
-import { hasDashboardAccess, loadDemoData, subscribeDashboard } from "./data";
+import {
+  DISPLAY_NAME_MAX_LENGTH,
+  hasDashboardAccess,
+  loadDemoData,
+  loadLocalDisplayNames,
+  saveLocalDisplayNames,
+  saveSourceDisplayName,
+  subscribeDashboard,
+} from "./data";
+import { EVENT_LABELS, formatPrice, formatTime } from "./format";
+import TrackedPages from "./TrackedPages";
 import {
   auth,
   database,
@@ -54,13 +64,6 @@ const EMPTY_DATA: DashboardData = {
   products: [],
   sources: [],
   events: [],
-};
-
-const EVENT_LABELS: Record<EventType, string> = {
-  new: "新品上架",
-  price_changed: "價格異動",
-  removed: "售完／下架",
-  restocked: "重新上架",
 };
 
 function isMobileDevice() {
@@ -111,24 +114,6 @@ function authErrorMessage(reason: unknown) {
 
   const suffix = code ? `（${code}）` : "";
   return `Google 登入失敗${suffix}，請再試一次。`;
-}
-
-function formatPrice(prices: number[]) {
-  if (!prices.length) return "—";
-  return prices.map((price) => `¥${price.toLocaleString("ja-JP")}`).join(" / ");
-}
-
-function formatTime(value?: string, withDate = false) {
-  if (!value) return "尚未同步";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat("zh-TW", {
-    month: withDate ? "2-digit" : undefined,
-    day: withDate ? "2-digit" : undefined,
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).format(date);
 }
 
 function isToday(value: string) {
@@ -228,7 +213,7 @@ function AccountMenu({ user, onLogout }: { user: User; onLogout: () => void }) {
   );
 }
 
-function ProductRow({ product }: { product: Product }) {
+function ProductRow({ product, sourceName }: { product: Product; sourceName: string }) {
   return (
     <article className="product-row">
       <div className="product-main">
@@ -239,14 +224,14 @@ function ProductRow({ product }: { product: Product }) {
             <ExternalLink size={13} />
           </a>
           <span className="product-sub">
-            <span className="mobile-source">{product.sourceLabel}</span>
+            <span className="mobile-source">{sourceName}</span>
             {product.qty != null && (
               <span className="stock-badge"><Boxes size={12} />在庫 {product.qty}</span>
             )}
           </span>
         </div>
       </div>
-      <span className="source-name">{product.sourceLabel}</span>
+      <span className="source-name">{sourceName}</span>
       <strong className="price-value">{formatPrice(product.prices)}</strong>
       <span className={`availability ${product.active ? "active" : "inactive"}`}>
         {product.active ? "追蹤中" : "已下架"}
@@ -255,7 +240,7 @@ function ProductRow({ product }: { product: Product }) {
   );
 }
 
-function EventItem({ event }: { event: ProductEvent }) {
+function EventItem({ event, sourceName }: { event: ProductEvent; sourceName: string }) {
   return (
     <a className={`event-item event-${event.type}`} href={event.url} target="_blank" rel="noreferrer">
       <span className="event-icon">
@@ -267,7 +252,7 @@ function EventItem({ event }: { event: ProductEvent }) {
           <time>{formatTime(event.occurredAt, true)}</time>
         </span>
         <strong>{event.productName || `商品 ${event.productId}`}</strong>
-        <span>{event.sourceLabel}</span>
+        <span>{sourceName}</span>
         {event.type === "price_changed" && (
           <span className="price-change">
             {formatPrice(event.oldPrices)}
@@ -294,6 +279,10 @@ export default function App() {
   const [accessState, setAccessState] = useState<
     "idle" | "checking" | "authorized" | "denied"
   >(firebaseEnabled ? "idle" : "authorized");
+  // 預覽模式沒有 Firestore 可寫，展示名稱改存在瀏覽器本機。
+  const [localNames, setLocalNames] = useState<Record<string, string>>(() =>
+    firebaseEnabled ? {} : loadLocalDisplayNames(),
+  );
 
   useEffect(() => {
     if (!auth) return;
@@ -398,6 +387,41 @@ export default function App() {
     }
   };
 
+  const sources = useMemo(
+    () =>
+      data.sources.map((source) => ({
+        ...source,
+        displayName: localNames[source.id] ?? source.displayName,
+      })),
+    [data.sources, localNames],
+  );
+
+  const sourceNames = useMemo(() => {
+    const names = new Map<string, string>();
+    sources.forEach((source) => names.set(source.id, source.displayName || source.label));
+    return names;
+  }, [sources]);
+
+  /** 找不到來源文件時（例如已停售站台的舊事件）退回同步時記下的名稱。 */
+  const sourceName = (sourceId: string, fallback: string) =>
+    sourceNames.get(sourceId) ?? fallback;
+
+  const handleRename = async (sourceId: string, displayName: string) => {
+    const value = displayName.trim().slice(0, DISPLAY_NAME_MAX_LENGTH);
+    if (firebaseEnabled && database) {
+      await saveSourceDisplayName(database, sourceId, value);
+      return;
+    }
+    const next = { ...localNames };
+    if (value) {
+      next[sourceId] = value;
+    } else {
+      delete next[sourceId];
+    }
+    saveLocalDisplayNames(next);
+    setLocalNames(next);
+  };
+
   const filteredProducts = useMemo(() => {
     const keyword = search.trim().toLocaleLowerCase();
     const filtered = data.products.filter((product) => {
@@ -421,19 +445,29 @@ export default function App() {
         const rightPrice = right.prices[0] ?? Number.MAX_SAFE_INTEGER;
         return leftPrice - rightPrice;
       }
+      const leftSource = sourceNames.get(left.sourceId) ?? left.sourceLabel;
+      const rightSource = sourceNames.get(right.sourceId) ?? right.sourceLabel;
       return (
-        left.sourceLabel.localeCompare(right.sourceLabel, "zh-Hant") ||
+        leftSource.localeCompare(rightSource, "zh-Hant") ||
         left.name.localeCompare(right.name, "zh-Hant")
       );
     });
-  }, [data.products, search, sourceFilter, categoryFilter, statusFilter, sortOrder]);
+  }, [
+    data.products,
+    search,
+    sourceFilter,
+    categoryFilter,
+    statusFilter,
+    sortOrder,
+    sourceNames,
+  ]);
 
   const visibleSources = useMemo(
     () =>
       categoryFilter === "all"
-        ? data.sources
-        : data.sources.filter((source) => source.category === categoryFilter),
-    [data.sources, categoryFilter],
+        ? sources
+        : sources.filter((source) => source.category === categoryFilter),
+    [sources, categoryFilter],
   );
 
   const categoryCounts = useMemo(
@@ -486,7 +520,7 @@ export default function App() {
   const namedProducts = data.products.filter((product) => product.active && product.name).length;
   const dataCompleteness = activeProducts ? Math.round((namedProducts / activeProducts) * 100) : 100;
   const todayEvents = data.events.filter((event) => isToday(event.occurredAt));
-  const healthySources = data.sources.filter((source) => source.status === "ok").length;
+  const healthySources = sources.filter((source) => source.status === "ok").length;
 
   return (
     <div className="app-shell">
@@ -522,7 +556,7 @@ export default function App() {
           <MetricCard icon={<ShoppingBag size={20} />} label="追蹤中商品" value={activeProducts} note={`共 ${data.products.length} 筆商品紀錄`} tone="green" />
           <MetricCard icon={<Boxes size={20} />} label="追蹤庫存總數" value={trackedStock.toLocaleString("ja-JP")} note="已回報庫存數的商品加總" tone="violet" />
           <MetricCard icon={<BellRing size={20} />} label="今日異動" value={todayEvents.length} note="新品、價格與庫存事件" tone="amber" />
-          <MetricCard icon={<Store size={20} />} label="站台狀態" value={`${healthySources}/${data.sources.length}`} note="目前正常同步來源" tone="blue" />
+          <MetricCard icon={<Store size={20} />} label="站台狀態" value={`${healthySources}/${sources.length}`} note="目前正常同步來源" tone="blue" />
           <MetricCard icon={<PackageCheck size={20} />} label="資料完整度" value={`${dataCompleteness}%`} note="追蹤商品名稱解析成功率" tone="green" />
         </section>
 
@@ -535,7 +569,7 @@ export default function App() {
               type="button"
             >
               <span className={source.status === "ok" ? "health-dot" : "health-dot error"} />
-              <span><b>{source.label}</b><small>{source.activeCount} 件{source.stockQuantity ? ` · 在庫 ${source.stockQuantity}` : ""} · {source.schedule}</small></span>
+              <span><b>{source.displayName || source.label}</b><small>{source.activeCount} 件{source.stockQuantity ? ` · 在庫 ${source.stockQuantity}` : ""} · {source.schedule}</small></span>
               <Check size={14} />
             </button>
           ))}
@@ -579,7 +613,11 @@ export default function App() {
               <label className="select-box">
                 <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value)} aria-label="選擇商店">
                   <option value="all">全部商店</option>
-                  {visibleSources.map((source) => <option key={source.id} value={source.id}>{source.label}</option>)}
+                  {visibleSources.map((source) => (
+                    <option key={source.id} value={source.id}>
+                      {source.displayName || source.label}
+                    </option>
+                  ))}
                 </select>
                 <ChevronDown size={15} />
               </label>
@@ -606,7 +644,13 @@ export default function App() {
                 {loading ? (
                   <div className="empty-state"><RefreshCw className="spin" /><b>正在載入監控資料</b></div>
                 ) : filteredProducts.length ? (
-                  filteredProducts.map((product) => <ProductRow key={product.id} product={product} />)
+                  filteredProducts.map((product) => (
+                    <ProductRow
+                      key={product.id}
+                      product={product}
+                      sourceName={sourceName(product.sourceId, product.sourceLabel)}
+                    />
+                  ))
                 ) : (
                   <div className="empty-state"><Search /><b>沒有符合條件的商品</b><span>試著調整搜尋或篩選條件</span></div>
                 )}
@@ -621,7 +665,13 @@ export default function App() {
             </div>
             <div className="event-list">
               {data.events.length ? (
-                data.events.slice(0, 20).map((event) => <EventItem key={event.id} event={event} />)
+                data.events.slice(0, 20).map((event) => (
+                  <EventItem
+                    key={event.id}
+                    event={event}
+                    sourceName={sourceName(event.sourceId, event.sourceLabel)}
+                  />
+                ))
               ) : (
                 <div className="activity-empty">
                   <span><PackageCheck size={24} /></span>
@@ -633,6 +683,8 @@ export default function App() {
             <div className="activity-footer"><span className="pulse-dot" />持續監聽 Firestore 更新</div>
           </aside>
         </div>
+
+        <TrackedPages sources={sources} events={data.events} onRename={handleRename} />
       </main>
 
       <footer>
