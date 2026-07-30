@@ -1,8 +1,8 @@
-# Card Radar
+# Card Shop Tracker
 
-Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓取多個商店的在庫商品，將狀態保存於 Git，透過 Telegram 通知異動，並把整理後的資料同步到受 Google 登入保護的 Firebase 儀表板。
+Card Shop Tracker 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓取多個商店的在庫商品，將狀態保存於 Git，透過 Telegram 通知異動，並把整理後的資料同步到受 Google 登入保護的 Firebase 儀表板。
 
-儀表板：<https://cardradar.web.app>（需授權的 Google 帳號；舊網址 `card-shop-tracker.web.app` 會部署相同內容並保留為登入用網域，詳見 [`docs/firebase-setup.md`](docs/firebase-setup.md)）。
+儀表板：<https://card-shop-tracker.web.app>（需授權的 Google 帳號）。
 
 ## 主要功能
 
@@ -100,7 +100,7 @@ cd web && npm audit --omit=dev --audit-level=high
 ## 專案結構
 
 ```text
-card-radar/
+card-shop-tracker/
 ├── lib/                    # 抓取、通知及資料正規化共用程式
 ├── tasks/                  # 爬取、報告與 Firestore 同步任務
 ├── scripts/                # 儀表板本機預覽資料匯出

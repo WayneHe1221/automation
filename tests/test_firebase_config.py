@@ -4,38 +4,17 @@ from pathlib import Path
 
 
 AUTH_DOMAIN = "card-shop-tracker.web.app"  # FIREBASE_AUTH_DOMAIN variable
-PRIMARY_SITE = "cardradar"
-
-
-def hosting_sites():
-    return json.loads(Path("firebase.json").read_text())["hosting"]
 
 
 def hosting_header(name):
-    site = next(site for site in hosting_sites() if site["site"] == PRIMARY_SITE)
-    headers = site["headers"][0]["headers"]
+    config = json.loads(Path("firebase.json").read_text())
+    headers = config["hosting"]["headers"][0]["headers"]
     return next(header["value"] for header in headers if header["key"] == name)
 
 
 class FirebaseConfigTests(unittest.TestCase):
-    def test_deploy_covers_primary_and_auth_domain_sites(self):
-        """主要網址與仍作為 authDomain 的舊網址都要部署，舊網址不能只留舊版本。"""
-        self.assertEqual(
-            [PRIMARY_SITE, AUTH_DOMAIN.removesuffix(".web.app")],
-            [site["site"] for site in hosting_sites()],
-        )
-
-    def test_all_hosting_sites_share_the_same_configuration(self):
-        """兩個網址必須提供完全相同的內容與安全標頭，只有 site 名稱不同。"""
-        without_site = [
-            {key: value for key, value in site.items() if key != "site"}
-            for site in hosting_sites()
-        ]
-
-        self.assertTrue(all(entry == without_site[0] for entry in without_site))
-
     def test_content_security_policy_allows_the_auth_domain_iframe(self):
-        """儀表板網域與 authDomain 不同，Firebase 登入的 iframe 必須明確放行。"""
+        """Firebase 登入的 iframe 來自 authDomain，必須明確放行；換網域後 'self' 就不夠。"""
         content_security_policy = hosting_header("Content-Security-Policy")
 
         frame_src = next(
