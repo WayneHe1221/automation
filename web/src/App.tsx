@@ -682,9 +682,9 @@ export default function App() {
             </div>
             <div className="activity-footer"><span className="pulse-dot" />持續監聽 Firestore 更新</div>
           </aside>
-        </div>
 
-        <TrackedPages sources={sources} events={data.events} onRename={handleRename} />
+          <TrackedPages sources={sources} events={data.events} onRename={handleRename} />
+        </div>
       </main>
 
       <footer>
