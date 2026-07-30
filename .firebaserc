@@ -1,15 +1,5 @@
 {
   "projects": {
     "default": "card-shop-tracker"
-  },
-  "targets": {
-    "card-shop-tracker": {
-      "hosting": {
-        "app": [
-          "cardradar",
-          "card-shop-tracker"
-        ]
-      }
-    }
   }
 }
