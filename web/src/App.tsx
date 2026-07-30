@@ -165,7 +165,7 @@ function LoginScreen({ error, onLogin }: { error: string; onLogin: () => void })
           <Radar size={42} />
         </div>
         <p className="eyebrow">PRIVATE MONITORING CONSOLE</p>
-        <h1>Card Radar</h1>
+        <h1>Card Shop Tracker</h1>
         <p className="login-copy">
           集中查看各卡牌商店的新品、價格變化與監控狀態。
         </p>
@@ -527,7 +527,7 @@ export default function App() {
       <header className="topbar">
         <a className="brand" href="#top" aria-label="回到頁面頂端">
           <span className="brand-mark"><Radar size={23} /></span>
-          <span><b>Card Radar</b><small>Monitoring console</small></span>
+          <span><b>Card Shop Tracker</b><small>Monitoring console</small></span>
         </a>
         <div className="topbar-status">
           {!firebaseEnabled && <span className="demo-pill"><Eye size={14} />預覽模式</span>}
@@ -688,7 +688,7 @@ export default function App() {
       </main>
 
       <footer>
-        <span><Radar size={15} />Card Radar</span>
+        <span><Radar size={15} />Card Shop Tracker</span>
         <span>由 GitHub Actions 與 Firebase 驅動</span>
       </footer>
     </div>

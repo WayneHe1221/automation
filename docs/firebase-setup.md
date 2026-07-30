@@ -16,36 +16,19 @@
 
 ## 1-1. Hosting 網域
 
-主要網址是 **https://cardradar.web.app**（Hosting site `cardradar`）。
+網址是 **https://card-shop-tracker.web.app**，也就是專案預設的 Hosting site；同一個網域同時是
+`FIREBASE_AUTH_DOMAIN`，Google 登入（尤其行動版 redirect）會用它的
+`/__/auth/handler`。`firebase.json` 只有一份 `hosting` 設定，因此
+`firebase deploy --only hosting` 就是部署這個站台。
 
-Firebase 的專案 ID 建立後無法改名，所以專案 ID 仍是 `card-shop-tracker`；為了讓網址與專案名稱
-Card Radar 一致，改在同一個專案內新增 Hosting site：
+若日後要換網域（自訂網域或另開 Hosting site），記得同時：
 
-| Site | 網址 | 角色 |
-| --- | --- | --- |
-| `cardradar` | https://cardradar.web.app | 主要網址 |
-| `card-shop-tracker` | https://card-shop-tracker.web.app | 舊網址；同時是 `FIREBASE_AUTH_DOMAIN` |
-
-`firebase.json` 的 `hosting` 是兩份 site 設定（內容完全相同、只有 `site` 不同），因此一次
-`firebase deploy --only hosting` 會把相同內容送到兩個網址。不能用單一 hosting target 指向兩個
-site，firebase-tools 會以「target is linked to multiple sites」拒絕部署；兩份設定的內容一致性由
-`tests/test_firebase_config.py` 保證。
-
-舊網址刻意保留而**不做轉址**：Google 登入（尤其行動版 redirect）會使用 `authDomain` 的
-`card-shop-tracker.web.app/__/auth/handler`，轉址會讓登入失效。
-
-新增網址時記得在 **Authentication → Settings → Authorized domains** 加入該網域，否則從新網址登入
-會得到 `auth/unauthorized-domain`。若日後要把 `authDomain` 也換成新網域，需同時在 Google Cloud
-Console 的 OAuth 網頁用戶端加入 `https://cardradar.web.app/__/auth/handler`，並更新
-`FIREBASE_AUTH_DOMAIN` variable。
-
-新增站台的指令：
-
-```bash
-npx --yes firebase-tools@15.23.0 hosting:sites:create <site-id> --project card-shop-tracker
-```
-
-site ID 是全域唯一的，`card-radar` 已被其他專案占用，因此改用 `cardradar`。
+1. 在 **Authentication → Settings → Authorized domains** 加入新網域，否則登入會得到
+   `auth/unauthorized-domain`。
+2. 若連 `authDomain` 一起換，要在 Google Cloud Console 的 OAuth 網頁用戶端加入
+   `https://<新網域>/__/auth/handler`，並更新 `FIREBASE_AUTH_DOMAIN` variable。
+3. 確認 `firebase.json` 的 CSP `frame-src` 放行 `authDomain`；儀表板網域與 `authDomain` 不同時，
+   登入用的 iframe 不再屬於 `'self'`，漏了就會被擋（`tests/test_firebase_config.py` 有防呆）。
 
 ## 2. 新增或移除觀看者
 
@@ -91,7 +74,7 @@ site ID 是全域唯一的，`card-radar` 已被其他專案占用，因此改�
 1. 在 GitHub Actions 手動執行 `scheduled-tasks`。
 2. 確認 `sync-firestore` job 成功，並在 Firestore 看到 `products`、`sources`、`runs`、`meta` 集合。
 3. 手動執行 `firebase-dashboard`。
-4. 開啟主要網址 https://cardradar.web.app，以允許的 Google 帳號登入。
+4. 開啟 https://card-shop-tracker.web.app，以允許的 Google 帳號登入。
 
 之後：
 

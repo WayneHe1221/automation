@@ -42,7 +42,7 @@ export async function hasDashboardAccess(database: Firestore, userId: string) {
 }
 
 export const DISPLAY_NAME_MAX_LENGTH = 60;
-const LOCAL_DISPLAY_NAMES_KEY = "card-radar.sourceDisplayNames";
+const LOCAL_DISPLAY_NAMES_KEY = "card-shop-tracker.sourceDisplayNames";
 
 /**
  * 寫入來源的展示名稱；傳入空字串代表還原成監控任務的原始名稱。
