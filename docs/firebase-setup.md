@@ -26,9 +26,13 @@ Card Radar 一致，改在同一個專案內新增 Hosting site：
 | `cardradar` | https://cardradar.web.app | 主要網址 |
 | `card-shop-tracker` | https://card-shop-tracker.web.app | 舊網址；同時是 `FIREBASE_AUTH_DOMAIN` |
 
-`.firebaserc` 的 hosting target `app` 同時指向兩個 site，`firebase.json` 以 `"target": "app"` 部署，
-因此一次部署會把相同內容送到兩個網址。舊網址刻意保留而**不做轉址**：Google 登入（尤其行動版
-redirect）會使用 `authDomain` 的 `card-shop-tracker.web.app/__/auth/handler`，轉址會讓登入失效。
+`firebase.json` 的 `hosting` 是兩份 site 設定（內容完全相同、只有 `site` 不同），因此一次
+`firebase deploy --only hosting` 會把相同內容送到兩個網址。不能用單一 hosting target 指向兩個
+site，firebase-tools 會以「target is linked to multiple sites」拒絕部署；兩份設定的內容一致性由
+`tests/test_firebase_config.py` 保證。
+
+舊網址刻意保留而**不做轉址**：Google 登入（尤其行動版 redirect）會使用 `authDomain` 的
+`card-shop-tracker.web.app/__/auth/handler`，轉址會讓登入失效。
 
 新增網址時記得在 **Authentication → Settings → Authorized domains** 加入該網域，否則從新網址登入
 會得到 `auth/unauthorized-domain`。若日後要把 `authDomain` 也換成新網域，需同時在 Google Cloud
