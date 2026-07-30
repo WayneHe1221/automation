@@ -14,6 +14,35 @@
 
 本 repository 的 `.firebaserc` 預設指向 `card-shop-tracker`。若使用其他專案，請同步更新該檔案或部署時明確傳入 `--project`。
 
+## 1-1. Hosting 網域
+
+主要網址是 **https://cardradar.web.app**（Hosting site `cardradar`）。
+
+Firebase 的專案 ID 建立後無法改名，所以專案 ID 仍是 `card-shop-tracker`；為了讓網址與專案名稱
+Card Radar 一致，改在同一個專案內新增 Hosting site：
+
+| Site | 網址 | 角色 |
+| --- | --- | --- |
+| `cardradar` | https://cardradar.web.app | 主要網址 |
+| `card-shop-tracker` | https://card-shop-tracker.web.app | 舊網址；同時是 `FIREBASE_AUTH_DOMAIN` |
+
+`.firebaserc` 的 hosting target `app` 同時指向兩個 site，`firebase.json` 以 `"target": "app"` 部署，
+因此一次部署會把相同內容送到兩個網址。舊網址刻意保留而**不做轉址**：Google 登入（尤其行動版
+redirect）會使用 `authDomain` 的 `card-shop-tracker.web.app/__/auth/handler`，轉址會讓登入失效。
+
+新增網址時記得在 **Authentication → Settings → Authorized domains** 加入該網域，否則從新網址登入
+會得到 `auth/unauthorized-domain`。若日後要把 `authDomain` 也換成新網域，需同時在 Google Cloud
+Console 的 OAuth 網頁用戶端加入 `https://cardradar.web.app/__/auth/handler`，並更新
+`FIREBASE_AUTH_DOMAIN` variable。
+
+新增站台的指令：
+
+```bash
+npx --yes firebase-tools@15.23.0 hosting:sites:create <site-id> --project card-shop-tracker
+```
+
+site ID 是全域唯一的，`card-radar` 已被其他專案占用，因此改用 `cardradar`。
+
 ## 2. 新增或移除觀看者
 
 1. 請觀看者先使用預定的 Google 帳號登入一次網站；畫面會顯示尚未授權，同時 Firebase Authentication 會建立使用者。
@@ -58,7 +87,7 @@
 1. 在 GitHub Actions 手動執行 `scheduled-tasks`。
 2. 確認 `sync-firestore` job 成功，並在 Firestore 看到 `products`、`sources`、`runs`、`meta` 集合。
 3. 手動執行 `firebase-dashboard`。
-4. 開啟 Hosting URL，以允許的 Google 帳號登入。
+4. 開啟主要網址 https://cardradar.web.app，以允許的 Google 帳號登入。
 
 之後：
 
