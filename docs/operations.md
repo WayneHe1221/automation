@@ -102,7 +102,7 @@ test ! -e dist/demo-data.json
 2. 使用 `lib.fetch.fetch_html`，設定預期 path 與頁面關鍵標記，避免登入頁或阻擋頁被當成商品頁。
 3. 將狀態寫入 `state/`；成功或安全略過回傳 `True`，抓取、解析或通知失敗回傳 `False`。
 4. 在 `tests/fixtures/` 保存最小化 HTML fixture，於 `tests/` 新增離線 parser 測試。
-5. 若來源需要出現在網站，更新 `lib/catalog.py` 的 `SOURCE_DEFINITIONS`。
+5. 若來源需要出現在網站，更新 `lib/catalog.py` 的 `SOURCE_DEFINITIONS`；`page_url` 必須填入實際被監看的列表頁（儀表板「追蹤網頁」會顯示這個原始連結），`tests/test_catalog.py` 會比對它與抓取任務真正使用的網址。
 6. 若來源需要出現在靜態報告，更新 `tasks/inventory_report.py`。
 7. 執行 Python 測試、重建報告及前端 build，再送出 PR。
 

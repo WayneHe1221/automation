@@ -10,6 +10,8 @@ Card Radar 是一套 Weiss Schwarz 商品監控系統。GitHub Actions 定期抓
 - 自動產生 [`inventory_report.md`](inventory_report.md) 靜態清單。
 - 將商品、來源、同步紀錄與異動事件寫入 Cloud Firestore。
 - 提供 React + Firebase Hosting 儀表板，支援一般商品／Deck 販售分類、價格、搜尋、來源／狀態篩選及即時更新。
+- 儀表板「追蹤網頁」清單列出每個來源正在監看的列表頁原始連結、商品數與各自的異動歷程；
+  展示名稱可直接在清單上改名（只影響儀表板顯示，Telegram 通知與靜態報告仍用原始名稱）。
 
 ## 系統流程
 
@@ -114,5 +116,5 @@ automation/
 
 - Telegram token 與 service account JSON 只能存放於 GitHub Secrets 或本機安全憑證路徑。
 - Firebase Web API key 不是伺服器密鑰；資料權限由 Authentication、`admins/{uid}` 與 Firestore Rules 控制。
-- 瀏覽器端只能讀取允許的集合，所有寫入都由 Firebase Admin SDK 執行。
+- 瀏覽器端只能讀取允許的集合；唯一可寫入的是 `sources/{id}.displayName`（自訂展示名稱），其餘寫入都由 Firebase Admin SDK 執行。
 - GitHub Actions 使用最小權限，外部 action 以完整 commit SHA 固定版本。

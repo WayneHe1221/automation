@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
-"""將各監控任務的 state 轉成網站與 Firestore 共用格式。"""
+"""將各監控任務的 state 轉成網站與 Firestore 共用格式。
+
+`page_url` 是該來源實際被監看的列表頁（原始連結），必須與抓取任務真正抓的網址
+一致；`tests/test_catalog.py` 會比對兩邊，改動抓取網址時測試會提醒同步更新。
+"""
 
 import json
 import os
@@ -13,6 +17,7 @@ SOURCE_DEFINITIONS = [
         "id": "bushiroad_668",
         "label": "square-bushiroad 668",
         "schedule": "每天",
+        "page_url": "https://www.square-bushiroad.com/product-list/668",
         "state_file": "bushiroad_668.json",
         "state_key": None,
         "url": lambda pid: f"https://www.square-bushiroad.com/product/{pid}",
@@ -21,6 +26,7 @@ SOURCE_DEFINITIONS = [
         "id": "torecolo",
         "label": "torecolo ヴァイス新品",
         "schedule": "每天",
+        "page_url": "https://www.torecolo.jp/shop/c/c10309996/",
         "state_file": "shop_watch.json",
         "state_key": "torecolo",
         "url": lambda pid: f"https://www.torecolo.jp/shop/g/g{pid}/",
@@ -29,6 +35,7 @@ SOURCE_DEFINITIONS = [
         "id": "clabo",
         "label": "c-labo 2421",
         "schedule": "每天",
+        "page_url": "https://www.c-labo-online.jp/product-list/2421/0/photo?num=60&available=1",
         "state_file": "shop_watch.json",
         "state_key": "clabo",
         "url": lambda pid: f"https://www.c-labo-online.jp/product/{pid}",
@@ -37,6 +44,7 @@ SOURCE_DEFINITIONS = [
         "id": "gurapan",
         "label": "gurapan 1081",
         "schedule": "每天",
+        "page_url": "https://gurapan.jp/products/list?category_id=1081",
         "state_file": "shop_watch.json",
         "state_key": "gurapan",
         "url": lambda pid: f"https://gurapan.jp/products/detail/{pid}",
@@ -45,6 +53,7 @@ SOURCE_DEFINITIONS = [
         "id": "manasource",
         "label": "manasource 2268",
         "schedule": "每天",
+        "page_url": "https://www.manasource.net/product-list/2268/0/photo",
         "state_file": "shop_watch.json",
         "state_key": "manasource",
         "url": lambda pid: f"https://www.manasource.net/product/{pid}",
@@ -53,6 +62,7 @@ SOURCE_DEFINITIONS = [
         "id": "cardmax",
         "label": "cardmax ct1849",
         "schedule": "每天",
+        "page_url": "https://www.cardmax.jp/smartphone/list.html?category_code=ct1849",
         "state_file": "shop_watch.json",
         "state_key": "cardmax",
         "url": lambda pid: f"https://www.cardmax.jp/shopdetail/{pid}/",
@@ -61,6 +71,7 @@ SOURCE_DEFINITIONS = [
         "id": "bushiroad_284",
         "label": "square-bushiroad 284",
         "schedule": "每天",
+        "page_url": "https://www.square-bushiroad.com/product-list/284",
         "state_file": "shop_watch.json",
         "state_key": "bushiroad_284",
         "url": lambda pid: f"https://www.square-bushiroad.com/product/{pid}",
@@ -70,6 +81,7 @@ SOURCE_DEFINITIONS = [
         "category": "deck",
         "label": "福福トレカ WSデッキ販売",
         "schedule": "每天",
+        "page_url": "https://weis.fukufukutoreka.com/products/list?category_id=2",
         "state_file": "shop_watch.json",
         "state_key": "fukufuku_deck",
         "url": lambda pid: f"https://weis.fukufukutoreka.com/products/detail/{pid}",
@@ -79,6 +91,7 @@ SOURCE_DEFINITIONS = [
         "category": "deck",
         "label": "torecolo WSデッキ販売",
         "schedule": "每天",
+        "page_url": "https://www.torecolo.jp/shop/c/c10309010/",
         "state_file": "shop_watch.json",
         "state_key": "torecolo_deck",
         "url": lambda pid: f"https://www.torecolo.jp/shop/g/g{pid}/",
@@ -88,6 +101,7 @@ SOURCE_DEFINITIONS = [
         "category": "deck",
         "label": "c-labo WSデッキ販売",
         "schedule": "每天",
+        "page_url": "https://www.c-labo-online.jp/product-list/1070/0/photo?num=120&available=1&sort=&Submit=",
         "state_file": "shop_watch.json",
         "state_key": "clabo_deck",
         "url": lambda pid: f"https://www.c-labo-online.jp/product/{pid}",
@@ -97,6 +111,7 @@ SOURCE_DEFINITIONS = [
         "category": "deck",
         "label": "Hobby Station WSデッキ販売",
         "schedule": "每天",
+        "page_url": "https://www.hobbystation-single.jp/ws/product/list?HbstSearchOptions%5B0%5D%5Bid%5D=16&HbstSearchOptions%5B0%5D%5Bsearch_keyword%5D=%28BANNER%29%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%87%E3%83%83%E3%82%AD%28BANNER%29&HbstSearchOptions%5B0%5D%5BType%5D=2",
         "state_file": "shop_watch.json",
         "state_key": "hobbystation_deck",
         "url": lambda pid: f"https://www.hobbystation-single.jp/ws/product/detail/{pid}",
@@ -106,6 +121,7 @@ SOURCE_DEFINITIONS = [
         "category": "deck",
         "label": "gurapan WSデッキ販売",
         "schedule": "每天",
+        "page_url": "https://gurapan.jp/products/list?category_id=1253",
         "state_file": "shop_watch.json",
         "state_key": "gurapan_deck",
         "url": lambda pid: f"https://gurapan.jp/products/detail/{pid}",
@@ -115,6 +131,7 @@ SOURCE_DEFINITIONS = [
         "category": "deck",
         "label": "square-bushiroad WSデッキ販売",
         "schedule": "每天",
+        "page_url": "https://www.square-bushiroad.com/product-group/78",
         "state_file": "shop_watch.json",
         "state_key": "bushiroad_deck",
         "url": lambda pid: f"https://www.square-bushiroad.com/product/{pid}",
@@ -193,6 +210,7 @@ def collect_catalog(repo_root):
                 "id": definition["id"],
                 "label": definition["label"],
                 "schedule": definition["schedule"],
+                "pageUrl": definition["page_url"],
                 "category": category,
                 "activeCount": len(source_products),
                 "stockQuantity": stock_quantity,

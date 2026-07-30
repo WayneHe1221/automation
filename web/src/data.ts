@@ -1,12 +1,14 @@
 import {
   Firestore,
   collection,
+  deleteField,
   doc,
   getDoc,
   limit,
   onSnapshot,
   orderBy,
   query,
+  updateDoc,
 } from "firebase/firestore";
 import {
   DashboardData,
@@ -37,6 +39,43 @@ function toCategory(value: unknown, sourceId: unknown): ProductCategory {
 export async function hasDashboardAccess(database: Firestore, userId: string) {
   const snapshot = await getDoc(doc(database, "admins", userId));
   return snapshot.exists() && snapshot.data().enabled === true;
+}
+
+export const DISPLAY_NAME_MAX_LENGTH = 60;
+const LOCAL_DISPLAY_NAMES_KEY = "card-radar.sourceDisplayNames";
+
+/**
+ * 寫入來源的展示名稱；傳入空字串代表還原成監控任務的原始名稱。
+ * Firestore Rules 只開放 admin 修改這個欄位。
+ */
+export async function saveSourceDisplayName(
+  database: Firestore,
+  sourceId: string,
+  displayName: string,
+) {
+  const value = displayName.trim();
+  await updateDoc(doc(database, "sources", sourceId), {
+    displayName: value ? value.slice(0, DISPLAY_NAME_MAX_LENGTH) : deleteField(),
+  });
+}
+
+/** 預覽模式沒有 Firestore，改用瀏覽器本機儲存，讓命名功能同樣可用。 */
+export function loadLocalDisplayNames(): Record<string, string> {
+  try {
+    const stored = localStorage.getItem(LOCAL_DISPLAY_NAMES_KEY);
+    const parsed = stored ? JSON.parse(stored) : null;
+    return parsed && typeof parsed === "object" ? (parsed as Record<string, string>) : {};
+  } catch {
+    return {};
+  }
+}
+
+export function saveLocalDisplayNames(names: Record<string, string>) {
+  try {
+    localStorage.setItem(LOCAL_DISPLAY_NAMES_KEY, JSON.stringify(names));
+  } catch {
+    // 無痕模式等封鎖儲存空間時，改名仍在本次瀏覽有效。
+  }
 }
 
 export async function loadDemoData(): Promise<DashboardData> {
@@ -103,6 +142,11 @@ export function subscribeDashboard(
         return {
           id: document.id,
           label: data.label,
+          displayName:
+            typeof data.displayName === "string" && data.displayName.trim()
+              ? data.displayName
+              : undefined,
+          pageUrl: typeof data.pageUrl === "string" ? data.pageUrl : undefined,
           schedule: data.schedule,
           category: toCategory(data.category, document.id),
           activeCount: data.activeCount ?? 0,
@@ -118,10 +162,11 @@ export function subscribeDashboard(
     onError,
   );
 
+  // 取到 200 筆，讓「追蹤網頁」清單能列出每個來源各自的異動歷程。
   const eventsQuery = query(
     collection(database, "events"),
     orderBy("occurredAt", "desc"),
-    limit(80),
+    limit(200),
   );
   const unsubscribeEvents = onSnapshot(
     eventsQuery,

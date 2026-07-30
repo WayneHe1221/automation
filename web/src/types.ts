@@ -18,7 +18,12 @@ export type Product = {
 
 export type Source = {
   id: string;
+  /** 由監控任務產生的原始名稱 */
   label: string;
+  /** 使用者自訂的展示名稱；未設定時以 label 顯示 */
+  displayName?: string;
+  /** 被監看的列表頁原始連結 */
+  pageUrl?: string;
   schedule: string;
   category: ProductCategory;
   activeCount: number;
