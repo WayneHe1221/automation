@@ -1,37 +1,42 @@
 # 追蹤商品清單
 
-**合計 145 件**，已知在庫共 998 件
+**合計 149 件**，已知在庫共 982 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
-## square-bushiroad 668（每天）— 2 件、在庫共 97
+## square-bushiroad 668（每天）— 2 件、在庫共 94
 
 - [【予約商品・全額前金制】【11/13(金)発売】ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/110371) — 在庫 72
-- [【予約商品・全額前金制】【11/13(金)発売】ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) (1カートン・12BOX入)(1BOXあたり4000円)(新品商品)](https://www.square-bushiroad.com/product/110372) — 在庫 25
+- [【予約商品・全額前金制】【11/13(金)発売】ヴァイスシュヴァルツ BanG Dream! (夢限大みゅーたいぷ) (1カートン・12BOX入)(1BOXあたり4000円)(新品商品)](https://www.square-bushiroad.com/product/110372) — 在庫 22
 
 ## torecolo ヴァイス新品（每天）— 0 件
 
-## c-labo 2421（有庫存）（每天）— 2 件
+## c-labo 2421（有庫存）（每天）— 5 件
 
+- [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 - [※8月15日まで受付※【予約】(新品ボックス)ヴァイスシュヴァルツブラウ ブースターパック 『少女☆歌劇 レヴュースタァライト』(1BOX=10パック) (2610/16)](https://www.c-labo-online.jp/product/399266)
+- [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ステラソラ』(2610/16)](https://www.c-labo-online.jp/product/398302)
+- [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『anemoi』(1BOX=10パック) (2610/02)](https://www.c-labo-online.jp/product/394143)
 - [(新品ボックス)アイドルマスター シャイニーカラーズプロテインバー (ヴァイスシュヴァルツPRカード付) (1BOX=8個) (2606/05)](https://www.c-labo-online.jp/product/381541)
 
-## gurapan 1081（每天）— 5 件、在庫共 21
+## gurapan 1081（每天）— 7 件、在庫共 36
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 9
-- [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 3
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 1
+- [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417) — 在庫 6
+- [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 5
+- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 3
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 3
+- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 5
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 5
 
-## manasource 2268（每天）— 8 件、在庫共 259
+## manasource 2268（每天）— 8 件、在庫共 233
 
-- [予約 スペシャルシリーズ「ぶっちぎりスタートデッキ ごーすと・みーつ・ぎゃる！」](https://www.manasource.net/product/195603) — 在庫 46
+- [予約 スペシャルシリーズ「ぶっちぎりスタートデッキ ごーすと・みーつ・ぎゃる！」](https://www.manasource.net/product/195603) — 在庫 44
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019) — 在庫 46
-- [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 51
+- [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 31
 - [予約 ラブライブ!シリーズ オフィシャルカードゲーム ブースターパック MELLOW MOMENT 1BOX](https://www.manasource.net/product/190717) — 在庫 40
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498) — 在庫 32
-- [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499) — 在庫 29
+- [予約 カードファイト!! ヴァンガード VG-DZ-BT16 ブースターパック 幻真覚醒 1BOX](https://www.manasource.net/product/158499) — 在庫 25
 - [予約 Z/X -Zillions of enemy X- ジェネレート ユニゾンドリーム 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/190989) — 在庫 11
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675) — 在庫 4
 
@@ -50,10 +55,10 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 99 件、在庫共 604
+## square-bushiroad 284（每天）— 99 件、在庫共 603
 
 - [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039) — 在庫 7
-- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/105040) — 在庫 7
+- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/105040) — 在庫 6
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805) — 在庫 29
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806) — 在庫 2
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796) — 在庫 6
@@ -172,11 +177,10 @@
 
 - [【WS】《青赤》アイドルマスターシンデレラガールズ 門ストブ デッキ](https://www.c-labo-online.jp/product/384770) — 在庫 1
 
-### Hobby Station WSデッキ販売（每天）— 6 件、在庫共 6
+### Hobby Station WSデッキ販売（每天）— 5 件、在庫共 5
 
 - [ダ・カーポ 枝宝デッキ](https://www.hobbystation-single.jp/ws/product/detail/254634) — 在庫 1
 - [ラブライブ！スーパースター!!! ドラ門デッキ](https://www.hobbystation-single.jp/ws/product/detail/273105) — 在庫 1
-- [アサルトリリィ 8門デッキ](https://www.hobbystation-single.jp/ws/product/detail/282977) — 在庫 1
 - [ラブライブ！サンシャイン!! 8電源デッキ](https://www.hobbystation-single.jp/ws/product/detail/303450) — 在庫 1
 - [青ブタ 8扉デッキ](https://www.hobbystation-single.jp/ws/product/detail/306318) — 在庫 1
 - [ダ・カーポ 8枝（フルホイル）デッキ](https://www.hobbystation-single.jp/ws/product/detail/307182) — 在庫 1
