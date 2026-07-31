@@ -658,30 +658,33 @@ export default function App() {
             </div>
           </section>
 
-          <aside className="panel activity-panel">
-            <div className="panel-heading">
-              <div><p className="section-kicker">ACTIVITY</p><h2>最近異動</h2></div>
-              <Activity size={19} />
-            </div>
-            <div className="event-list">
-              {data.events.length ? (
-                data.events.slice(0, 20).map((event) => (
-                  <EventItem
-                    key={event.id}
-                    event={event}
-                    sourceName={sourceName(event.sourceId, event.sourceLabel)}
-                  />
-                ))
-              ) : (
-                <div className="activity-empty">
-                  <span><PackageCheck size={24} /></span>
-                  <b>基準資料已就緒</b>
-                  <p>Firebase 同步後，新品、價格和庫存異動會出現在這裡。</p>
-                </div>
-              )}
-            </div>
-            <div className="activity-footer"><span className="pulse-dot" />持續監聽 Firestore 更新</div>
-          </aside>
+          {/* 外層負責占住格線位置，讓 sticky 的黏著範圍限制在這一列，不會蓋到下方的追蹤網頁 */}
+          <div className="activity-column">
+            <aside className="panel activity-panel">
+              <div className="panel-heading">
+                <div><p className="section-kicker">ACTIVITY</p><h2>最近異動</h2></div>
+                <Activity size={19} />
+              </div>
+              <div className="event-list">
+                {data.events.length ? (
+                  data.events.slice(0, 20).map((event) => (
+                    <EventItem
+                      key={event.id}
+                      event={event}
+                      sourceName={sourceName(event.sourceId, event.sourceLabel)}
+                    />
+                  ))
+                ) : (
+                  <div className="activity-empty">
+                    <span><PackageCheck size={24} /></span>
+                    <b>基準資料已就緒</b>
+                    <p>Firebase 同步後，新品、價格和庫存異動會出現在這裡。</p>
+                  </div>
+                )}
+              </div>
+              <div className="activity-footer"><span className="pulse-dot" />持續監聽 Firestore 更新</div>
+            </aside>
+          </div>
 
           <TrackedPages sources={sources} events={data.events} onRename={handleRename} />
         </div>
