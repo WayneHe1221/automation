@@ -157,6 +157,9 @@ body::before {
 .health-dot.error { background: #f67f6f; }
 
 .content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 18px; align-items: start; }
+.products-panel { grid-column: 1; grid-row: 1; }
+/* 撐滿整列高度，sticky 的最近異動就只能在這一列內移動，不會蓋到下方的追蹤網頁 */
+.activity-column { grid-column: 2; grid-row: 1; align-self: stretch; }
 .panel { border: 1px solid var(--line); border-radius: 18px; background: rgba(12, 25, 22, 0.9); overflow: hidden; }
 .panel-heading { min-height: 75px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .panel-heading h2 { margin: 0; font-size: 20.4px; letter-spacing: -0.02em; }
@@ -225,7 +228,7 @@ body::before {
 .activity-empty p { max-width: 230px; margin: 8px 0 0; color: var(--muted); font-size: 13.2px; line-height: 1.7; }
 .activity-footer { padding: 12px 16px; display: flex; align-items: center; gap: 9px; color: #70887e; border-top: 1px solid var(--line); font-size: 10.8px; }
 
-.pages-panel { grid-column: 1 / -1; }
+.pages-panel { grid-column: 1 / -1; grid-row: 2; }
 .pages-note { margin: 0; padding: 13px 20px; color: var(--muted); border-bottom: 1px solid var(--line); font-size: 12px; line-height: 1.6; }
 .page-list { max-height: 720px; overflow-y: auto; scrollbar-color: #294139 transparent; scrollbar-width: thin; }
 .page-row { padding: 15px 20px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 10px 18px; align-items: start; border-bottom: 1px solid rgba(182, 221, 203, 0.07); }
@@ -305,7 +308,9 @@ footer span { display: flex; align-items: center; gap: 7px; }
 @media (max-width: 1120px) {
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .content-grid { grid-template-columns: 1fr; }
-  .activity-panel { position: static; order: 1; }
+  .products-panel, .activity-column, .pages-panel { grid-column: 1; grid-row: auto; }
+  .activity-panel { position: static; }
+  .activity-column { order: 1; }
   .pages-panel { order: 2; }
   .products-panel { order: 3; }
   .event-list { max-height: 500px; }

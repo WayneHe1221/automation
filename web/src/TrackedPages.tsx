@@ -209,7 +209,7 @@ export default function TrackedPages({
   );
 
   return (
-    <section className="panel pages-panel">
+    <section className="panel pages-panel" id="tracked-pages">
       <div className="panel-heading">
         <div>
           <p className="section-kicker">TRACKED PAGES</p>
