@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 152 件**，已知在庫共 1033 件
+**合計 156 件**，已知在庫共 1035 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -22,13 +22,12 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 - [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ステラソラ』(2610/16)](https://www.c-labo-online.jp/product/398302)
 
-## gurapan 1081（每天）— 12 件、在庫共 39
+## gurapan 1081（每天）— 11 件、在庫共 38
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 9
 - [【トライアルデッキ】『東方Project【カートン】](https://gurapan.jp/products/detail/214730) — 在庫 6
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/226588) — 在庫 2
 - [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 1
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 1
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 1
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 3
 - [【簡易版】【TD付】ステラソラRR以下4枚ずつセット](https://gurapan.jp/products/detail/227420) — 在庫 3
@@ -37,14 +36,14 @@
 - [BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228070) — 在庫 2
 - [BanG Dream! (夢限大みゅーたいぷ)【カートン】](https://gurapan.jp/products/detail/228069) — 在庫 6
 
-## manasource 2268（每天）— 9 件、在庫共 203
+## manasource 2268（每天）— 9 件、在庫共 201
 
 - [予約 スペシャルシリーズ「ぶっちぎりスタートデッキ ごーすと・みーつ・ぎゃる！」](https://www.manasource.net/product/195603) — 在庫 26
 - [予約 「Lycee Overture Ver.サガプラネッツ&HOOKSOFT&SMEE&ASa Project」ブースターパック 1BOX(20パック）](https://www.manasource.net/product/150019) — 在庫 40
 - [予約 【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 6
 - [予約 Harry Potter カードゲーム ブースターパック「ハリー・ポッターと賢者の石」Part.2 1BOX](https://www.manasource.net/product/160498) — 在庫 32
 - [予約 カードファイト!! ヴァンガード 【VG-DZ-BT17】 ブースターパック「運命星戦(うんめいせいせん)」 1BOX](https://www.manasource.net/product/158499) — 在庫 3
-- [予約 Z/X -Zillions of enemy X- ジェネレート ユニゾンドリーム 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/190989) — 在庫 6
+- [予約 Z/X -Zillions of enemy X- ジェネレート ユニゾンドリーム 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/190989) — 在庫 4
 - [予約 Z/X -Zillions of enemy X- ネクストステージ 1カートン(12BOX）](https://www.manasource.net/product/175675) — 在庫 3
 - [予約 Z/X -Zillions of enemy X- アセンション・サマー 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/186132) — 在庫 3
 - [予約 ヴァイスシュヴァルツ ブースターパック anemoi 1BOX](https://www.manasource.net/product/192705) — 在庫 84
@@ -171,8 +170,8 @@
 ### torecolo WSデッキ販売（每天）— 6 件、在庫共 6
 
 - [【ヴァイス】デッキ販売 東方 ８扉](https://www.torecolo.jp/shop/g/gDECK-WSTHP01/) — 在庫 1
-- [【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス](https://www.torecolo.jp/shop/g/gDECK-WSTAL/) — 在庫 1
 - [【ヴァイス】デッキ販売 東方 ８門](https://www.torecolo.jp/shop/g/gDECK-WSTHP/) — 在庫 1
+- [【ヴァイス】デッキ販売 テイルズシリーズ 宝チャンス](https://www.torecolo.jp/shop/g/gDECK-WSTAL/) — 在庫 1
 - [【ヴァイス】デッキ販売 BanG Dream! 扉門](https://www.torecolo.jp/shop/g/gDECK-WSBD3/) — 在庫 1
 - [【ヴァイス】デッキ販売 カードキャプターさくら 扉電源](https://www.torecolo.jp/shop/g/gDECK-WSCCS/) — 在庫 1
 - [【ヴァイス】デッキ販売 BanG Dream! 門枝](https://www.torecolo.jp/shop/g/gDECK-WSBD2/) — 在庫 1
@@ -181,12 +180,17 @@
 
 - [【WS】《青赤》アイドルマスターシンデレラガールズ 門ストブ デッキ](https://www.c-labo-online.jp/product/384770) — 在庫 1
 
-### Hobby Station WSデッキ販売（每天）— 4 件、在庫共 4
+### Hobby Station WSデッキ販売（每天）— 9 件、在庫共 9
 
-- [ラブライブ！スーパースター!!! ドラ門デッキ](https://www.hobbystation-single.jp/ws/product/detail/273105) — 在庫 1
-- [グラブル 門扉デッキ](https://www.hobbystation-single.jp/ws/product/detail/360601) — 在庫 1
+- [ウマ娘 ドラ扉デッキ](https://www.hobbystation-single.jp/ws/product/detail/247567) — 在庫 1
+- [ダ・カーポ ドラ枝デッキ](https://www.hobbystation-single.jp/ws/product/detail/254634) — 在庫 1
+- [ブラウンダスト 望門デッキ](https://www.hobbystation-single.jp/ws/product/detail/273788) — 在庫 1
+- [GA文庫 8電源デッキ](https://www.hobbystation-single.jp/ws/product/detail/299519) — 在庫 1
 - [ダ・カーポ 8枝（フルホイル）デッキ](https://www.hobbystation-single.jp/ws/product/detail/307182) — 在庫 1
 - [ダンダダン 8枝デッキ](https://www.hobbystation-single.jp/ws/product/detail/335428) — 在庫 1
+- [GA文庫 8枝デッキ](https://www.hobbystation-single.jp/ws/product/detail/339438) — 在庫 1
+- [バンドリ 宝扉デッキ](https://www.hobbystation-single.jp/ws/product/detail/339440) — 在庫 1
+- [東方Project ８扉デッキ](https://www.hobbystation-single.jp/ws/product/detail/342953) — 在庫 1
 
 ### gurapan WSデッキ販売（每天）— 1 件、在庫共 1
 
