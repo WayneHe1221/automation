@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 152 件**，已知在庫共 1025 件
+**合計 152 件**，已知在庫共 1023 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -23,13 +23,13 @@
 - [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ガールズ＆パンツァー 無限軌道杯』(2610/30)](https://www.c-labo-online.jp/product/403398)
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 
-## gurapan 1081（每天）— 14 件、在庫共 56
+## gurapan 1081（每天）— 14 件、在庫共 54
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 9
 - [【トライアルデッキ】『東方Project【カートン】](https://gurapan.jp/products/detail/214730) — 在庫 6
 - [「Re:ゼロから始める異世界生活」Vol.4RR以下4枚ずつセット](https://gurapan.jp/products/detail/226588) — 在庫 1
-- [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417) — 在庫 2
-- [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 3
+- [【簡易版】葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225417) — 在庫 1
+- [葬送のフリーレン Vol.2RR以下4枚ずつセット](https://gurapan.jp/products/detail/225416) — 在庫 2
 - [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 3
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 3
 - [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 3
