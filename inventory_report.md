@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 158 件**，已知在庫共 1192 件
+**合計 157 件**，已知在庫共 1189 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -29,16 +29,16 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 - [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ステラソラ』(2610/16)](https://www.c-labo-online.jp/product/398302)
 
-## gurapan 1081（每天）— 9 件、在庫共 37
+## gurapan 1081（每天）— 9 件、在庫共 42
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 8
 - [【トライアルデッキ】東方Project【カートン】](https://gurapan.jp/products/detail/214730) — 在庫 6
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 3
+- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 2
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 3
-- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 1
+- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 5
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 3
 - [【簡易版】BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228071) — 在庫 2
-- [BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228070) — 在庫 1
+- [BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228070) — 在庫 3
 - [BanG Dream! (夢限大みゅーたいぷ)【カートン】](https://gurapan.jp/products/detail/228069) — 在庫 10
 
 ## manasource 2268（每天）— 7 件、在庫共 268
@@ -65,12 +65,11 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 100 件、在庫共 604
+## square-bushiroad 284（每天）— 99 件、在庫共 596
 
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/107480) — 在庫 12
-- [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/107481) — 在庫 7
-- [ヴァイスシュヴァルツ 【推しの子】Vol.3 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105041) — 在庫 3
-- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039) — 在庫 8
+- [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/107481) — 在庫 6
+- [ヴァイスシュヴァルツ 「Re:ゼロから始める異世界生活」Vol.4 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/105039) — 在庫 4
 - [ヴァイスシュヴァルツ 東方Project 〜 Black and White Lotus Land. トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/100370) — 在庫 12
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805) — 在庫 29
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806) — 在庫 2
