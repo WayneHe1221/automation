@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 155 件**，已知在庫共 1162 件
+**合計 154 件**，已知在庫共 1160 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -66,7 +66,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 96 件、在庫共 583
+## square-bushiroad 284（每天）— 95 件、在庫共 581
 
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/107480) — 在庫 11
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/107481) — 在庫 6
@@ -75,7 +75,6 @@
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/98805) — 在庫 29
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター ミリオンライブ！(1カートン・30BOX入)(1BOXあたり3600円)(新品商品)](https://www.square-bushiroad.com/product/98806) — 在庫 2
 - [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/98796) — 在庫 12
-- [ヴァイスシュヴァルツ TVアニメ『Summer Pockets』 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/98797) — 在庫 2
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/96347) — 在庫 11
 - [ヴァイスシュヴァルツ D.C. Re:tune 〜ダ・カーポ〜 リチューン(1カートン・24BOX入)(1BOXあたり4800円)(新品商品)](https://www.square-bushiroad.com/product/96348) — 在庫 3
 - [ヴァイスシュヴァルツ 『テイルズ オブ』シリーズ トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/91309) — 在庫 4
