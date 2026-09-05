@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 156 件**，已知在庫共 1170 件
+**合計 155 件**，已知在庫共 1161 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -64,7 +64,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 99 件、在庫共 586
+## square-bushiroad 284（每天）— 98 件、在庫共 577
 
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/107480) — 在庫 11
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/107481) — 在庫 6
@@ -83,7 +83,6 @@
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary トライアルデッキ(1カートン・48個入)(1個あたり1650円)(新品商品)](https://www.square-bushiroad.com/product/89774) — 在庫 1
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/89775) — 在庫 20
 - [ヴァイスシュヴァルツ きんいろモザイク 15th Anniversary(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/89776) — 在庫 3
-- [ヴァイスシュヴァルツ プレミアムブースター Key 25th Anniversary(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/89771) — 在庫 9
 - [★SALE★ヴァイスシュヴァルツ ブルーアーカイブ The Animation(1カートン・24BOX入)(1BOXあたり4000円)(新品商品)](https://www.square-bushiroad.com/product/89786) — 在庫 3
 - [ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/86677) — 在庫 31
 - [★SALE★ヴァイスシュヴァルツ プレミアムブースター アイドルマスター シャイニーカラーズ(1カートン・30BOX入)(1BOXあたり2500円)(新品商品)](https://www.square-bushiroad.com/product/86678) — 在庫 2
