@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 158 件**，已知在庫共 1181 件
+**合計 157 件**，已知在庫共 1169 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -29,7 +29,7 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 - [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ステラソラ』(2610/16)](https://www.c-labo-online.jp/product/398302)
 
-## gurapan 1081（每天）— 12 件、在庫共 58
+## gurapan 1081（每天）— 11 件、在庫共 48
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 5
 - [【トライアルデッキ】東方Project【カートン】](https://gurapan.jp/products/detail/214730) — 在庫 6
@@ -40,18 +40,17 @@
 - [【簡易版】BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228071) — 在庫 2
 - [BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228070) — 在庫 3
 - [BanG Dream! (夢限大みゅーたいぷ)【カートン】](https://gurapan.jp/products/detail/228069) — 在庫 10
-- [超かぐや姫！N(ノーマル)4枚ずつセット](https://gurapan.jp/products/detail/228838) — 在庫 9
 - [【簡易版】アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228839) — 在庫 5
-- [アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228840) — 在庫 6
+- [アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228840) — 在庫 5
 
-## manasource 2268（每天）— 7 件、在庫共 266
+## manasource 2268（每天）— 7 件、在庫共 254
 
 - [予約 ホロライブ OFFICIAL CARD GAME ブースターパック 「ボリュームヴォルテックス」 OSR 各1枚 RR・R・UC・C 各4枚ずつセット](https://www.manasource.net/product/196914) — 在庫 4
 - [予約 hololive OFFICIAL CARD GAME ブースターパック「ボリュームヴォルテックス」1BOX](https://www.manasource.net/product/196913) — 在庫 89
 - [予約 Z/X -Zillions of enemy X- GAMBLING FORCE 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/196912) — 在庫 6
 - [予約 10月23日発売変更！！【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 93
 - [予約 Z/X -Zillions of enemy X- ジェネレート ユニゾンドリーム 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/190989) — 在庫 2
-- [予約 ヴァイスシュヴァルツ ブースターパック anemoi 1BOX](https://www.manasource.net/product/192705) — 在庫 36
+- [予約 ヴァイスシュヴァルツ ブースターパック anemoi 1BOX](https://www.manasource.net/product/192705) — 在庫 24
 - [予約 五等分の花嫁 カードゲーム ブースターパック vol.8 恋と青春が最高潮！ 1BOX(12パック)](https://www.manasource.net/product/153147) — 在庫 36
 
 ## cardmax ct1849（每天）— 10 件
@@ -67,7 +66,7 @@
 - [ブースターパック あやかしトライアングル BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114082/)
 - [ブースターパック 幻日のヨハネ -SUNSHINE in the MIRROR- BOX【ヴァイスシュヴァルツ】](https://www.cardmax.jp/shopdetail/000000114074/)
 
-## square-bushiroad 284（每天）— 98 件、在庫共 577
+## square-bushiroad 284（每天）— 98 件、在庫共 587
 
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1BOX・10パック入)(新品商品)](https://www.square-bushiroad.com/product/107480) — 在庫 11
 - [ヴァイスシュヴァルツ 葬送のフリーレン Vol.2 (1カートン・12BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/107481) — 在庫 6
@@ -94,6 +93,7 @@
 - [ヴァイスシュヴァルツ 怪獣8号 トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/83846) — 在庫 11
 - [★SALE★ヴァイスシュヴァルツ 怪獣8号(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/83848) — 在庫 17
 - [ヴァイスシュヴァルツ Toy Story 30YEARS＆BEYOND(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/83843) — 在庫 5
+- [ヴァイスシュヴァルツ Summer Pockets REFLECTION BLUE Re:Edit(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/83339) — 在庫 12
 - [ヴァイスシュヴァルツ Summer Pockets REFLECTION BLUE Re:Edit(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/83340) — 在庫 1
 - [★SALE★ヴァイスシュヴァルツ 負けヒロインが多すぎる！ トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/80376) — 在庫 3
 - [ヴァイスシュヴァルツ 負けヒロインが多すぎる！ トライアルデッキ(1カートン・48個入)(1個あたり1400円)(新品商品)](https://www.square-bushiroad.com/product/80377) — 在庫 1
@@ -106,9 +106,8 @@
 - [ヴァイスシュヴァルツ 甘神さんちの縁結び(1カートン・24BOX入)(1BOXあたり4400円)(新品商品)](https://www.square-bushiroad.com/product/75298) — 在庫 2
 - [ヴァイスシュヴァルツ エクストラブースター ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII(1BOX・6パック入)(新品商品)](https://www.square-bushiroad.com/product/72885) — 在庫 9
 - [ヴァイスシュヴァルツ エクストラブースター ソードアート・オンライン オルタナティブ ガンゲイル・オンラインII(1カートン・30BOX入)(1BOXあたり3300円)(新品商品)](https://www.square-bushiroad.com/product/72886) — 在庫 1
-- [ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1個)(新品商品)](https://www.square-bushiroad.com/product/73437) — 在庫 1
 - [★SALE★ヴァイスシュヴァルツ BanG Dream! (Ave Mujica) トライアルデッキ(1カートン・48個入)(1個あたり1500円)(新品商品)](https://www.square-bushiroad.com/product/73438) — 在庫 2
-- [ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73439) — 在庫 3
+- [ヴァイスシュヴァルツ MyGO!!!!! × Ave Mujica(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/73439) — 在庫 2
 - [ヴァイスシュヴァルツ ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！(1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/70317) — 在庫 5
 - [ヴァイスシュヴァルツ ラブライブ！蓮ノ空女学院スクールアイドルクラブ feat. Link！Like！ラブライブ！(1カートン・24BOX入)(1BOXあたり5280円)(新品商品)](https://www.square-bushiroad.com/product/70318) — 在庫 1
 - [ヴァイスシュヴァルツ ゆるキャン△ SEASON３ (1BOX・12パック入)(新品商品)](https://www.square-bushiroad.com/product/66233) — 在庫 20
