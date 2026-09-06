@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 153 件**，已知在庫共 1163 件
+**合計 152 件**，已知在庫共 1161 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -28,7 +28,7 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 - [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ステラソラ』(2610/16)](https://www.c-labo-online.jp/product/398302)
 
-## gurapan 1081（每天）— 11 件、在庫共 45
+## gurapan 1081（每天）— 11 件、在庫共 44
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 5
 - [【トライアルデッキ】東方Project【カートン】](https://gurapan.jp/products/detail/214730) — 在庫 6
@@ -39,7 +39,7 @@
 - [【簡易版】BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228071) — 在庫 2
 - [BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228070) — 在庫 3
 - [BanG Dream! (夢限大みゅーたいぷ)【カートン】](https://gurapan.jp/products/detail/228069) — 在庫 10
-- [【簡易版】アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228839) — 在庫 3
+- [【簡易版】アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228839) — 在庫 2
 - [アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228840) — 在庫 4
 
 ## manasource 2268（每天）— 7 件、在庫共 254
@@ -167,10 +167,9 @@
 
 ### 福福トレカ WSデッキ販売（每天）— 0 件
 
-### torecolo WSデッキ販売（每天）— 7 件、在庫共 7
+### torecolo WSデッキ販売（每天）— 6 件、在庫共 6
 
 - [【ヴァイス】デッキ販売 東方 ８扉](https://www.torecolo.jp/shop/g/gDECK-WSTHP01/) — 在庫 1
-- [【ヴァイス】デッキ販売 東方 ８門](https://www.torecolo.jp/shop/g/gDECK-WSTHP/) — 在庫 1
 - [【ヴァイス】デッキ販売 BanG Dream! 扉門](https://www.torecolo.jp/shop/g/gDECK-WSBD3/) — 在庫 1
 - [【ヴァイス】デッキ販売 デート・ア・ライブ 8宝](https://www.torecolo.jp/shop/g/gDECK-WSDAL/) — 在庫 1
 - [【ヴァイス】デッキ販売 カードキャプターさくら 扉電源](https://www.torecolo.jp/shop/g/gDECK-WSCCS/) — 在庫 1
