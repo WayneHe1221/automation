@@ -1,6 +1,6 @@
 # 追蹤商品清單
 
-**合計 152 件**，已知在庫共 1155 件
+**合計 153 件**，已知在庫共 1156 件
 
 > 由 GitHub Actions 自動更新；內容隨追蹤商品變動而變。
 
@@ -28,23 +28,24 @@
 - [【予約】(新品ボックス)ヴァイスシュヴァルツ ブースターパック 『BanG Dream! (夢限大みゅーたいぷ)』(1BOX=10パック) (2611/13)](https://www.c-labo-online.jp/product/400096)
 - [【予約】(新品)ヴァイスシュヴァルツ トライアルデッキ 『ステラソラ』(2610/16)](https://www.c-labo-online.jp/product/398302)
 
-## gurapan 1081（每天）— 11 件、在庫共 43
+## gurapan 1081（每天）— 12 件、在庫共 45
 
 - [SummerPockets REFLECTIONBLUE Re:Edit【カートン】](https://gurapan.jp/products/detail/197686) — 在庫 5
 - [【トライアルデッキ】東方Project【カートン】](https://gurapan.jp/products/detail/214730) — 在庫 6
-- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 2
+- [【簡易版】「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223480) — 在庫 1
 - [「勝利の女神：NIKKE Vol.2」RR以下4枚ずつセット](https://gurapan.jp/products/detail/223479) — 在庫 3
-- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 5
+- [【簡易版】anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225419) — 在庫 4
 - [anemoiRR以下4枚ずつセット](https://gurapan.jp/products/detail/225420) — 在庫 1
 - [【簡易版】BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228071) — 在庫 2
 - [BanG Dream! (夢限大みゅーたいぷ)RR以下4枚ずつセット](https://gurapan.jp/products/detail/228070) — 在庫 3
 - [BanG Dream! (夢限大みゅーたいぷ)【カートン】](https://gurapan.jp/products/detail/228069) — 在庫 10
-- [【簡易版】アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228839) — 在庫 2
+- [超かぐや姫！N(ノーマル)4枚ずつセット](https://gurapan.jp/products/detail/228838) — 在庫 5
+- [【簡易版】アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228839) — 在庫 1
 - [アズールレーン Vol.3RR以下4枚ずつセット](https://gurapan.jp/products/detail/228840) — 在庫 4
 
-## manasource 2268（每天）— 7 件、在庫共 251
+## manasource 2268（每天）— 7 件、在庫共 250
 
-- [予約 ホロライブ OFFICIAL CARD GAME ブースターパック 「ボリュームヴォルテックス」 OSR 各1枚 RR・R・UC・C 各4枚ずつセット](https://www.manasource.net/product/196914) — 在庫 4
+- [予約 ホロライブ OFFICIAL CARD GAME ブースターパック 「ボリュームヴォルテックス」 OSR 各1枚 RR・R・UC・C 各4枚ずつセット](https://www.manasource.net/product/196914) — 在庫 3
 - [予約 hololive OFFICIAL CARD GAME ブースターパック「ボリュームヴォルテックス」1BOX](https://www.manasource.net/product/196913) — 在庫 89
 - [予約 Z/X -Zillions of enemy X- GAMBLING FORCE 1カートン(12BOX）カートンで購入がお得！？ お楽しみパックが３パックへ増量！！](https://www.manasource.net/product/196912) — 在庫 6
 - [予約 10月23日発売変更！！【VG-DZ-TBP02】 タイトルブースター プレミアム「ペルソナ 30th Anniversary」 1BOX](https://www.manasource.net/product/194482) — 在庫 93
